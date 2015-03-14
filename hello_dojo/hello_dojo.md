@@ -186,7 +186,7 @@ More information on DOM manipulation functions can be found in the [Dojo DOM Fun
 
 Now we can liven up our example by adding some animations. One module we can load to add effects to the page is `dojo/fx`. Let's add a sliding animation to the greeting with `dojo/fx`'s `slideTo` method:
 
-<!-- ```js
+```js
 require([
 	'dojo/dom',
 	'dojo/fx',
@@ -204,7 +204,7 @@ require([
 	}).play();
 });
 ```
--->
+
 <iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
