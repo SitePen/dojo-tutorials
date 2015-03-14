@@ -164,7 +164,17 @@ Organizing code in AMD modules allows you to create modular JavaScript source th
 
 One of the common things that you need to accomplish with web applications is to ensure that the browser's DOM is available before executing code.  This is accomplished via a special AMD module called a "plugin".  Plugins can be required like any other module, but their special functionality is only activated by adding an exclamation point (bang) to the end of the module identifier. In the case of the DOM ready event, Dojo provides the `dojo/domReady` plugin. Simply include this plugin as a dependency in any `require` or `define` call and the callback will not be fired until the DOM is ready:
 
-<iframe width="100%" height="300" src="//jsfiddle.net/gh/get/library/pure/SitePen/dojo-tutorials/tree/master/hello_dojo/demos/dojoReady/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+```js
+require([
+    'dojo/dom',
+    'dojo/domReady!'
+], function (dom) {
+    var greeting = dom.byId('greeting');
+    greeting.innerHTML += ' from Dojo!';
+});
+```
+<iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 The example above simply adds some text to the `greeting` element &mdash; something that can only be done reliably once the DOM is loaded (we did not use this in previous code since the `script` element is included at the bottom of the `body` element &mdash; this delays processing of the script until the DOM has loaded). Again, note that the module identifier ends with **!**; without this, the `dojo/domReady` module would simply function like any other module.
 
