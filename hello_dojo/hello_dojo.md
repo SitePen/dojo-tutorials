@@ -7,6 +7,7 @@ Welcome to Dojo! In this tutorial, you’ll learn how to load Dojo and begin exp
 ### Getting Started
 
 Getting started with Dojo is as simple as including the `dojo.js` script in a web page, just like any other JavaScript file. Dojo is available on popular [CDNs](http://en.wikipedia.org/wiki/Content_delivery_network "Content Delivery Network"), so to get started enter the following in a file named `hellodojo.html` and open it in your web browser.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,6 @@ So what is available when `dojo.js` has been loaded? Dojo's AMD loader is, and i
 A few of Dojo's basic modules for HTML DOM manipulation are [dojo/dom](/reference-guide/1.10/dojo/dom.html) and [dojo/dom-construct](/reference-guide/1.10/dojo/dom-construct.html). Let's see how we can load these modules and use the functionality they provide:
 
 ```html
-//highlight: [13, 14, 15, 16, 17, 18, 19, 20, 21]
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,9 +68,11 @@ The AMD loader will automatically load all sub-dependencies for a requested modu
 
 At this point you've seen an example of loading and using modules. To define and load your own modules, you'll need to ensure that you are loading your HTML file from an HTTP server (localhost is fine, but you do need an HTTP server since there are security subtleties that will prevent many things from working with the "file:///" protocol). For these examples, you don't need any fancy features in your web server other than the ability to serve files. Add a `demo` directory in the directory that contains your `hellodojo.html` file, and in the `demo` directory create a file named `myModule.js`:
 
-<pre>demo/
+<pre>
+demo/
     myModule.js
-hellodojo.html</pre>
+	hellodojo.html
+</pre>
 
 Now enter the following in `myModule.js`:
 
@@ -113,7 +115,6 @@ The AMD `define` function accepts similar parameters to the `require` function -
 Loading local modules while using Dojo from a CDN requires a little extra configuration (more information on configuring Dojo's AMD loader and using Dojo with a CDN can be found in the [Advanced AMD](../modules_advanced/) and [Using Modules with a CDN](../cdn/) tutorials). Update `hellodojo.html` as follows:
 
 ```html
-//highlight: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 30, 31, 32, 33, 34, 35, 36]
 <!DOCTYPE html>
 <html>
 <head>
@@ -174,6 +175,7 @@ require([
     greeting.innerHTML += ' from Dojo!';
 });
 ```
+
 <iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 The example above simply adds some text to the `greeting` element &mdash; something that can only be done reliably once the DOM is loaded (we did not use this in previous code since the `script` element is included at the bottom of the `body` element &mdash; this delays processing of the script until the DOM has loaded). Again, note that the module identifier ends with **!**; without this, the `dojo/domReady` module would simply function like any other module.
@@ -228,14 +230,19 @@ Follow these steps to get starting using the Dojo source, which is generally how
     If you are experienced with [git](http://git-scm.com/) and [GitHub](https://github.com/), you can [clone Dojo from GitHub](https://github.com/dojo/). At a minimum, get [dojo](https://github.com/dojo/dojo). You will likely want [dijit](https://github.com/dojo/dijit), [dojox](https://github.com/dojo/dojox), and [util](https://github.com/dojo/util) at some point as well (these are all included in the source download).
 
 2.  Extract the Dojo archive into your project folder, e.g.:
-		<pre>demo/
+<pre>
+demo/
     myModule.js
 dojo/
 dijit/
 dojox/
 util/
-hellodojo.html</pre>
+hellodojo.html
+
+</pre>
+
 3.  Load `dojo.js` locally, rather than from the CDN:
+
 ```js
 <script src="dojo/dojo.js"></script>
 ```
