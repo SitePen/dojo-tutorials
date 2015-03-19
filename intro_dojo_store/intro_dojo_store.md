@@ -2,9 +2,6 @@
 
 Separation of concerns is a fundamental aspect of good programming. Keeping presentation distinct from the data model is a key separation to employ. The Dojo object store architecture establishes a consistent interface for data interaction inspired by the HTML5 object store API.
 
-*   <span>Difficulty:</span> Intermediate
-*   <span>Dojo Version:</span> 1.10
-
 ### Why Dojo Object Store?
 
 Separation of concerns is a fundamental aspect of organized, manageable programming, and an essential separation in web applications is that of data modeling from the user interface (where a user interface is typically defined as a view and controller in model-view-controller (MVC) architecture). The Dojo object store architecture establishes a consistent interface for data interaction inspired by the HTML5 object store API. This API was developed to facilitate loosely coupled development where different widgets and user interfaces could interact with data from a variety of sources in a consistent manner.
@@ -15,7 +12,7 @@ The Dojo Object Store interface allows you to develop and use well-encapsulated 
 
 The easiest store to get started with is `dojo/store/Memory`. We can simply provide an array of objects to the constructor, and we can start interacting with it. Once the store is created, we can query it with the `query` method. An easy way to query is to provide an object with name/value pairs that indicate the required values of matched objects. The `query` method always returns an object or array with a `forEach` method (as well as `map` and `filter`):
 
-<pre class="brush: js;">
+```js
 require(["dojo/store/Memory"],
 	function(Memory){
 
@@ -32,7 +29,7 @@ require(["dojo/store/Memory"],
 		});
 
 });
-</pre>
+```
 
 
 This will call an alert with the name of each employee in the sales department.
@@ -41,17 +38,17 @@ This will call an alert with the name of each employee in the sales department.
 
 We could go on to create new objects in the store, and delete objects:
 
-<pre class="brush: js;">
+```js
 // add a new employee
 employeeStore.add({name:"George", department:"accounting"});
 // remove Bill
 employeeStore.remove("Bill");
-</pre>
+```
 
 
 We can retrieve objects and update them. Objects in the store are simple plain JavaScript objects, so we can directly access and modify the properties (when you modify properties, make sure you do a put() to save the changes):
 
-<pre class="brush: js;">
+```js
 // retrieve object with the name "Jim"
 var jim = employeeStore.get("Jim");
 // show the department property
@@ -64,12 +61,12 @@ for(var i in jim){
 jim.department = "engineering";
 // and store the change
 employeeStore.put(jim);
-</pre>
+```
 
 
 Going back to querying, we can add additional parameters to a query. These additional parameters allow us to limit the query to a specific number of objects, or to sort the objects, using the second argument to the `query` method. This second argument can be an object with `start` and `count` properties that define the limit on the number of objects returned. Limiting the result set can be critical for large-scale data sets that are used by paging-capable widgets (like the grid), where new pages of data are requested on demand. The second argument can also include a `sort` property, to specify the property and direction to sort on in the query:
 
-<pre class="brush: js;">
+```js
 employeeStore.query({department:"sales"}, {
 	// the results should be sorted by department
 	sort:[{attribute:"department", descending: false}],
@@ -83,7 +80,7 @@ employeeStore.query({department:"sales"}, {
 }).forEach(function(employeeName){
 	console.log(employeeName);
 });
-</pre>
+```
 
 
 The Memory store is a synchronous store, which means it directly returns the results of an action (`get` returns the object).
@@ -94,7 +91,7 @@ Another highly useful store is the `JsonRest` store, which delegates the various
 
 This is also an example of an asynchronous store. The methods on an asynchronous store return [promises](../promises/). We can use a promise by providing a callback to the returned promise:
 
-<pre class="brush: js;">
+```js
 require(["dojo/store/JsonRest"],
 	function(JsonRest){
             employeeStore = new JsonRest({target:"/Employee/"});
@@ -102,7 +99,7 @@ require(["dojo/store/JsonRest"],
 				// called once Bill was retrieved
             });
 });
-</pre>
+```
 
 
 We can also use `Deferred.when()` (as exposed via the `dojo/_base/Deferred` module) to work with methods that may be synchronous or asynchronous, for consistent behavior regardless of implementation.
@@ -111,7 +108,7 @@ These examples demonstrate how to interact with stores. We can now start buildin
 
 For example, the StoreSeries adapter allows us to use a store as the data source for a chart. Most components that use a store require that you provide the query that the component should use to query the store:
 
-<pre class="brush: js;">
+```js
 // Note that while the Default plot2d module is not used explicitly, it needs to
 // be loaded to be able to create a Chart when no other plot is specified.
 require(["dojox/charting/Chart", "dojox/charting/StoreSeries" /*, other deps */,
@@ -127,7 +124,7 @@ require(["dojox/charting/Chart", "dojox/charting/StoreSeries" /*, other deps */,
 			render();
 
 });
-</pre>
+```
 
 
 Another important concept in the Dojo store architecture is composing functionality by layering store wrappers. Dojo comes with a few store wrappers that add functionality, including a caching wrapper, and an observable wrapper that fires events for data changes.

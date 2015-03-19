@@ -2,9 +2,6 @@
 
 [dojo/request](http://dojotoolkit.org/reference-guide/1.10/dojo/request.html) is a new API (introduced in Dojo 1.8) for making requests to a server from the client.  This tutorial introduces the `dojo/request` API:  you'll learn how to request a text file from the server, handle errors if they occur, post information to the server, take advantage of the notify API, and use the registry to use the same code to request data from different locations.
 
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Getting Started
 
@@ -19,7 +16,7 @@ After this tutorial, you'll want to check out those tutorials.
 
 Let's take a look at a simple example:
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/request"], function(request){
 	request("helloworld.txt").then(
 		function(text){
@@ -29,7 +26,8 @@ require(["dojo/request"], function(request){
 			console.log("An error occurred: " + error);
 		}
 	);
-});</pre>
+});
+```
 
 
 In a browser, the code above will execute an HTTP GET request using an `XMLHttpRequest` to
@@ -69,7 +67,7 @@ an `Object`. Some of the most-used options available are:
 
 <p>Let's take a look at an example using some of these options:
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/request"], function(request){
 	request.post("post-content.php", {
 		data: {
@@ -83,7 +81,7 @@ require(["dojo/request"], function(request){
 		console.log("The server returned: ", text);
 	});
 });
-</pre>
+```
 
 
 This example executes an HTTP POST request to `post-content.php`; a simple object (`data`)
@@ -98,7 +96,7 @@ The following are some common uses of `dojo/request`.
 
 This example uses `dojo/request.get` to request a text file.  A good use of this approach would be to provide text for terms and conditions or privacy for a site, because the text files would only be sent to the client if they were specifically requested, and it is easier to maintain text in a file than in code.
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
 	function(dom, on, request){
 		// Results will be displayed in resultDiv
@@ -110,18 +108,17 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
 			request.get("../resources/text/psalm_of_life.txt").then(
 				function(response){
 					// Display the text file content
-					resultDiv.innerHTML = "&lt;pre&gt;"+response+"&lt;/pre&gt;";
+					resultDiv.innerHTML = "<pre>"+response+"</pre>";
 				},
 				function(error){
 					// Display the error returned
-					resultDiv.innerHTML = "&lt;div class=\"error\"&gt;"+error+"&lt;div&gt;";
+					resultDiv.innerHTML = "<div class=\"error\">"+error+"<div>";
 				}
 			);
 		});
 	}
 );
-
-</pre>
+```
 
 [View Demo](demo/dojo-request-xhr.php)
 
@@ -129,7 +126,7 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
 
 In the example below, a POST request is used to send the username and password to the server and the result from the server is displayed.
 
-<pre class="brush: js; html-script: false;">
+```js
 
 require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 	function(dom, on, request, domForm){
@@ -157,7 +154,7 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 	}
 );
 
-</pre>
+```
 
 [View Demo](demo/dojo-request-xhr-post.php)
 
@@ -171,7 +168,7 @@ original `Promise` (The `Promise` returned from the `XHR` will
 Additionally, when using `promise.response.then`, the response will not be the data,
 but an object with a data property.
 
-<pre class="brush: js; html-script: false;">
+```js
 
 require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 	function(dom, on, request, domForm){
@@ -210,7 +207,7 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 	}
 );
 
-</pre>
+```
 
 [View Demo](demo/dojo-request-xhr-header.php)
 
@@ -220,7 +217,8 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 
 **JSON encoded object**
 
-<pre style="overflow-x:scroll">{
+```json
+{
 	"title":"JSON Sample Data",
 	"items":[{
 		"name":"text",
@@ -235,13 +233,13 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 		"name":"boolean",
 		"value":false
 	}]
-}</pre>
+}```
 
 
 When `handleAs` is set to `"json"`, `dojo/request` treats the response payload
 as JSON data and parses it into a JavaScript object.
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/dom", "dojo/request", "dojo/json",
 		"dojo/_base/array", "dojo/domReady!"],
 	function(dom, request, JSON, arrayUtil){
@@ -254,21 +252,21 @@ require(["dojo/dom", "dojo/request", "dojo/json",
 			handleAs: "json"
 		}).then(function(data){
 			// Display the data sent from the server
-			var html = "&lt;h2&gt;JSON Data&lt;/h2&gt;" +
-				"&lt;p&gt;JSON encoded data:&lt;/p&gt;" +
-				"&lt;p&gt;&lt;code&gt;" + JSON.stringify(data) + "&lt;/code&gt;&lt;/p&gt;"+
-				"&lt;h3&gt;Accessing the JSON data&lt;/h3&gt;" +
-				"&lt;p&gt;&lt;strong&gt;title&lt;/strong&gt; " + data.title + "&lt;/p&gt;" +
-				"&lt;p&gt;&lt;strong&gt;items&lt;/strong&gt; An array of items." +
+			var html = "<h2>JSON Data</h2>" +
+				"<p>JSON encoded data:</p>" +
+				"<p><code>" + JSON.stringify(data) + "</code></p>"+
+				"<h3>Accessing the JSON data</h3>" +
+				"<p><strong>title</strong> " + data.title + "</p>" +
+				"<p><strong>items</strong> An array of items." +
 				"Each item has a name and a value.  The type of " +
-				"the value is shown in parentheses.&lt;/p&gt;&lt;dl&gt;";
+				"the value is shown in parentheses.</p><dl>";
 
 			arrayUtil.forEach(data.items, function(item,i){
-				html += "&lt;dt&gt;" + item.name +
-					"&lt;/dt&gt;&lt;dd&gt;" + item.value +
-					" (" + (typeof item.value) + ")&lt;/dd&gt;";
+				html += "<dt>" + item.name +
+					"</dt><dd>" + item.value +
+					" (" + (typeof item.value) + ")</dd>";
 			});
-			html += "&lt;/dl&gt;";
+			html += "</dl>";
 
 			resultDiv.innerHTML = html;
 		},
@@ -278,7 +276,7 @@ require(["dojo/dom", "dojo/request", "dojo/json",
 		});
 	}
 );
-</pre>
+```
 
 
 In addition to the encoding the data as JSON in the response, set the [Content-Type](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17) header to _application/json_, either using server configuration such as [Apache's AddType](http://httpd.apache.org/docs/2.0/mod/mod_mime.html#addtype) or adding it to the header with the server side code.
@@ -293,7 +291,7 @@ Let's take a look at a few examples:
 
 #### Using JSONP to request data from a server and handling the response
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/dom", "dojo/on", "dojo/request/script",
 		"dojo/json", "dojo/domReady!"
 ], function(dom, on, script, JSON){
@@ -321,7 +319,7 @@ require(["dojo/dom", "dojo/on", "dojo/request/script",
 		});
 	});
 });
-</pre>
+```
 
 
 Since the response is JavaScript, not JSON, the **Content-Type** header on the response should be _application/javascript_.
@@ -330,7 +328,7 @@ Since the response is JavaScript, not JSON, the **Content-Type** header on the r
 
 #### Using JSONP to request Dojo pull requests from the GitHub API
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/dom", "dojo/on", "dojo/request/script",
 		"dojo/dom-construct", "dojo/_base/array",
 		"dojo/domReady!"
@@ -365,7 +363,7 @@ require(["dojo/dom", "dojo/on", "dojo/request/script",
 		});
 	});
 });
-</pre>
+```
 
 [View Demo](demo/dojo-request-script-pulls.php)
 
@@ -386,35 +384,35 @@ Listeners of `"start"` and `"stop"` receive no arguments. Listeners of `"send"` 
 
 #### Using dojo/request/notify to monitor the progress of requests
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/dom", "dojo/request", "dojo/request/notify",
 		"dojo/on", "dojo/dom-construct", "dojo/query",
 		"dojo/domReady!"],
 	function(dom, request, notify, on, domConstruct){
 		// Listen for events from request providers
 		notify("start", function(){
-			domConstruct.place("&lt;p&gt;Start&lt;/p&gt;","divStatus");
+			domConstruct.place("<p>Start</p>","divStatus");
 		});
 		notify("send", function(data, cancel){
-			domConstruct.place("&lt;p&gt;Sent request&lt;/p&gt;","divStatus");
+			domConstruct.place("<p>Sent request</p>","divStatus");
 		});
 		notify("load", function(data){
-			domConstruct.place("&lt;p&gt;Load (response received)&lt;/p&gt;","divStatus");
+			domConstruct.place("<p>Load (response received)</p>","divStatus");
 		});
 		notify("error", function(error){
-			domConstruct.place("&lt;p class=\"error\"&gt;Error&lt;/p&gt;","divStatus");
+			domConstruct.place("<p class=\"error\">Error</p>","divStatus");
 		});
 		notify("done", function(data){
-			domConstruct.place("&lt;p&gt;Done (response processed)&lt;/p&gt;","divStatus");
+			domConstruct.place("<p>Done (response processed)</p>","divStatus");
 			if(data instanceof Error){
-				domConstruct.place("&lt;p class=\"error\"&gt;Error&lt;/p&gt;","divStatus");
+				domConstruct.place("<p class=\"error\">Error</p>","divStatus");
 			}else{
-				domConstruct.place("&lt;p class=\"success\"&gt;Success&lt;/p&gt;","divStatus");
+				domConstruct.place("<p class=\"success\">Success</p>","divStatus");
 			}
 		});
 		notify("stop", function(){
-			domConstruct.place("&lt;p&gt;Stop&lt;/p&gt;","divStatus");
-			domConstruct.place("&lt;p class=\"ready\"&gt;Ready&lt;/p&gt;", "divStatus");
+			domConstruct.place("<p>Stop</p>","divStatus");
+			domConstruct.place("<p class=\"ready\">Ready</p>", "divStatus");
 		});
 
 		// Use event delegation to only listen for clicks that
@@ -430,7 +428,7 @@ require(["dojo/dom", "dojo/request", "dojo/request/notify",
 		});
 	}
 );
-</pre>
+```
 
 [View Demo](demo/dojo-request-notify.php)
 
@@ -440,9 +438,9 @@ require(["dojo/dom", "dojo/request", "dojo/request/notify",
 
 #### dojo/request/registry syntax
 
-<pre class="brush: js; html-script: false;">
+```js
 request.register(url, provider, first);
-</pre>
+```
 
 
 #### dojo/request/registry parameters
@@ -459,7 +457,7 @@ Let's take a look at one final example:
 
 #### Using dojo/request/registry to assign the provider based on the URL of requests
 
-<pre class="brush: js; html-script: false;">
+```js
 require(["dojo/request/registry", "dojo/request/script", "dojo/dom",
 		"dojo/dom-construct", "dojo/on", "dojo/domReady!"],
 	function(request, script, dom, domConstuct, on){
@@ -485,11 +483,11 @@ require(["dojo/request/registry", "dojo/request/script", "dojo/dom",
 					domConstuct.destroy("tweets");
 				}
 				// If at least one result was returned
-				if (data.results.length &gt; 0) {
+				if (data.results.length > 0) {
 					// Create a new tweet list
 					domConstuct.create("ul", {id: "tweets"},"twitterDiv");
 					// Add each tweet as an li
-					while (data.results.length&gt;0){
+					while (data.results.length>0){
 						domConstuct.create("li", {innerHTML: data.results.shift().text},"tweets");
 					}
 				}else{
@@ -506,18 +504,18 @@ require(["dojo/request/registry", "dojo/request/script", "dojo/dom",
 			}).then(
 				function(data){
 					dom.byId('localResourceDiv').innerHTML =
-						"&lt;p&gt;&lt;strong&gt;" + data.name + "&lt;/strong&gt;&lt;br /&gt;" +
-						"&lt;a href=\"" + data.url + "\"&gt;" + data.url + "&lt;/a&gt;&lt;br /&gt;";
+						"<p><strong>" + data.name + "</strong><br />" +
+						"<a href=\"" + data.url + "\">" + data.url + "</a><br />";
 				},
 				function(error){
 					// If no results are found, the local search returns a 404
-					dom.byId('localResourceDiv').innerHTML = "&lt;p&gt;None&lt;/p&gt;";
+					dom.byId('localResourceDiv').innerHTML = "<p>None</p>";
 				}
 			);
 		});
 	}
 );
-</pre>
+```
 
 [View Demo](demo/dojo-request-registry.php)
 

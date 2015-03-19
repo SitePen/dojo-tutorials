@@ -2,9 +2,6 @@
 
 In this tutorial, you'll learn about the importance of Dijit's `_TemplatedMixin` mixin, and how to use templates to quickly create your own custom widgets.
 
-*   <span>Difficulty:</span> Intermediate
-*   <span>Dojo Version:</span> 1.10
-
 ### Getting Started
 
 If you are not already familiar with the basics of creating widgets with Dijit you will want to
@@ -34,9 +31,9 @@ Note that `_TemplatedMixin` is intended to be used as a _mixin_, and not directl
 For the working developer, mixing `_TemplatedMixin` into a widget definition provides you with the
 	following additional properties on your widget:
 
-<pre class="brush: js;">
+```js
 templateString		//	a string representing the HTML of the template
-</pre>
+```
 
 This property is deceptively simple &mdash; after all, how can so much power come from so little?  The
 	answer lies in what else `_TemplatedMixin` adds to your widget's definition.
@@ -63,7 +60,7 @@ To make your custom widget "templatable", all you need to do is add `dijit/_Temp
 	second or subsequent argument in the array of class declarations for your widget.  For example, a SomeWidget
 	widget might be declared like so:
 
-<pre class="brush: js;">
+```js
 define([
 	"dojo/_base/declare",
 	"dijit/_WidgetBase",
@@ -76,7 +73,7 @@ define([
 	});
 
 });
-</pre>
+```
 
 Dijit adheres to a standard of creating a separate directory called `templates` in the folder containing the widget module &mdash; a standard we'd advise you follow in your own code.
 
@@ -95,12 +92,12 @@ A template is an HTML document fragment in which you define a DOM structure, alo
 	and how variable substitution takes place in a template.  Here's a hypothetical template for our SomeWidget,
 	above:
 
-<pre class="brush: js; html-script: true;">
-&lt;div class="${baseClass}"&gt;
-	&lt;div class="${baseClass}Title" data-dojo-attach-point="titleNode"
-			data-dojo-attach-event="onclick:_onClick"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+```js
+<div class="${baseClass}">
+	<div class="${baseClass}Title" data-dojo-attach-point="titleNode"
+			data-dojo-attach-event="onclick:_onClick"></div>
+</div>
+```
 
 While simple, this template demonstrates three of the most important aspects of the Dijit template system: variable
 	substitution, attach points, and event attachments.
@@ -113,9 +110,9 @@ Note that when you define a template, it can only have **one** root node definit
 A template can have values set on DOM rendering though the use of a simple variable placeholder syntax, which looks
 	like this:
 
-<pre class="brush: js;">
+```js
 ${property}
-</pre>
+```
 
 The variable name is any property or field defined in your widget declaration; the example above used the property
 	`baseClass` (available with any widget), but custom fields work just as fine &mdash; for instance, if
@@ -123,16 +120,16 @@ The variable name is any property or field defined in your widget declaration; t
 	template.  If the property in question happens to be a reference to an object, and you want to use the value of a
 	property in that object, you may easily do so via normal object reference notation:
 
-<pre class="brush: js;">
+```js
 ${propertyObject.property}
-</pre>
+```
 
 To prevent `_TemplatedMixin` from escaping quotations within a string, place a "!" before the full
 	variable name, like so:
 
-<pre class="brush: js;">
+```js
 	${!property}
-</pre>
+```
 
 Variable substitution in a template is only recommended _for values that will not be changed
 	during the lifetime of the widget_.  In other words, if you expect to be able to set the value of a property
@@ -159,39 +156,39 @@ Dijit also defines a "magical" attach point called a _containerNode_. The basic 
 	is to provide some place for any additional markup to go if a widget is created declaratively.  For example, given
 	the template for SomeWidget:
 
-<pre class="brush: js; html-script: true">
-&lt;div class="${baseClass}"&gt;
-	&lt;div class="${baseClass}Title" data-dojo-attach-point="titleNode"
-			data-dojo-attach-event="ondijitclick:_onClick"&gt;&lt;/div&gt;
-	&lt;!-- And our container: --&gt;
-	&lt;div class="${baseClass}Container"
-			data-dojo-attach-point="containerNode"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+```html
+<div class="${baseClass}">
+	<div class="${baseClass}Title" data-dojo-attach-point="titleNode"
+			data-dojo-attach-event="ondijitclick:_onClick"></div>
+	<!-- And our container: -->
+	<div class="${baseClass}Container"
+			data-dojo-attach-point="containerNode"></div>
+</div>
+```
 
 <p>We might use it in declarative markup like so:
 
-<pre class="brush: js; html-script: true">
-&lt;div data-dojo-type="demo/SomeWidget"
-		data-dojo-props="title: 'Our Some Widget'"&gt;
-	&lt;p&gt;This is arbitrary content!&lt;/p&gt;
-	&lt;p&gt;More arbitrary content!&lt;/p&gt;
-&lt;/div&gt;
-</pre>
+```html
+<div data-dojo-type="demo/SomeWidget"
+		data-dojo-props="title: 'Our Some Widget'">
+	<p>This is arbitrary content!</p>
+	<p>More arbitrary content!</p>
+</div>
+```
 
 When the Dojo parser traverses the document, it will find our example widget and instantiate it &mdash; and as part
 	of that instantiation, _any markup inside the widget will be appended to the containerNode_.  So when the
 	widget is finished with its startup, the resulting DOM will look like this:
 
-<pre class="brush: js; html-script: true">
-&lt;div id="demo_SomeWidget_0" class="someWidgetBase"&gt;
-	&lt;div class="someWidgetTitle"&gt;Our Some Widget&lt;/div&gt;
-	&lt;div class="someWidgetContainer"&gt;
-		&lt;p&gt;This is arbitrary content!&lt;/p&gt;
-		&lt;p&gt;More arbitrary content!&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+```html
+<div id="demo_SomeWidget_0" class="someWidgetBase">
+	<div class="someWidgetTitle">Our Some Widget</div>
+	<div class="someWidgetContainer">
+		<p>This is arbitrary content!</p>
+		<p>More arbitrary content!</p>
+	</div>
+</div>
+```
 
 Note that we removed some of the custom attributes for brevity; Dijit does not remove them
 	when rendering templates.
@@ -200,13 +197,13 @@ Also be aware that if you embed other widget definitions in the main markup, and
 	`containerNode` attach point, any widgets will be instantiated inside the container node.  For example,
 	the following is a typical scenario when assembling an application:
 
-<pre class="brush: js; html-script: true">
-&lt;div data-dojo-type="demo/SomeWidget"&gt;
-	&lt;p&gt;This is arbitrary content!&lt;/p&gt;
-	&lt;div data-dojo-type="dijit/form/Button"&gt;My Button&lt;/div&gt;
-	&lt;p&gt;More arbitrary content!&lt;/p&gt;
-&lt;/div&gt;
-</pre>
+```html
+<div data-dojo-type="demo/SomeWidget">
+	<p>This is arbitrary content!</p>
+	<div data-dojo-type="dijit/form/Button">My Button</div>
+	<p>More arbitrary content!</p>
+</div>
+```
 
 #### Event Attachments
 
@@ -217,9 +214,9 @@ In addition to attach points, the Dijit template system gives you a way of attac
 	when that event is fired.  If only a single event needs to be handled, omit a trailing comma.  For example, here's
 	the `dojo-data-attach-event` attribute defined on Dijit's MenuBarItem:
 
-<pre class="brush: js; html-script: true">
+```html
 data-dojo-attach-event="onmouseenter:_onHover,onmouseleave:_onUnhover,ondijitclick:_onClick"
-</pre>
+```
 
 When your widget is instantiated and the DOM fragment is created from your template, the Dijit template system will
 	then go through any attached event definitions and "auto-magically" wire these events (using `dojo/on`)
@@ -230,7 +227,7 @@ When your widget is instantiated and the DOM fragment is created from your templ
 
 Also, we want to use the `dijit/_OnDijitClickMixin` which adds in a modified event that supports more functionality than the standard DOM `onclick` event.  Therefore we need to modify our widget declaration:
 
-<pre class="brush: js;">
+```js
 define([
 	"dojo/_base/declare",
 	"dijit/_WidgetBase",
@@ -246,20 +243,20 @@ define([
 	});
 
 });
-</pre>
+```
 
 We also need to modify our widget template:
 
-<pre class="brush: js; html-script: true">
-&lt;div class="${baseClass}"&gt;
-	&lt;div class="${baseClass}Title"
+```html
+<div class="${baseClass}">
+	<div class="${baseClass}Title"
 		data-dojo-attach-point="titleNode"
-		data-dojo-attach-event="ondijitclick:_onClick"&gt;&lt;/div&gt;
-	&lt;div&gt;And our container:&lt;/div&gt;
-	&lt;div class="${baseClass}Container"
-		data-dojo-attach-point="containerNode"&gt;&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+		data-dojo-attach-event="ondijitclick:_onClick"></div>
+	<div>And our container:</div>
+	<div class="${baseClass}Container"
+		data-dojo-attach-point="containerNode"></div>
+</div>
+```
 
 [View Demo](demo/templated-demo.php)
 
@@ -278,7 +275,7 @@ in it and to instantiate them when your widget is instantiated.
 
 For example, let's modify both our declaration to always include a Dijit button:
 
-<pre class="brush: js;">
+```js
 define([
 	"dojo/_base/declare",
 	"dijit/_WidgetBase",
@@ -298,21 +295,21 @@ define([
 	});
 
 });
-</pre>
+```
 
 And then we would create a template like:
 
-<pre class="brush: js; html-script: true;">
-&lt;div class="${baseClass}" data-dojo-attach-point="focusNode"
+```html
+<div class="${baseClass}" data-dojo-attach-point="focusNode"
 		data-dojo-attach-event="ondijitclick:_onClick"
-		role="menuitem" tabIndex="-1"&gt;
-	&lt;div data-dojo-type="dijit/form/Button"
-		data-dojo-attach-point="buttonWidget"&gt;
+		role="menuitem" tabIndex="-1">
+	<div data-dojo-type="dijit/form/Button"
+		data-dojo-attach-point="buttonWidget">
 		My Button
-	&lt;/div&gt;
-	&lt;span data-dojo-attach-point="containerNode"&gt;&lt;/span&gt;
-&lt;/div&gt;
-</pre>
+	</div>
+	<span data-dojo-attach-point="containerNode"></span>
+</div>
+```
 
 Notice that in our modified template, we've added an attach point called `buttonWidget` along with the
 	button's markup.  This is an additional bonus of Dijit's attach point system; because the definition in question

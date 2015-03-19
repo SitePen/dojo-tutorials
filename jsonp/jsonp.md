@@ -2,9 +2,6 @@
 
 JSON with Padding (JSONP) has become a common technique for accessing cross-domain resources from the browser.  In this tutorial you learn what JSONP is and how you can use it to retrieve data from cross-domain sources.
 
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Getting Started
 
@@ -15,9 +12,9 @@ The answer to cross-domain communication is JSON with Padding, or JSONP.  Bob Ip
 What is this JSONP technique anyway?  Unlike XHR, the browser doesn't prevent scripts from being loaded across domains.  JSONP works by dynamically inserting a `<script>` element onto the page with its source set to the cross-domain URL we want to query. By passing relevant parameters on the URL's query string,
 it can return a dynamic response in the format of JavaScript representing the data we requested. For example, a request may go to `endpoint?q=dojo&callback=callme`, and its response will look like:
 
-<pre class="brush:js; html-script:true;">
+```html
 callme({id: "dojo", some: "parameter"})
-</pre>
+```
 
 
 When the browser then evaluates the code in the script, it will call the `callme()` method&mdash;passing its data along. The local application, having defined the `callme` method, will then receive it.  Note that this is essentially executing script from a third party; because you are executing script from a third party service, it is implied that you are trusting the third party service with your application.  This is not to imply that JSONP is bad or should be avoided, only that its use should be limited to communication with trusted parties.
@@ -26,7 +23,7 @@ When the browser then evaluates the code in the script, it will call the `callme
 
 `dojo/request/script` automates the creation of the script element and callback methods, and provides you the familiar [`Deferred`](../deferreds/) interface you are accustomed to from Dojo.
 
-<pre class="brush:js;">
+```js
 //include the script modules
 require(["dojo/request/script"], "dojo/dom-construct", "dojo/dom", "dojo/_base/array", "dojo/domReady!"
 ], function(script, domConstruct, dom, arrayUtil){
@@ -36,12 +33,12 @@ require(["dojo/request/script"], "dojo/dom-construct", "dojo/dom", "dojo/_base/a
 				jsonp: "callback"
 		});
 });
-</pre>
+```
 
 
 This code follows the same basic pattern that you typically see with `dojo/request/xhr`.  The only real addition you'll notice is `jsonp`; this property tells Dojo which parameter the endpoint expects you to specify the callback function's name on (not the callback function name itself). This tends to vary a bit from service to service.  From this point on, you can treat it like you would any other response.  This code retrieves the most recent set of pull requests on the Dojo GitHub repo.  Let's flesh out the example a bit more, and show those results:
 
-<pre class="brush:js;">
+```js
 //first do the io script request
 script.get("https://api.github.com/repos/dojo/dojo/pulls", {
 	jsonp: "callback"
@@ -56,7 +53,7 @@ script.get("https://api.github.com/repos/dojo/dojo/pulls", {
 	});
 	domConstruct.place(fragment, dom.byId("pullrequests"));
 });
-</pre>
+```
 
 
 [View Demo](demo/demo.php)

@@ -2,8 +2,6 @@
 
 You may have been away from Dojo for a while, or you have been struggling to keep your older Dojo 1.6 applications working under 1.10 and you find yourself not sure of what is going on.  You keep hearing talk of "AMD" and "baseless", but you aren't sure what to do or where to start.  This tutorial will help you with that.
 
-*   <span>Difficulty:</span> Intermediate
-*   <span>Dojo Version:</span> 1.10
 
 ### Getting Started
 
@@ -29,19 +27,19 @@ To strengthen the modularity of Dojo and leverage the concepts above, in 1.7 Doj
 
 Let's take for example something we would have done in "legacy":
 
-<pre class="brush:js;">
+```js
   dojo.ready(function(){
     dojo.byId("helloworld").innerHTML = "Hello World!";
   });
-</pre>
+```
 
 Now let's look at the modern version of this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/dom", "dojo/domReady!"], function(dom){
     dom.byId("helloworld").innerHTML = "Hello New World!";
   });
-</pre>
+```
 
 [View Demo](demo/modern_dojo-helloworld.php)
 
@@ -55,13 +53,13 @@ The sharped eyed among you will notice that there is a "module" in the requireme
 
 You can also get a reference to a module with `require()` after that module has already loaded, by just supplying the MID as a single string argument.  This won't load the module and will throw an error if it isn't already loaded.  You won't see this coding style in the Dojo Toolkit, because we like to manage all of our dependencies centrally in the code.  But if you choose to use this alternative syntax it would look something like this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/dom"], function(){
     // some code
     var dom = require("dojo/dom");
     // some more code
   });
-</pre>
+```
 
 <div class="proTip">The other core function in AMD is `define()` which is usually used for defining modules.  See the [Defining Modules](../modules/) tutorial for more information on how to use `define()`.</div>
 
@@ -77,19 +75,19 @@ While the Reference Guide has been updated to tell you where functionality is lo
 
 Once you get outside of the Dojo Base and Core, almost everything else would work like the following.  Where you would have done a `dojo.require()`:
 
-<pre class="brush:js;">
+```js
   dojo.require("dojo.string");
 
   dojo.byId("someNode").innerHTML = dojo.string.trim("  I Like Trim Strings ");
-</pre>
+```
 
 You would now do a `require()`:
 
-<pre class="brush:js;">
+```js
   require(["dojo/dom", "dojo/string", "dojo/domReady!"], function(dom, string){
     dom.byId("someNode").innerHTML = string.trim("  I Like Trim Strings ");
   });
-</pre>
+```
 
 [View Demo](demo/modern_dojo-string.php)
 
@@ -101,8 +99,8 @@ In "legacy" Dojo, there was no clear distinction between events and modifying me
 
 In "legacy" Dojo, we might have accomplished handling of a button `onclick` event a couple of different ways:
 
-<pre class="brush:js; html-script:true;">
-  &lt;script&gt;
+```html
+  <script>
     dojo.require("dijit.form.Button");
 
     myOnClick = function(evt){
@@ -110,26 +108,26 @@ In "legacy" Dojo, we might have accomplished handling of a button `onclick` even
     };
 
     dojo.connect(dojo.byId("button3"), "onclick", myOnClick);
-  &lt;/script&gt;
-  &lt;body&gt;
-    &lt;div&gt;
-      &lt;button id="button1" type="button" onclick="myOnClick"&gt;Button1&lt;/button&gt;
-      &lt;button id="button2" data-dojo-type="dijit.form.Button" type="button"
-        data-dojo-props="onClick: myOnClick"&gt;Button2&lt;/button&gt;
-      &lt;button id="button3" type="button"&gt;Button3&lt;/button&gt;
-      &lt;button id="button4" data-dojo-type="dijit.form.Button" type="button"&gt;
-        &lt;span&gt;Button4&lt;/span&gt;
-        &lt;script type="dojo/connect" data-dojo-event="onClick"&gt;
+  </script>
+  <body>
+    <div>
+      <button id="button1" type="button" onclick="myOnClick">Button1</button>
+      <button id="button2" data-dojo-type="dijit.form.Button" type="button"
+        data-dojo-props="onClick: myOnClick">Button2</button>
+      <button id="button3" type="button">Button3</button>
+      <button id="button4" data-dojo-type="dijit.form.Button" type="button">
+        <span>Button4</span>
+        <script type="dojo/connect" data-dojo-event="onClick">
           console.log("I was clicked");
-        &lt;/script&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-</pre>
+        </script>
+    </div>
+  </body>
+```
 
 In "modern" Dojo, only using `dojo/on`, you can specify your code, both programmatically and declaratively, as well as not worry about if it is the DOM event or the Dijit/widget event you are dealing with:
 
-<pre class="brush:js; html-script:true;">
-  &lt;script&gt;
+```html
+  <script>
     require([
         "dojo/dom",
         "dojo/on",
@@ -147,20 +145,20 @@ In "modern" Dojo, only using `dojo/on`, you can specify your code, both programm
         on(dom.byId("button1"), "click", myClick);
         on(registry.byId("button2"), "click", myClick);
     });
-  &lt;/script&gt;
-  &lt;body&gt;
-    &lt;div&gt;
-      &lt;button id="button1" type="button"&gt;Button1&lt;/button&gt;
-      &lt;button id="button2" data-dojo-type="dijit/form/Button" type="button"&gt;Button2&lt;/button&gt;
-      &lt;button id="button3" data-dojo-type="dijit/form/Button" type="button"&gt;
-        &lt;div&gt;Button4&lt;/div&gt;
-        &lt;script type="dojo/on" data-dojo-event="click"&gt;
+  </script>
+  <body>
+    <div>
+      <button id="button1" type="button">Button1</button>
+      <button id="button2" data-dojo-type="dijit/form/Button" type="button">Button2</button>
+      <button id="button3" data-dojo-type="dijit/form/Button" type="button">
+        <div>Button4</div>
+        <script type="dojo/on" data-dojo-event="click">
           console.log("I was clicked");
-        &lt;/script&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-</pre>
+        </script>
+      </button>
+    </div>
+  </body>
+```
 
 [View Demo](demo/modern_dojo-button.php)
 
@@ -168,18 +166,18 @@ In "modern" Dojo, only using `dojo/on`, you can specify your code, both programm
 
 Adding functionality to methods in a "legacy" way you might have done something like:
 
-<pre class="brush:js;">
+```js
   var callback = function(){
     // ...
   };
   var handle = dojo.connect(myInstance, "execute", callback);
   // ...
   dojo.disconnect(handle);
-</pre>
+```
 
 In "modern" Dojo, the `dojo/aspect` module allows you to get advice from a method and add behaviour "before", "after" or "around" another method.  Typically, if you were converting a `dojo.connect()` you would replace it with an `aspect.after()` which would look something like this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/aspect"], function(aspect){
     var callback = function(){
       // ...
@@ -188,7 +186,7 @@ In "modern" Dojo, the `dojo/aspect` module allows you to get advice from a metho
     // ...
     handle.remove();
   });
-</pre>
+```
 
 <div class="proTip">Check out the reference guide for [`dojo/aspect`](/reference-guide/1.10/dojo/aspect.html) for more details as well as [David Walsh's blog on `dojo/aspect`](http://davidwalsh.name/dojo-aspect) and [SitePen's blog comparing dojo/on and dojo/aspect](http://www.sitepen.com/blog/2014/03/26/dojo-faq-what-is-the-difference-between-dojoon-and-dojoaspect/).</div>
 
@@ -198,7 +196,7 @@ Another area that has undergone a bit of a revision is the "publish/subscribe" f
 
 For example, the "legacy" way of doing this would be something like:
 
-<pre class="brush:js;">
+```js
   // To publish a topic
   dojo.publish("some/topic", [1, 2, 3]);
 
@@ -207,11 +205,11 @@ For example, the "legacy" way of doing this would be something like:
 
   // And to unsubscribe from a topic
   dojo.unsubscribe(handle);
-</pre>
+```
 
 In "modern" Dojo, you would leverage the `dojo/topic` module and do something like:
 
-<pre class="brush:js;">
+```js
   require(["dojo/topic"], function(topic){
     // To publish a topic
     topic.publish("some/topic", 1, 2, 3);
@@ -224,7 +222,7 @@ In "modern" Dojo, you would leverage the `dojo/topic` module and do something li
     // To unsubscribe from a topic
     handle.remove();
   });
-</pre>
+```
 
 <div class="proTip">Check out the reference guide for [`dojo/topic`](/reference-guide/1.10/dojo/topic.html) for more details.</div>
 
@@ -234,7 +232,7 @@ In "modern" Dojo, you would leverage the `dojo/topic` module and do something li
 
 One of the core concepts of Dojo has always been the `Deferred` class, and while the change to the "promise" architecture occurred in Dojo 1.5, it is worth discussing here.  In addition, in Dojo 1.8 and newer, the promise API was rewritten.  While it is mostly semantically the same as before, it no longer supports the "legacy" API, so if you want to use it, you will have to adopt the "modern" API.  In "legacy" Dojo you would find a `Deferred` worked like this:
 
-<pre class="brush:js;">
+```js
   function createMyDeferred(){
     var myDeferred = new dojo.Deferred();
     setTimeout(function(){
@@ -250,11 +248,11 @@ One of the core concepts of Dojo has always been the `Deferred` class, and while
   deferred.addErrback(function(err){
     console.log("Error: " + err);
   });
-</pre>
+```
 
 Now "modern" Dojo would work like this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/Deferred"], function(Deferred){
     function createMyDeferred(){
       var myDeferred = new Deferred();
@@ -271,7 +269,7 @@ Now "modern" Dojo would work like this:
       console.log("Error: " + err);
     });
   });
-</pre>
+```
 
 <div class="proTip">There is quite a bit more to `Deferred`s, so check out the [Getting Started with Deferreds](../deferreds/) tutorial.</div>
 
@@ -283,7 +281,7 @@ One of the core fundamentals of any JavaScript library is the concept of Ajax.  
 
 Just like `dojo/promise` the old implementations are still there, but you can easily re-factor your code to take advantage of the new.  For example, in "legacy" Dojo you might have written something like this:
 
-<pre class="brush:js;">
+```js
   dojo.xhrGet({
     url: "something.json",
     handleAs: "json",
@@ -294,11 +292,11 @@ Just like `dojo/promise` the old implementations are still there, but you can ea
       console.log("error:", err);
     }
   });
-</pre>
+```
 
 In "modern" Dojo, you would write the above like this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/request"], function(request){
     request.get("something.json", {
       handleAs: "json"
@@ -308,7 +306,7 @@ In "modern" Dojo, you would write the above like this:
       console.log("error:", err);
     });
   });
-</pre>
+```
 
 <div class="proTip">`dojo/request` will load the most appropriate request handler for your platform, which for a browser is XHR.  The code above could easily be code running on NodeJS and you wouldn't need to change anything.</div>
 
@@ -372,7 +370,7 @@ set()</td></tr>
 
 One of the things that is a consistent pattern across the "modern" Dojo toolkit is the separation of logic around accessors, in that instead of something like:
 
-<pre class="brush:js;">
+```js
   var node = dojo.byId("someNode");
 
   // Retrieves the value of the "value" DOM attribute
@@ -380,11 +378,11 @@ One of the things that is a consistent pattern across the "modern" Dojo toolkit 
 
   // Sets the value of the "value" DOM attribute
   dojo.attr(node, "value", "something");
-</pre>
+```
 
 Where the same function does two wholly different things depending on the arguments, versus something like this:
 
-<pre class="brush:js;">
+```js
   require(["dojo/dom", "dojo/dom-attr"], function(dom, domAttr){
     var node = dom.byId("someNode");
 
@@ -394,7 +392,7 @@ Where the same function does two wholly different things depending on the argume
     // Sets the value of the "value" DOM attribute
     domAttr.set(node, "value", "something");
   });
-</pre>
+```
 
 In the "modern" example, it is very clear what you are doing in the code and it becomes more difficult for your code to do something you didn't intend, because of an extra or missing argument.  This separation of accessors is consistent throughout "modern" Dojo.
 
@@ -412,7 +410,7 @@ If you are just developing with dijits or other widgets, then there were a few c
 
 `dojo/Stateful` provides discrete accessors for widget attributes as well as the ability to "watch" changes to these attributes.  For example, you can do the following:
 
-<pre class="brush:js;">
+```js
   require(["dijit/form/Button", "dojo/domReady!"], function(Button){
     var button = new Button({
       label: "A label"
@@ -435,13 +433,13 @@ If you are just developing with dijits or other widgets, then there were a few c
 
     button.set("label", "Even more different");
   });
-</pre>
+```
 
 [View Demo](demo/modern_dojo-watch.php)
 
 `dojo/Evented` provides `emit()` and `on()` functionality for classes and this is incorporated into Dijits and widgets.  In particular, it is "modern" to use `widget.on()` to set your event handling.  For example, you can do the following:
 
-<pre class="brush:js;">
+```js
   require(["dijit/form/Button", "dojo/domReady!"], function(Button){
     var button = new Button({
       label: "Click Me!"
@@ -452,7 +450,7 @@ If you are just developing with dijits or other widgets, then there were a few c
       console.log("I was clicked!", e);
     });
   });
-</pre>
+```
 
 [View Demo](demo/modern_dojo-on.php)
 
@@ -462,35 +460,35 @@ Finally, there is the `dojo/parser`.  Dojo has had strength in both a programmat
 
 While the `parseOnLoad: true` Dojo configuration is still supported, it usually makes more sense to invoke the parser explicitly.  For example:
 
-<pre class="brush:js;">
+```js
     require(["dojo/parser", "dojo/domReady!"], function(parser){
         parser.parse();
     });
-</pre>
+```
 
 One of the other "big" changes with the parser is that it supports HTML5 compliant attributes to markup the nodes.  This allows your marked-up HTML to be valid in HTML5.  In particular `dojoType` changes to `data-dojo-type` and instead of specifying object parameters as non-valid HTML/XHTML attributes, all parameters to be passed to the object constructor are specified in the `data-dojo-props` attribute.  For example:
 
-<pre class="brush:js; html-script:true;">
-  &lt;button data-dojo-type="dijit/form/Button" tabIndex=2
-      data-dojo-props="iconClass: 'checkmark'"&gt;OK&lt;/button&gt;
-</pre>
+```html
+  <button data-dojo-type="dijit/form/Button" tabIndex=2
+      data-dojo-props="iconClass: 'checkmark'">OK</button>
+```
 
 <div class="proTip">Dojo supports using the Module ID (MID) in `data-dojo-type`.  For example `dojoType="dijit.form.Button"` becomes `data-dojo-type="dijit/form/Button"`.</div>
 
 With the changes mentioned above in regards to the concepts introduced with `dojo/Evented` and `dojo/Stateful` the parser has kept pace with the declarative scripting and added appropriate script types to replicate the "watch" and "on" functionality.  For example, you can now do:
 
-<pre class="brush:js; html-script:true;">
-  &lt;button data-dojo-type="dijit/form/Button" type="button"&gt;
-    &lt;span&gt;Click&lt;/span&gt;
-    &lt;script type="dojo/on" data-dojo-event="click" data-dojo-args="e"&gt;
+```html
+  <button data-dojo-type="dijit/form/Button" type="button">
+    <span>Click</span>
+    <script type="dojo/on" data-dojo-event="click" data-dojo-args="e">
       console.log("I was clicked!", e);
       this.set("label", "Clicked!");
-    &lt;/script&gt;
-    &lt;script type="dojo/watch" data-dojo-prop="label" data-dojo-args="prop, oldValue, newValue"&gt;
+    </script>
+    <script type="dojo/watch" data-dojo-prop="label" data-dojo-args="prop, oldValue, newValue">
       console.log("button: " + prop + " changed from '" + oldValue + "' to '" + newValue + "'");
-    &lt;/script&gt;
-  &lt;/button&gt;
-</pre>
+    </script>
+  </button>
+```
 
 [View Demo](demo/modern_dojo-parser.php)
 

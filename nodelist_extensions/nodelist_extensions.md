@@ -2,9 +2,6 @@
 
 Dojo includes a range of extensions to the `NodeList` collection that is used by `dojo/query`. In this tutorial, we’ll look at what extended functionality is available and how to put it to good use.
 
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Getting Started
 
@@ -20,32 +17,32 @@ ES5 iteration methods are guaranteed to be available even in a non-ES5 environme
 will see in this tutorial there are various modules that can extend `dojo/NodeList`
 with additional useful methods.
 
-<pre class="brush: html;">
-&lt;button type="button" id="btn">Pick out fresh fruits&lt;/button&gt;
+```html
+<button type="button" id="btn">Pick out fresh fruits</button>
 
-&lt;h3&gt;Fresh Fruits&lt;/h3&gt;
-&lt;ul id="freshList"&gt;&lt;/ul&gt;
+<h3>Fresh Fruits</h3>
+<ul id="freshList"></ul>
 
-&lt;h3&gt;Fruits&lt;/h3&gt;
-&lt;ul&gt;
-	&lt;li class="fresh"&gt;Apples&lt;/li&gt;
-	&lt;li class="fresh"&gt;Persimmons&lt;/li&gt;
-	&lt;li class="fresh"&gt;Grapes&lt;/li&gt;
-	&lt;li class="fresh"&gt;Fresh Figs&lt;/li&gt;
-	&lt;li class="dried"&gt;Dates&lt;/li&gt;
-	&lt;li class="dried"&gt;Raisins&lt;/li&gt;
-	&lt;li class="dried"&gt;Prunes&lt;/li&gt;
-	&lt;li class="fresh dried"&gt;Apricots&lt;/li&gt;
-	&lt;li class="fresh"&gt;Peaches&lt;/li&gt;
-	&lt;li class="fresh"&gt;Bananas&lt;/li&gt;
-	&lt;li class="fresh"&gt;Cherries&lt;/li&gt;
-&lt;/ul&gt;
-</pre>
+<h3>Fruits</h3>
+<ul>
+	<li class="fresh">Apples</li>
+	<li class="fresh">Persimmons</li>
+	<li class="fresh">Grapes</li>
+	<li class="fresh">Fresh Figs</li>
+	<li class="dried">Dates</li>
+	<li class="dried">Raisins</li>
+	<li class="dried">Prunes</li>
+	<li class="fresh dried">Apricots</li>
+	<li class="fresh">Peaches</li>
+	<li class="fresh">Bananas</li>
+	<li class="fresh">Cherries</li>
+</ul>
+```
 
 
 To demonstrate `dojo/query`, a click handler is created for the button:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/domReady!"], function(query){
 	query("#btn").on("click", function(){
 		var nodes = query("li.fresh");
@@ -54,7 +51,7 @@ require(["dojo/query", "dojo/domReady!"], function(query){
 		});
 	});
 });
-</pre>
+```
 
 
 The `query("li.fresh")` call returns a `NodeList`, which is a standard JavaScript array
@@ -62,7 +59,7 @@ The `query("li.fresh")` call returns a `NodeList`, which is a standard JavaScrip
 	`query` call returns a `NodeList`, we can make this even simpler by chaining method calls (
 	instead of typing `var nodes` over and over again):
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/domReady!"], function(query){
 	query("#btn").on("click", function(){
 		query("li.fresh").on("click", function(event){
@@ -70,7 +67,7 @@ require(["dojo/query", "dojo/domReady!"], function(query){
 		});
 	});
 });
-</pre>
+```
 
 
 [View Demo](demo/nodelist_extensions-queryRecap.php)
@@ -103,7 +100,7 @@ Prior to Dojo 1.7, the base `NodeList` featured DOM methods such as `addClass`,
 	the advent of AMD and Dojo 1.7+, these methods have been moved to [`dojo/NodeList-dom`](/reference-guide/1.10/dojo/NodeList-dom.html).  Here's an
 	example of how you use that module:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/NodeList-dom"], function(query){
 	query("li.fresh")
 		.addClass("fresher")
@@ -113,7 +110,7 @@ require(["dojo/query", "dojo/NodeList-dom"], function(query){
 			alert("I love fresh " + this.innerHTML);
 		});
 });
-</pre>
+```
 
 
 Simply loading the `dojo/NodeList-dom` module adds these methods to `NodeList`.
@@ -129,7 +126,7 @@ The [`dojo/NodeList-fx`](/reference-guide/1.10/dojo/NodeList-fx.html) module
 
 In this demo, we’ll use the same fruity list, and a button that executes the following code when clicked:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/NodeList-fx", "dojo/domReady!"], function(query){
 	query("#btn").on("click", function(){
 		query("li.fresh")
@@ -144,7 +141,7 @@ require(["dojo/query", "dojo/NodeList-fx", "dojo/domReady!"], function(query){
 			.play();
 	});
 });
-</pre>
+```
 
 
 [View Demo](demo/nodelist_extensions-fx.php)
@@ -162,7 +159,7 @@ The [`dojo/NodeList-data`](/reference-guide/1.10/dojo/NodeList-data.html)
 	module adds a mechanism for attaching arbitrary data to elements via the `data` method. Here is an
 	example that stashes a `Date` object on an element each time it is clicked:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/NodeList-data", "dojo/domReady!"], function(query, NodeList){
 	function mark(){
 		var nodeList = new NodeList(this);		// make a new NodeList from the clicked element
@@ -179,8 +176,7 @@ require(["dojo/query", "dojo/NodeList-data", "dojo/domReady!"], function(query, 
 		});
 	});
 });
-</pre>
-
+```
 
 [View Demo](demo/nodelist_extensions-data.php)
 
@@ -213,7 +209,7 @@ To illustrate, we’ll use a longer, categorized list of fruit. Some fruits have
 Using the methods provided by `NodeList`, `dojo/NodeList-traverse` and
 	`dojo/NodeList-dom`, here is one quick way to do that:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/NodeList-traverse", "dojo/NodeList-dom",
 		"dojo/domReady!"], function(query){
 	query("li.yum")				// get LI elements with the class 'yum'
@@ -223,7 +219,7 @@ require(["dojo/query", "dojo/NodeList-traverse", "dojo/NodeList-dom",
 		.addClass("happy")		// add a 'happy' class to those headings
 		.style({backgroundPosition: "left", paddingLeft: "20px"}); // add some style properties to those headings
 });
-</pre>
+```
 
 
 [View Demo](demo/nodelist_extensions-traverse.php)
@@ -246,7 +242,7 @@ The [`dojo/NodeList-manipulate
 The following example puts some of these capabilities to use. Using the same categorized list of fruits, it builds
 	two new lists of yummy and yucky fruits:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/NodeList-manipulate", "dojo/domReady!"],
 function(query){
 	query(".yum") // get elements with the class 'yum'
@@ -259,7 +255,7 @@ function(query){
 		.append('<span class="emoticon sad"></span>')
 		.appendTo("#dontLikes");
 });
-</pre>
+```
 
 
 [View Demo](demo/nodelist_extensions-manip.php)
@@ -276,12 +272,12 @@ The [`dojo/NodeList-html`](/reference-guide/1.10/dojo/NodeList-html.html) module
 	`NodeList`. Here's a simple example of its use, in which we turn a simple list into a checkbox list
 	using `dijit/form/CheckBox` widgets:
 
-<pre class="brush: js;">
+```js
 require(["dojo/query", "dojo/_base/lang", "dijit/form/CheckBox", "dojo/NodeList-html", "dojo/domReady!"],
 function(query, lang){
 	var demo = {
 		addCheckboxes: function(q) {
-			query(q).html('&lt;input name="fruit" value="" data-dojo-type="dijit/form/CheckBox"&gt;', {
+			query(q).html('<input name="fruit" value="" data-dojo-type="dijit/form/CheckBox">', {
 				onBegin: function(){
 					var label = lang.trim(this.node.innerHTML),
 						cont = this.content + label;
@@ -297,8 +293,7 @@ function(query, lang){
 
 	query("#btn").on("click", lang.hitch(demo, "addCheckboxes", "li.alkaline"));
 });
-</pre>
-
+```
 
 [View Demo](demo/nodelist_extensions-htmlSet.php)
 

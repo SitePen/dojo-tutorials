@@ -2,9 +2,6 @@
 
 The `dojoConfig` object (formerly `djConfig`) allows you to set options and default behavior for various aspects of the toolkit.  In this tutorial we'll explore what's possible and how you can put dojoConfig to use in your code.
 
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 ### Introduction
 
 The `dojoConfig` object (known as `djConfig` prior to
@@ -22,10 +19,10 @@ adopt and encourage use of the new `dojoConfig` name from here on.
 Let's run through some quick examples to see how `dojoConfig` works in practice.
 First, a programmatic example of setting `dojoConfig` directly:
 
-<pre class="brush:js; html-script:true;">
+```html
 
-&lt;!-- set Dojo configuration, load Dojo --&gt;
-&lt;script&gt;
+<!-- set Dojo configuration, load Dojo -->
+<script>
 	dojoConfig= {
 		has: {
 			"dojo-firebug": true
@@ -34,10 +31,10 @@ First, a programmatic example of setting `dojoConfig` directly:
 		foo: "bar",
 		async: true
 	};
-&lt;/script&gt;
-&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;&gt;&lt;/script&gt;
+</script>
+<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
 
-&lt;script&gt;
+<script>
 // Require the registry, parser, Dialog, and wait for domReady
 require(["dijit/registry", "dojo/parser", "dojo/json", "dojo/_base/config", "dijit/Dialog", "dojo/domReady!"]
 , function(registry, parser, JSON, config) {
@@ -46,16 +43,16 @@ require(["dijit/registry", "dojo/parser", "dojo/json", "dojo/_base/config", "dij
 	// Find the dialog
 	var dialog = registry.byId("dialog");
 	// Set the content equal to what dojo.config is
-	dialog.set("content", "&lt;pre&gt;" + JSON.stringify(config, null, "\t") + "&lt;/pre&gt;");
+	dialog.set("content", "<pre>" + JSON.stringify(config, null, "\t") + "```");
 	// Show the dialog
 	dialog.show();
 });
-&lt;/script&gt;
+</script>
 
-&lt;!-- and later in the page --&gt;
-&lt;div id="dialog" data-dojo-type="dijit/Dialog" data-dojo-props="title: 'dojoConfig / dojo/_base/config'"&gt;&lt;/div&gt;
+<!-- and later in the page -->
+<div id="dialog" data-dojo-type="dijit/Dialog" data-dojo-props="title: 'dojoConfig / dojo/_base/config'"></div>
 
-</pre>
+```
 
 [View Demo](demo/dojoConfig.php)
 
@@ -78,11 +75,11 @@ parameters for later lookup by module code.
 
 Here's the same example written declaratively:
 
-<pre class="brush:js; html-script:true;">
-&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;
-		data-dojo-config=&quot;has:{'dojo-firebug': true}, parseOnLoad: false, foo: &#x27;bar&#x27;, async: 1&quot;&gt;
-&lt;/script&gt;
-</pre>
+```html
+<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;
+		data-dojo-config=&quot;has:{'dojo-firebug': true}, parseOnLoad: false, foo: &#x27;bar&#x27;, async: 1&quot;>
+</script>
+```
 
 [View Demo](demo/data-dojo-config.php)
 
@@ -101,31 +98,31 @@ Lets see what options there are and how we can use them.
 ### has() Configuration
 
 One of the major features added in Dojo 1.7+ was the use of the has() pattern for feature detection. We can specify features for the has() feature set in `dojoConfig`, by including an object hash of features as the value of the `has` property. This feature set is now used for determining certain supported capabilities in Dojo. For example, we could disable the amd factory scan (scanning the module for CommonJS require(module) statements to load as deps) with:
-<pre class="brush:js; html-script:true;">
-&lt;script&gt;
+```html
+<script>
 	dojoConfig = {
 		has: {
 			"dojo-amd-factory-scan": false
 		}
 	};
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 ### Debug/Firebug Lite Configuration
 
 You may be familiar by now with the `isDebug` config flag from other tutorials or usage of Dojo in versions prior to Dojo 1.7, to explicitly enable debug information. In Dojo 1.7+, this is now also specified with a has() feature at a higher level of granularity. To enable debugging assistance with Firebug Lite for older versions of Internet Explorer, we can set the dojo-firebug feature (isDebug can still be used to load this, but using the feature will load earlier in the loading cycle in async mode). If you have Firebug or another console available and open, it does nothing. But if you don't have a console, it will load Dojo's version of Firebug Lite, and create the console UI at the bottom of the page. This can be handy when debugging in earlier versions of IE or other browsers without nice developer tools.
 
 To enable debugging messages for deprecated and experimental features, we can set dojo-debug-messages to true (this defaults to false, unless you have set isDebug). if this feature is set to `false`, these warnings will be suppressed. For example, to enable a developer console (browser provided or use Firebug Lite) and log debugging messages:
-<pre class="brush:js; html-script:true;">
-&lt;script&gt;
+```html
+<script>
 	dojoConfig = {
 		has: {
 			"dojo-firebug": true,
 			"dojo-debug-messages": true
 		}
 	};
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 To disable a guaranteed console object, we can set dojo-guarantee-console feature to false. This feature defaults to true and will create a dummy
 `console` object if necessary so that any `console.*` logging statements in your code safely and quietly execute without throwing exceptions.
@@ -140,24 +137,24 @@ The following additional options are available to further configure this in-page
 Dojo received a new loader in Dojo 1.7 to accommodate for the toolkit's new AMD module format.  This new loader added a few new configuration options that are crucial to defining packages, maps, and more.  For details on the loader, see the [Advanced AMD Usage tutorial](../modules_advanced/). Important loader configuration parameters include:
 
 *   **`baseUrl`**: The base URL prepended to a module identifier when converting it to a path or URL.
-		<pre class="brush:js;">
-			baseUrl: "/js"</pre>
+		```js
+			baseUrl: "/js"```
 *   **`packages`**: An array of objects which provide the package name and location:
-		<pre class="brush:js;">
+		```js
 			packages: [{
 				name: "myapp",
 				location: "/js/myapp"
-			}]</pre>
+			}]```
 *   **`map`**: Allows you to map paths in module identifiers to different paths:
-		<pre class="brush: js">
+		```js
 			map: {
 				dijit16: {
 					dojo: "dojo16"
 				}
 			}
-		</pre>
+		```
 *   **`paths`**: a map of module id fragments to file paths:
-		<pre class="brush: js;">
+		```js
 		var dojoConfig = {
 			packages: [
 				"package1",
@@ -176,36 +173,36 @@ Dojo received a new loader in Dojo 1.7 to accommodate for the toolkit's new AMD 
 				{ name: "package2", location: "/js/package2" }
 			]
 		};
-		</pre>
+		```
 *   **`async`**: Defines if Dojo core should be loaded asynchronously.  Values can be `true`, `false` or `legacyAsync`, which puts the loader permanently in legacy cross-domain mode.
-		<pre class="brush: js;">
-			async: true</pre>
+		```js
+			async: true```
 *   **`parseOnLoad`**: If true, parses the page with `dojo/parser` when the DOM and all initial dependencies (including those in the `dojoConfig.deps` array) have loaded.
-		<pre class="brush: js;">
-			parseOnLoad: true</pre>
+		```js
+			parseOnLoad: true```
 
 			It is recommended that `parseOnLoad` be left at false (it defaults to false, so you can simply omit this property), and that developers explicitly require `dojo/parser` and call `parser.parse()`.
 
 *   **`deps`**: An array of resource paths which should load immediately once Dojo has loaded:
-		<pre class="brush: js;">
-			deps: ["dojo/parser"]</pre>
+		```js
+			deps: ["dojo/parser"]```
 *   **`callback`**: The callback to execute once `deps` have been retrieved:
-		<pre class="brush: js;">
+		```js
 			callback: function(parser) {
 				// Use the resources provided here
-			}</pre>
+			}```
 *   **`waitSeconds`**: Amount of time to wait before signaling load timeout for a module; defaults to 0 (wait forever):</strong>
-		<pre class="brush: js;">
-			waitSeconds: 5</pre>
+		```js
+			waitSeconds: 5```
 *   **`cacheBust`**: If true, appends the time as a querystring to each module URL to avoid module caching:
-		<pre class="brush: js;">
-			cacheBust: true</pre>
+		```js
+			cacheBust: true```
 
 Now let's create a simple demo that puts the basic parameters to use.  One very common scenario is using Dojo Toolkit from CDN with local modules.  Let's say we use Google CDN with modules in the `/documentation/tutorials/1.10/dojo_config/demo` space:
 
-<pre class="brush:js;html-script:true;">
-&lt;!-- Configure Dojo first --&gt;
-&lt;script&gt;
+```html
+<!-- Configure Dojo first -->
+<script>
 	dojoConfig = {
 		has: {
 			"dojo-firebug": true,
@@ -231,22 +228,22 @@ Now let's create a simple demo that puts the basic parameters to use.  One very 
 		// Get "fresh" resources
 		cacheBust: true
 	};
-&lt;/script&gt;
+</script>
 
-&lt;!-- Load Dojo, Dijit, and DojoX resources from Google CDN --&gt;
-&lt;script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"&gt;&lt;/script&gt;
+<!-- Load Dojo, Dijit, and DojoX resources from Google CDN -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
 
-&lt;!-- Load a "demo" module --&gt;
+<!-- Load a "demo" module -->
 
-&lt;script&gt;
+<script>
 	require(["demo/AuthoredDialog", "dojo/parser", "ready!"], function(AuthoredDialog, parser) {
 		// Parse the page
 		parser.parse();
 
 		// Do something with demo/AuthoredDialog...
 	});
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 By using the `packages` configuration, we've made all references to `demo/*` point to our local `/documentation/tutorials/1.10/dojo_config/demo/` directory, while allowing any references to `dojo`, `dijit`, and `dojox` to come from Google CDN.  Had the `demo` package not been defined, the request for `demo/AuthoredDialog` would have gone to `//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/demo/AuthoredDialog.js`.  We also used alias, by associating `ready` with `dojo/domReady`.
 
@@ -266,8 +263,8 @@ using Dojo's i18n infrastructure from `dojoConfig`.
 The `locale` option lets you override the default provided to Dojo
 by your browser. A simple demo shows it at work:
 
-<pre class="brush:js; html-script:true;">
-&lt;script&gt;
+```html
+<script>
 	var dojoConfig = {
 		has: {
 			"dojo-firebug": true,
@@ -277,9 +274,9 @@ by your browser. A simple demo shows it at work:
 		// look for a locale=xx query string param, else default to &#x27;en-us&#x27;
 		locale: location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : &quot;en-us&quot;
 	};
-&lt;/script&gt;
-&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
+</script>
+<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
+<script>
 	require(["dojo/date/locale", "dijit/Dialog", "dojo/json", "dojo/_base/config",
 	"dojo/_base/window", "dojo/i18n", "dojo/domReady!"]
 	, function(locale, Dialog, JSON, config, win) {
@@ -295,11 +292,11 @@ by your browser. A simple demo shows it at work:
 		}).placeAt(win.body());
 		dialog.startup();
 
-		dialog.set("content", "&lt;pre&gt;" + JSON.stringify(config, null, "\t") + "&lt;/pre&gt;");
+		dialog.set("content", "<pre>" + JSON.stringify(config, null, "\t") + "```");
 		dialog.show();
 	});
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 [Demo with dojo.config.locale ='zh' (Chinese)](demo/localeConfig.php?locale=zh)
 
@@ -351,8 +348,8 @@ What works for dojox modules also works for your own applications and modules.
 `dojoConfig` is an ideal place to provide configuration for
 behavior and page- or application-wide properties. Consider the following:
 
-<pre class="brush:js; html-script: true">
-&lt;script&gt;
+```html
+<script>
 	dojoConfig = {
 		has: {
 			"dojo-firebug": true
@@ -361,9 +358,9 @@ behavior and page- or application-wide properties. Consider the following:
 			userName: &quot;Anonymous&quot;
 		}
 	};
-&lt;/script&gt;
-&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
+</script>
+<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
+<script>
 	require(["dijit/Dialog", "dijit/registry", "dojo/parser", "dojo/_base/lang",
 	"dojo/json", "dojo/_base/config", "dojo/io-query", "dojo/domReady!"]
 	, function(Dialog, registry, parser, lang, JSON, config, ioQuery) {
@@ -376,15 +373,15 @@ behavior and page- or application-wide properties. Consider the following:
 		// Create a dialog
 		var dialog = new Dialog({
 			title: "Welcome back " + config.app.userName,
-			content: "&lt;pre&gt;" + JSON.stringify(config, null, "\t") + "&lt;/pre&gt;"
+			content: "<pre>" + JSON.stringify(config, null, "\t") + "```"
 		});
 
 		// Draw on the app config to put up a personalized message
 		dialog.show();
 
 	});
-&lt;/script&gt;
-</pre>
+</script>
+```
 
 [View Application Config Demo](demo/appConfig.php)
 

@@ -4,9 +4,6 @@ The `dojo/_base/lang` resource contains helpful methods for working with functio
 `lang.hitch`.  From there, you'll learn how to bind specific _arguments_ to a function using
 `lang.partial`, and how `lang.hitch` can combine the two operations.
 
-*   <span>Difficulty:</span> Intermediate
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Getting Started
 
@@ -42,7 +39,7 @@ The idea of scope during invocation is known as the execution context in JavaScr
 Let's take a common example.  Say we have an object, and one of the methods in that object is intended
 to be used as an event handler for a number of nodes in a document.  We might define it like so:
 
-<pre class="brush: js;">
+```js
 // Require the query resource, and wait until the DOM is ready
 require(["dojo/query", "dojo/domReady!"],
 	function(query) {
@@ -61,7 +58,7 @@ require(["dojo/query", "dojo/domReady!"],
 		});
 
 });
-</pre>
+```
 
 [View Demo](demo/demo.php)
 
@@ -101,13 +98,13 @@ allow you to execute a function with a passed object as its context.  For exampl
 to ensure that our contrived handler above was executed in the context of _myObject_, we'd
 wrap our reference using the `Function.call` method, like so:
 
-<pre class="brush: js;">
+```js
 query(".myNodes").forEach(function(node){
 	node.onclick = function(evt){
 		myObject.myHandler.call(myObject, evt);
 	};
 });
-</pre>
+```
 
 [View Demo](demo/call.php)
 <div class="proTip">
@@ -134,7 +131,7 @@ creates a _new_ Function object that is bound (or hitched, hence the name) to a 
 context, which you can then invoke safely&mdash;without ever worrying if the context has
 changed.  Using `lang.hitch` is simple:
 
-<pre class="brush: js;">
+```js
 // `foo` is intentionally global
 var foo = "bar";
 require(["dojo/_base/lang"],
@@ -155,7 +152,7 @@ require(["dojo/_base/lang"],
 		myFunction();		// "bar"
 
 });
-</pre>
+```
 
 [View Demo](demo/hitch.php)
 
@@ -189,21 +186,21 @@ A problem a developer might face is having a function with multiple arguments
 being used where a smaller set of arguments is required.  For example, say we have a function
 that takes 4 arguments, like so (we'll be using `dojo/data` for the example):
 
-<pre class="brush: js;">
+```js
 var putValue = function(store, item, attr, value){
 	return store.setValue(item, attr, value);
 }
-</pre>
+```
 
 
 ...but somewhere else in your application, a different developer (or a library) has written a set of objects
 that will call a similar handler with only _3_ arguments:
 
-<pre class="brush: js;">
+```js
 someObject.setValueHandler = function(item, attr, value){
 	//	placeholder function to be overridden
 };
-</pre>
+```
 
 
 With `lang.partial`, you can create a new (unbound) function _with preset values
@@ -212,7 +209,7 @@ for arguments_ (or _bound_ arguments).  To complete our example above, we'd want
 `someObject.setValueHandler` to a reference of our _partial_ function
 (hence the name), like so:
 
-<pre class="brush: js;">
+```js
 // assuming we have a dojo/data store called "myStore"
 
 // our function
@@ -235,7 +232,7 @@ someObject.setValueHandler = lang.partial(putValue, myStore);
 // our putValue function will already have the "store" arg
 // set to a reference to "myStore"
 someObject.setValueHandler(someItem, "foo", "bar");
-</pre>
+```
 
 [View Demo](demo/partial.php)
 
@@ -269,14 +266,14 @@ _after_ the context and method arguments, and `lang.hitch` will assemble
 the new function with both a bound context and preset arguments.  Let's take a similar example
 to the above:
 
-<pre class="brush: js;">
+```js
 someObject.setValueHandler = lang.hitch(someObject, putValue, myStore);
 
 // ...
 // later on in the application, the setHandler is invoked
 // again--this time in the context of someObject
 someObject.setValueHandler(someItem, "foo", "bar");
-</pre>
+```
 
 
 `hitch` and `partial` are a gateway to a technique known as

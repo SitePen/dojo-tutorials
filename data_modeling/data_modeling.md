@@ -2,9 +2,6 @@
 
 The Model-Viewer-Controller (MVC) is a dominant paradigm for application development. Here we will look at the foundation Dojo provides for MVC-advised applications. We will learn how we can leverage Dojo object stores and Stateful objects for the foundational model, and how we can build modular viewer and controller code on top of the model.
 
-*   <span>Difficulty:</span> Expert
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Data Modeling for MVC Applications
 
@@ -17,7 +14,7 @@ The model is the M in MVC. The data model represents the core information that y
 
 The [Dojo object store](../intro_dojo_store/) fulfills the role of model within Dojo applications. The store interface is designed to separate the data concerns from the rest of the application. Different storage mediums may be used without changing the store interface. Stores can be extended to provide far more than just storage capability. Let's look at constructing a basic store. We will use a JsonRest store and cache the items it returns:
 
-<pre class="brush: js;">
+```js
 require(["dojo/store/JsonRest", "dojo/store/Memory", "dojo/store/Cache", "dojo/store/Observable"],
 		function(JsonRest, Memory, Cache, Observable){
 	masterStore = new JsonRest({
@@ -25,14 +22,14 @@ require(["dojo/store/JsonRest", "dojo/store/Memory", "dojo/store/Cache", "dojo/s
 	});
 	cacheStore = new Memory({});
 	inventoryStore = new Cache(masterStore, cacheStore);
-</pre>
+```
 
 
 Now our inventoryStore represents our basic data model. We can retrieve data with get(), query with query(), and modify with put(). The store encapsulates the storage of this information, by handling the server interaction.
 
 Our viewer can be connected to query results:
 
-<pre class="brush: js;">
+```js
 results = inventoryStore.query("some-query");
 viewResults(results);
 
@@ -49,34 +46,34 @@ function viewResults(results){
 		}, container);
 	}
 }
-</pre>
+```
 
 
 Now our `viewResults` function acts as a viewer for the data model. We could also leverage `dojo/string`'s `substitute` function to do simple templating:
 
-<pre class="brush: js;">
+```js
 	function addRow(item){
 		var row = domConstruct.create("div",{
 			innerHTML: string.substitute(tmpl, item);
 		}, container);
 	}
-</pre>
+```
 
 
 ### Collection Data Binding
 
 One important aspect of MVC is that viewers should monitor the data model, ready to respond to changes. This allows the controllers to avoid unnecessary couplings to the viewer. The controller should update the model, and then the viewer will observe and respond to this change. We can make the data model observable by using the `dojo/store/Observable` wrapper:
 
-<pre class="brush: js;">
+```js
 masterStore = new Observable(masterStore);
 ...
 inventoryStore = new Cache(masterStore, cacheStore);
-</pre>
+```
 
 
 Now our view can monitor query results using the observe method.
 
-<pre class="brush: js;">
+```js
 function viewResults(results){
 	var container = dom.byId("container");
 	var rows = [];
@@ -104,13 +101,13 @@ function viewResults(results){
 		domConstruct.destroy(rows.splice(i, 1)[0]);
 	}
 }
-</pre>
+```
 
 [View Demo](demo/demo.php)
 
 We now have a view that can respond directly to model changes and our controller code can make changes to the data in the store in response to user interaction. The controller could `put()`, `add()`, and `remove()` methods to affect changes. Typically controller code is concerned with handling events, so for example, we can create a new data object when a user clicks on the add button:
 
-<pre class="brush: js;">
+```js
 on(addButton, "click", function(){
 	inventoryStore.add({
 		name: "Shoes",
@@ -118,7 +115,7 @@ on(addButton, "click", function(){
 		quantity: 40
 	});
 });
-</pre>
+```
 
 [View Demo](demo/demo.php)
 
@@ -132,27 +129,27 @@ The store that we have used so far is very simple, and doesn't include any logic
 
 One of the first extensions to the store we might want to add is validation. This is very simple with the `JsonRest` store because all updates go through the `put()` method (`add()` `calls put()`). We can simply extend the inventoryStore by adding a `put` method in the constructor call:
 
-<pre class="brush: js;">
+```js
 var oldPut = inventoryStore.put;
 inventoryStore.put = function(object, options){
-	if(object.quantity &lt; 0){
+	if(object.quantity < 0){
 		throw new Error("quantity must not be negative");
 	}
 	// now call the original
 	oldPut.call(this, object, options);
 };
-</pre>
+```
 
 
 Now updates will be checked by our validation logic:
 
-<pre class="brush: js;">
+```js
 inventoryStore.put({
 	name: "Donuts",
 	category: "Food",
 	quantity: -1
 });
-</pre>
+```
 
 [View Demo](demo/demo.php)
 </p>
@@ -167,18 +164,18 @@ Stored objects can hold an array of references to children. This can be a good d
 
 To implement the latter approach, we can simply add a `getChildren()` method. In this example our hierarchy will come from having category objects that have individual items as children. We will create a `getChildren()` method that will find all objects whose category property matches the name of the parent object, therefore having the child/parent relationship defined as a property of the child:
 
-<pre class="brush: js;">
+```js
 inventoryStore.getChildren = function(parent, options){
 	return this.query({
 		category: parent.id
 	}, options);
 };
-</pre>
+```
 
 
 Now, hierarchical viewers can call `getChildren()` to get a list of children for an object without needing to understand the structure of the data. Retrieval of children might look like:
 
-<pre class="brush: js;">
+```js
 require(["dojo/_base/Deferred"], function(Deferred){
 	Deferred.when(inventoryStore.get("Food"), function(foodCategory){
 		// retrieved the food category object, now get it's children
@@ -187,34 +184,34 @@ require(["dojo/_base/Deferred"], function(Deferred){
 		});
 	});
 });
-</pre>
+```
 
 
 We can get the children of an object, now let's look at how to alter the collection of children of an object. When working with the inventoryStore we know that hierarchy is defined by the category property. If we want to move an item to be a child of a different category, we can simply change the category property:
 
-<pre class="brush: js;">
+```js
 donut.category = "Junk Food";
 inventoryStore.put(donut);
-</pre>
+```
 
 
 One of the key concepts with Dojo stores is to provide a consistent interface between data models and other components. If we want our hierarchy to be defined in such a way that components can set the parent of an object without knowledge of the internal structure of the objects, we can use the `parent` property of the `options` parameter to the `put()` method:
 
-<pre class="brush: js;">
+```js
 inventoryStore.put = function(object, options){
 	if(options.parent){
 		object.category = options.parent;
 	}
 	// ...
 };
-</pre>
+```
 
 
 Now we could change the parent:
 
-<pre class="brush: js;">
+```js
 inventoryStore.put(donut, {parent: "Junk Food"});
-</pre>
+```
 
 
 #### Ordered Store
@@ -223,7 +220,7 @@ By default, a store represents an unordered collections of objects. However, we 
 
 Ordered stores may also wish to provide an interface for objects to be moved to different points in the order. The application may wish to provide a means for moving objects up, down, to the top, or to the bottom. This is done by using the `before` property in the `put()`'s options argument:
 
-<pre class="brush: js;">
+```js
 inventoryStore.put = function(object, options){
 	if(options.before){
 		// we set the reference object's name in the object's "insertBefore"
@@ -232,12 +229,12 @@ inventoryStore.put = function(object, options){
 	}
 	// ...
 };
-</pre>
+```
 
 
 Our server can respond to the insertBefore property to properly order the objects now. Our controller code could now move objects around like this (we will use event delegation and assume we've set the node's `itemIdentity` and `beforeId` properties have been set during creation):
 
-<pre class="brush: js;">
+```js
 require(["dojo/on"],
 		function(on){
 	on(moveUpButton, ".move-up:click", function(){
@@ -247,14 +244,14 @@ require(["dojo/on"],
 			before: inventoryStore.get(this.beforeId)
 		});
 	});
-</pre>
+```
 
 
 #### Transactional
 
 Transactions are a critical part of many applications, and application logic often needs to define what operations need to be combined atomically. One approach to transactions is to collect all the operations during a transaction and send them all inside a single request when the transaction is committed. Here is an example of how we can do that:
 
-<pre class="brush: js;">
+```js
 require(["dojo/_base/lang"],
 		function(lang){
 	lang.mixin(inventoryStore, {
@@ -287,12 +284,12 @@ require(["dojo/_base/lang"],
 			this.operations.push({action:"remove", id:id});
 		}
 	});
-</pre>
+```
 
 
 And we could then create our custom operation that makes use of the transactions:
 
-<pre class="brush: js;">
+```js
 	removeCategory: function(category){
 		// atomically remove entire category and the items within the category
 		var transaction = this.transaction();
@@ -308,7 +305,7 @@ And we could then create our custom operation that makes use of the transactions
 			transaction.commit();
 		});
 	}
-</pre>
+```
 
 
 ### Object Data Binding: dojo/Stateful
@@ -321,17 +318,18 @@ Dojo makes a clear delineation between the collection level concerns and the ent
 
 This interface affords the same opportunity as the store for viewers to be given data so they can render it and react to changes in the data. Let's create a viewer that binds a simple HTML form to an object. First, our HTML, which could look like this:
 
-<pre class="brush: js; html-script: true;">
-&lt;form id=&quot;itemForm&quot;&gt;
-	Name: &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
-	Quantity: &lt;input type=&quot;text&quot; name=&quot;quantity&quot; /&gt;
-&lt;/form&gt;
-</pre>
+```html
+<form id="itemForm">
+	Name: <input type="text" name="name" />
+	Quantity: <input type="text" name="quantity" />
+</form>
+
+```
 
 
 And then we could bind to the HTML:
 
-<pre class="brush: js;">
+```js
 function viewInForm(object, form){
 	// copy initial values into form inputs
 	for(var i in object){
@@ -346,38 +344,38 @@ function viewInForm(object, form){
 		}
 	}
 }
-</pre>
+```
 
 
 Now we can initiate this from within an object from the store:
 
-<pre class="brush: js;">
+```js
 require(["dojo/Stateful", "dojo/_base/Deferred"],
 		function(Stateful, Deferred){
 	Deferred.when(store.get("Donut"), function(item){
 		item = new Stateful(item); // wrap with stateful
 		viewInForm(item, dom.byId("itemForm"));
 	});
-</pre>
+```
 
 [View Demo](demo/demo.php)
 
 And now controller code could modify this object, and the viewer will respond instantly:
 
-<pre class="brush: js;">
+```js
 item.set("quantity", 4);
-</pre>
+```
 
 
 In the case of a form, we may also want to add `onchange` event listeners that would update the object when the input changes, so as to make the data binding bidirectional (changes to the object are reflected in the form, and changes in the form are reflected in the object). Dojo also offers much more advanced form interaction functionality with the [form manager](../form_manager/).
 
 Also remember that the wrapped object can and should be `put()` back to the store when changes are ready to be committed. We could also have controller code:
 
-<pre class="brush: js;">
+```js
 on(saveButton, "click", function(){
 	inventoryStore.put(currentItem); // save the current state of the Stateful item
 });
-</pre>
+```
 
 [View Demo](demo/demo.php)
 

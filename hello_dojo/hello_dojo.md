@@ -1,9 +1,6 @@
 ## Hello Dojo!
 Welcome to Dojo! In this tutorial, you’ll learn how to load Dojo and begin exploring some of its core functionality. You’ll also learn about Dojo’s AMD-based module architecture, discover how to load additional modules to add extra functionality to your Web site or application, and find out how to get help when things go wrong.
 
-* <span>Difficulty:</span> Beginner
-* <span>Dojo Version:</span> 1.10
-
 ### Getting Started
 
 Getting started with Dojo is as simple as including the `dojo.js` script in a web page, just like any other JavaScript file. Dojo is available on popular [CDNs](http://en.wikipedia.org/wiki/Content_delivery_network "Content Delivery Network"), so to get started enter the following in a file named `hellodojo.html` and open it in your web browser.
@@ -68,11 +65,11 @@ The AMD loader will automatically load all sub-dependencies for a requested modu
 
 At this point you've seen an example of loading and using modules. To define and load your own modules, you'll need to ensure that you are loading your HTML file from an HTTP server (localhost is fine, but you do need an HTTP server since there are security subtleties that will prevent many things from working with the "file:///" protocol). For these examples, you don't need any fancy features in your web server other than the ability to serve files. Add a `demo` directory in the directory that contains your `hellodojo.html` file, and in the `demo` directory create a file named `myModule.js`:
 
-<pre>
+```
 demo/
     myModule.js
 	hellodojo.html
-</pre>
+```
 
 Now enter the following in `myModule.js`:
 
@@ -230,7 +227,7 @@ Follow these steps to get starting using the Dojo source, which is generally how
     If you are experienced with [git](http://git-scm.com/) and [GitHub](https://github.com/), you can [clone Dojo from GitHub](https://github.com/dojo/). At a minimum, get [dojo](https://github.com/dojo/dojo). You will likely want [dijit](https://github.com/dojo/dijit), [dojox](https://github.com/dojo/dojox), and [util](https://github.com/dojo/util) at some point as well (these are all included in the source download).
 
 2.  Extract the Dojo archive into your project folder, e.g.:
-<pre>
+```
 demo/
     myModule.js
 dojo/
@@ -239,7 +236,7 @@ dojox/
 util/
 hellodojo.html
 
-</pre>
+```
 
 3.  Load `dojo.js` locally, rather than from the CDN:
 

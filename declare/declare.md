@@ -2,11 +2,6 @@
 
 The `dojo/_base/declare` module is the foundation of class creation within the Dojo Toolkit.  `declare` allows for multiple inheritance to allow developers to create flexible code and avoid writing the same code routines.  Dojo, Dijit, and Dojox modules all use `declare`; in this tutorial, you'll learn why you should too.
 
-</p>
-
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 
 ### Getting Started
 
@@ -24,14 +19,14 @@ The `className` argument represents the name of the class, including the namespa
 
 ##### Named Class
 
-<pre class="brush:js;">
+```js
 // Create a new class named "mynamespace.MyClass"
 declare("mynamespace.MyClass", null, {
 
 	// Custom properties and methods here
 
 });
-</pre>
+```
 
 A class named `mynamespace.MyClass` is now globally available within the application.
 
@@ -39,14 +34,14 @@ Named classes should only be created if they will be used with the Dojo parser. 
 
 ##### "Anonymous" Class
 
-<pre class="brush:js;">
+```js
 // Create a scoped, anonymous class
 var MyClass = declare(null, {
 
 	// Custom properties and methods here
 
 });
-</pre>
+```
 
 The `MyClass` is now only available within its given scope.
 
@@ -56,32 +51,32 @@ The SuperClass argument can be `null`, one existing class, or an array of existi
 
 ##### Class with No Inheritance
 
-<pre class="brush:js;">
+```js
 var MyClass = declare(null, {
 
 	// Custom properties and methods here
 
 });
-</pre>
+```
 
 `null` signifies that this class has no classes to inherit from.
 
 ##### Class Inheriting from Another Class
 
-<pre class="brush:js;">
+```js
 var MySubClass = declare(MyClass, {
 
 	// MySubClass now has all of MyClass's properties and methods
 	// These properties and methods override parent's
 
 });
-</pre>
+```
 
 The new `MySubClass` will inherit `MyClass`'s properties and methods.  A parent class' method or property can be overridden by adding its key with a new definition within the third argument, which will be explained shortly.
 
 ##### Class with Multiple Inheritance
 
-<pre class="brush:js;">
+```js
 var MyMultiSubClass = declare([
 	MySubClass,
 	MyOtherClass,
@@ -92,7 +87,7 @@ var MyMultiSubClass = declare([
 	// MySubClass, MyOtherClass, and MyMixinClass
 
 });
-</pre>
+```
 
 An array of classes signifies multiple inheritance.  Properties and methods are inherited from left to right.  The first class in the array serves as the base prototype, then the subsequent classes are mixins to that class.
 
@@ -104,7 +99,7 @@ The last argument of `declare` is an object containing methods and properties fo
 
 ##### Custom Properties and Methods
 
-<pre class="brush:js;">
+```js
 // Class with custom properties and methods
 var MyClass = declare(MyParentClass, {
 	// Any property
@@ -119,13 +114,13 @@ var MyClass = declare(MyParentClass, {
 		return result;
 	}
 });
-</pre>
+```
 
 #### Example:  Basic Class Creation and Inheritance
 
 The following code creates a widget that inherits from `dijit/form/Button`:
 
-<pre class="brush:js;">
+```js
 define([
 	"dojo/_base/declare",
 	"dijit/form/Button"
@@ -138,7 +133,7 @@ define([
 		}
 	});
 });
-</pre>
+```
 
 From the snippet above, it's easy to conclude:
 
@@ -153,7 +148,7 @@ Let's dig deeper into class creation with Dojo by learning about the `constructo
 
 One of the special class methods is the `constructor` method.  The `constructor` method is fired upon class instantiation, executed in the scope of the new object.  This means that the `this` keyword references the instance, not the original class.  The `constructor` method also accepts any number of instance-specific arguments.
 
-<pre class="brush:js;">
+```js
 // Create a new class
 var Twitter = declare(null, {
 	// The default username
@@ -164,21 +159,21 @@ var Twitter = declare(null, {
 		declare.safeMixin(this,args);
 	}
 });
-</pre>
+```
 
 Take the following instance creation:
 
-<pre class="brush:js;">
+```js
 var myInstance = new Twitter();
-</pre>
+```
 
 The username used within this instance will be "defaultUser" since no specific settings were provided to the instance.  To leverage the `safeMixin` method, provide a username parameter:
 
-<pre class="brush:js;">
+```js
 var myInstance = new Twitter({
 	username: "sitepen"
 });
-</pre>
+```
 
 Now the instance uses `sitepen` as the username setting!
 
@@ -192,7 +187,7 @@ Now the instance uses `sitepen` as the username setting!
 
 As stated above, inheritance is defined within the second argument of `declare`.  Classes are mixed-in from left to right with each subsequent class' properties and methods getting priority over the previous if a property has already been defined.  Take the following:
 
-<pre class="brush:js;">
+```js
 // Define class A
 var A = declare(null, {
 	// A few properties...
@@ -215,11 +210,11 @@ var C = declare([mynamespace.A, mynamespace.B], {
 	propertyB: 99,
 	propertyD: false
 });
-</pre>
+```
 
 The result of the inherited class properties is:
 
-<pre class="brush:js;">
+```js
 // Create an instance
 var instance = new C();
 
@@ -227,11 +222,12 @@ var instance = new C();
 // instance.propertyB = 99 // overridden by B, then by C
 // instance.propertyC = true // kept from B
 // instance.propertyD = false // created by C
-</pre>
+```
 
 It is important to have a clear understanding of prototypical inheritance. When a property is read from an object instance, the instance itself is first inspected to see if the property is defined on it. If not, the prototype chain is traversed and the value from the first object in the chain that has the property defined is returned. When a value is assigned to a property it is always on the object instance, never the prototype. The result of this is that all objects that share a common prototype will return the same value for a property defined on the prototype, unless the value has been set on the instance. This makes it easy to define default values for primitive data types (number, string, boolean) in your class declaration and update them on instance objects as needed. However, if you assign object values (Object, Array) to a property on the prototype, every instance will manipulate the same shared value. Consider the following:
 
-<pre class="brush: js;">var MyClass = declare(null, {
+```js
+var MyClass = declare(null, {
 	primitiveVal: 5,
 	objectVal: [1, 2, 3]
 });
@@ -265,11 +261,12 @@ obj1.objectVal[3] === 4; // true
 // properties) creates an instance-specific property
 obj2.objectVal = [];
 obj1.objectVal === obj2.objectVal; // false
-</pre>
+```
 
 To avoid inadvertently sharing arrays or objects among all instances, object properties should be declared with null values and initialized in the constructor function:
 
-<pre class="brush: js;">declare(null, {
+```js
+declare(null, {
 	// not strictly necessary, but good practice
 	// for readability to declare all properties
 	memberList: null,
@@ -283,7 +280,7 @@ To avoid inadvertently sharing arrays or objects among all instances, object pro
 		this.roomMap = {};
 	}
 });
-</pre>
+```
 
 Refer to the [dojo/_base/declare](/reference-guide/1.10/dojo/_base/declare.html#arrays-and-objects-as-member-variables) documentation for additional information.
 
@@ -291,7 +288,7 @@ Refer to the [dojo/_base/declare](/reference-guide/1.10/dojo/_base/declare.html#
 
 While completely overriding methods is certainly useful, sometimes the constructor of each class up through the inheritance chain should be executed to preserve its original functionality.  This is where the `this.inherited(arguments)` statement comes in handy.  The `this.inherited(arguments)` statement calls the parent class' method of the same name.  Consider the following:
 
-<pre class="brush:js;">
+```js
 // Define class A
 var A = declare(null, {
 	myMethod: function(){
@@ -315,7 +312,7 @@ myB.myMethod();
 // Would output:
 //		Hello!
 //		World!
-</pre>
+```
 
 The `this.inherited` method can be called at any time within the child class' code.  There will be some cases where you will want to call `inherited()` in the middle of the child function, or even at the end. That said, you should not call it from within the constructor.
 

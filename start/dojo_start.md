@@ -2,9 +2,6 @@
 
 How do I start learning Dojo? Where are the docs? How do I get support and training? Which Dojo version should I use? Why do I need to use a web server? How can I avoid common mistakes? How do I report issues? How do I contribute and get involved? These questions and more are answered with this introductory start tutorial.
 
-*   <span>Difficulty:</span> Beginner
-*   <span>Dojo Version:</span> 1.10
-
 ### Documentation
 
 The Dojo web site offers 3 primary documentation sections to get started, all created via extensive community contributions and efforts.
