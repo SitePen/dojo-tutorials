@@ -1,0 +1,34 @@
+/* Any demo specific styling needed for this tutorial only */
+
+.box {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+	background-color: #ddd;
+	border: 1px #eee;
+	padding: 5px;
+}
+.innerBox {
+    margin: 5%;
+	padding: 5px;
+	background-color: white;
+}
+
+#container {
+    position: relative;
+    padding: 10px;
+    height: 300px;
+    width: 450px;
+}
+
+.contentBox {
+	background-color: white;
+    position: absolute;
+    width: 200px;
+	border: solid 1px #99c;
+	margin: 5px;
+
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 2px 3px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+}
