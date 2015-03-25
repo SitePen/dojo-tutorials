@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: dojo/keys</title>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="async: true"></script>
+		<link rel="stylesheet" href="../../../resources/style/demo.css" media="screen">
+		<style>
+			input {
+				display: block;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Press any key</h1>
+		keyCode value: <input type="text" id="keyCode" size="2">
+		<?php Utils::printDojoScript("async: true") ?>
+		<script>
+			require(["dojo/on", "dojo/dom", "dojo/domReady!"], function (on, dom) {
+				on(document, "keyup", function(event) {
+					dom.byId("keyCode").value = event.keyCode;
+				});
+			});
+		</script>
+</body>
+</html>
