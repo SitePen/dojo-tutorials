@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Custom Modules with CDN</title>
+	</head>
+	<body class="claro">
+		<h1>Demo: Custom Modules with CDN</h1>
+
+		<!-- note that you can always create a dojoConfig object instead of putting everything into data-dojo-config
+		     if you want -->
+		<script>
+			var dojoConfig = {
+				dojoBlankHtmlUrl: location.pathname.replace(/\/[^/]+$/, '') + '/blank.html',
+				packages: [{
+					name: 'custom',
+					location: location.pathname.replace(/\/[^/]+$/, '') + '/js/custom'
+				}]
+			};
+		</script>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+			// load our custom/Hello module and wait for the DOM to be ready
+			require([ "custom/Hello", "dojo/domReady!" ], function(Hello){
+				// create our custom dialog
+				var w = new Hello({
+					id: "hello",
+					content: "Hello World!"
+
+				// place it in the DOM
+				}).placeAt(document.body);
+
+				// show it
+				w.show();
+			});
+		</script>
+	</body>
+</html>
