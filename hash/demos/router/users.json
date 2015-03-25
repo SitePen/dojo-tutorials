@@ -1,0 +1,31 @@
+[{
+  "id": 0,
+  "fullName": "Matthew Maxwell",
+  "firstName": "Matthew",
+  "lastName": "Maxwell",
+  "email": "matthew@email.com"
+}, {
+  "id": 1,
+  "fullName": "Jim Davids",
+  "firstName": "Jim",
+  "lastName": "Davids",
+  "email": "jim@email.com"
+}, {
+  "id": 2,
+  "fullName": "Tim Thompson",
+  "firstName": "Tim",
+  "lastName": "Thompson",
+  "email": "tim@email.com"
+}, {
+  "id": 3,
+  "fullName": "John Smith",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john@email.com"
+}, {
+  "id": 4,
+  "fullName": "Kevin Anderson",
+  "firstName": "Kevin",
+  "lastName": "Anderson",
+  "email": "kevin@email.com"
+}]

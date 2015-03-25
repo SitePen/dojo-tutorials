@@ -1,0 +1,16 @@
+body {
+	font: 83% sans-serif;
+}
+
+#menu {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 0;
+	margin: 1em 0;
+}
+#menu li {
+	display: inline;
+}
+#menu a {
+	padding: 5px 20px;
+}
