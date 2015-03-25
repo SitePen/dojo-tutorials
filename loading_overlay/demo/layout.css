@@ -1,0 +1,11 @@
+
+#appLayout {
+    height: 100%;
+}
+#leftCol {
+    width: 14em;
+}
+
+.claro .demoLayout .edgePanel {
+    background-color: #d0e9fc;
+}

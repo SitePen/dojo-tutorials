@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.pageOverlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1001;
+    display: block;
+}
+
+#loadingOverlay {
+    background:  #fff url('//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+}
+
+.loadingMessage {
+    padding: 25px 40px;
+    color: #999;
+}
