@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: dojox/grid/DataGrid Simple Structure</title>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/resources/dojo.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/Grid.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+
+</head>
+<body class="claro">
+<h1>Demo: dojox/grid/DataGrid Simple Structure</h1>
+
+<br/>
+<div id="grid"></div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
+<script>
+
+	require([
+		"dojox/grid/DataGrid",
+		"dojo/store/Memory",
+		"dojo/data/ObjectStore",
+		"dojo/request",
+		"dojo/domReady!"
+	], function(DataGrid, Memory, ObjectStore, request){
+		var grid, dataStore;
+		request.get("hof-batting.json", {
+			handleAs: "json"
+		}).then(function(data){
+			dataStore =  new ObjectStore({ objectStore:new Memory({ data: data.items }) });
+
+			grid = new DataGrid({
+				store: dataStore,
+				query: { id: "*" },
+				queryOptions: {},
+				structure: [
+					{ name: "First Name", field: "first", width: "25%" },
+					{ name: "Last Name", field: "last", width: "25%" },
+					{ name: "G", field: "totalG", width: "10%" },
+					{ name: "AB", field: "totalAB", width: "10%" },
+					{ name: "R", field: "totalR", width: "10%" },
+					{ name: "H", field: "totalH", width: "10%" },
+					{ name: "RBI", field: "totalRBI", width: "10%" }
+				]
+			}, "grid");
+			grid.startup();
+		});
+	});
+
+</script>
+</body>
+</html>
