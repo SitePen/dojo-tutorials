@@ -1,0 +1,11 @@
+/* Any demo specific styling needed for this tutorial only */
+#console {
+	margin-top: 2em;
+	border-top: 1px solid #333;
+}
+
+#console div {
+	background: #eee; 
+	padding:5px 10px;
+	margin-top: 2px;
+}

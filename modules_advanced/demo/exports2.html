@@ -1,0 +1,45 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Resolving circular dependencies with "exports"</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="style.css" media="screen">
+</head>
+
+<body>
+<h1>Demo: Resolving circular dependencies with "exports"</h1>
+<p>
+	With our circular dependency resolved, you should see the message "apples and oranges" below.
+</p>
+
+<script>
+	dojoConfig = {
+		async: true,
+		isDebug: true,
+		baseUrl: '.',
+		tlmSiblingOfDojo: false
+	};
+</script>
+<!-- load dojo -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script>
+	require([
+		"my/a"
+	], function(a) {
+		a.print();
+	});
+
+	function log(msg){
+		var c = document.getElementById("console");
+		if(!c){
+			c = document.createElement("div");
+			c.id = "console";
+			document.body.appendChild(c);
+		}
+		c.innerHTML += "<div>" + msg + "</div>";
+	}
+</script>
+</body>
+</html>
