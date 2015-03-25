@@ -1,0 +1,26 @@
+/* Any demo specific styling needed for this tutorial only */
+
+#appLayout {
+    height: 100%;
+}
+#leftCol {
+    width: 14em;
+}
+
+#appLayout .mainHeading {
+    margin: 0;
+}
+
+.claro .demoLayout .edgePanel {
+    background-color: #d0e9fc;
+}
+
+#viewsChart {
+	width: 550px; 
+	height: 550px;
+}
+.topLink {
+    position: absolute;
+    top: 0;
+    left: -200px;
+}
