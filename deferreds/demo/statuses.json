@@ -1,0 +1,5 @@
+[
+	{ "id": 1, "userId": 2, "status": "Hello!" },
+	{ "id": 2, "userId": 3, "status": "Eating a sandwich..." },
+	{ "id": 3, "userId": 1, "status": "Dojo rocks!!" }
+]
