@@ -1,0 +1,104 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: DataGrid Events</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/Grid.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
+	<link rel="stylesheet" href="style.css" media="screen">
+</head>
+<body class="claro">
+<h1>Demo: DataGrid events</h1>
+<p>
+	The following shows how to connect to and handle the <em>onRowClick</em> event in a DataGrid.
+</p>
+<div id="grid"></div>
+<div id="results" class="results"></div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
+<script>
+
+	require(["dojo/request",
+				"dojo/store/Memory",
+				"dojo/data/ObjectStore",
+				"dojox/grid/DataGrid",
+				"dojox/math/round",
+				"dojo/domReady!"],
+			function(request, Memory, ObjectStore, DataGrid, mathRound){
+
+				request("hof-batting.json", { handleAs: "json" }).then(function(data){
+					var store = new Memory({ data: data, idProperty: "id" });
+
+					// global var "test_store"
+					test_store = new ObjectStore({objectStore: store});
+
+					var grid = new DataGrid({
+						"class": "grid",
+						store: test_store,
+						query: { id: "*" },
+						structure: [
+							{
+								name: "Name", fields: ["first", "last"], width: "30%",
+								formatter: function(fields, rowIndex, cell){
+									var first = fields[0],
+											last = fields[1];
+
+									return last + ", " + first;
+								}
+							},
+							{
+								name: "G", field: "totalG", width: "10%",
+								formatter: function(games, rowIndex, cell){
+									return games + " <em>games</em>";
+								}
+							},
+							{ name: "AB", field: "totalAB", width: "10%" },
+							{ name: "R", field: "totalR", width: "8%" },
+							{ name: "H", field: "totalH", width: "9%" },
+							{ name: "RBI", field: "totalRBI", width: "8%" },
+							{
+								name: "Batting Average", field: "_item", width: "12%",
+								formatter: function(item, rowIndex, cell){
+									var rowData = grid.getItem(rowIndex);
+									return mathRound((rowData.totalH / rowData.totalAB), 3);
+								}
+							},
+							{
+								name: "Slugging %", width: "13%",
+								get: function(rowIndex, item){
+									if(!item){
+										return;
+									}
+									var rowData = grid.getItem(rowIndex),
+											hits = rowData.totalH,
+											doubles = rowData.total2B,
+											triples = rowData.total3B,
+											homeruns = rowData.totalHR,
+											total_bases = hits + doubles + (triples * 2) + (homeruns * 3),
+											at_bats = rowData.totalAB;
+
+									return total_bases / at_bats;
+								},
+								formatter: function(slugging){
+									return mathRound(slugging, 3);
+								}
+							}
+						]
+					}, "grid");
+					grid.startup();
+
+					grid.on("RowClick", function(evt){
+						var idx = evt.rowIndex,
+								rowData = grid.getItem(idx);
+						document.getElementById("results").innerHTML =
+								"You have clicked on " + rowData.last + ", " + rowData.first + ".";
+					}, true);
+
+				});
+			});
+</script>
+</body>
+</html>

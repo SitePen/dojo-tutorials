@@ -1,0 +1,121 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Selections in a Grid</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/Grid.css" />
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/grid/resources/claroGrid.css" />
+	<link rel="stylesheet" href="style.css" media="screen">
+
+
+</head>
+<body class="claro">
+<h1>Demo: Selections in a Grid</h1>
+<p>The following grids demonstrate how selections work in a dojox/grid/DataGrid.</p>
+<h2>Grid with <code>rowSelector</code></h2>
+<p>
+	In the following Grid, no special selector view is used, but
+	<code>rowSelector</code> is specified in the arguments to the constructor.
+</p>
+<p>
+	The row selector behaves according to the rules of the grid's
+	<code>selectionMode</code>.
+</p>
+<div id="grid"></div>
+<div id="results" class="results"></div>
+<h2>Grid with <code>dojox/grid/_CheckBoxSelector</code></h2>
+<p>
+	In the following Grid, the leftmost column is actually a separate view of type
+	<code>dojox/grid/_CheckBoxSelector</code>.
+</p>
+<p>
+	Notice how using the checkbox selectors follows its own behavior&mdash;in
+	this case, although the Grid is in <code>extended</code> selection mode,
+	which is still in effect when selecting rows via other data cells,
+	clicking on the checkboxes does not follow that behavior.
+	(In fact, it's closer to the behavior of the <code>multiple</code>
+	selection mode.)
+</p>
+<div id="grid2"></div>
+<div id="results2" class="results"></div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
+<script>
+	require([
+		"dojox/grid/DataGrid",
+		"dojox/grid/cells",
+		"dojo/store/Memory",
+		"dojo/data/ObjectStore",
+		"dojo/_base/array",
+		"dojo/_base/lang",
+		"dojox/grid/_CheckBoxSelector",
+		"dojo/domReady!"
+	], function(DataGrid, gridCells, Memory, ObjectStore, baseArray, lang, _CheckBoxSelector){
+		var cells = [
+			[
+				new gridCells.RowIndex({ width: "10%" }),
+				{ name: "Column 1", field: "col1", width: "30%" },
+				{ name: "Column 2", field: "col2", width: "30%" },
+				{ name: "Column 3", field: "col3", width: "30%" }
+			],[
+				{ name: "Column 4", field: "col4", colSpan: 4 }
+			]
+		];
+
+		gridLayout = [{
+			// First, our view using the _CheckBoxSelector custom type
+			type: "dojox.grid._CheckBoxSelector"
+		},
+			cells
+		];
+
+		var data = [
+			{ id: 0, col1: "normal", col2: false, col3: "new", col4: "But are not followed by two hexadecimal"},
+			{ id: 1, col1: "important", col2: false, col3: "new", col4: "Because a % sign always indicates"},
+			{ id: 2, col1: "important", col2: false, col3: "read", col4: "Signs can be selectively"},
+			{ id: 3, col1: "note", col2: false, col3: "read", col4: "However the reserved characters"},
+			{ id: 4, col1: "normal", col2: false, col3: "replied", col4: "It is therefore necessary"},
+			{ id: 5, col1: "important", col2: false, col3: "replied", col4: "To problems of corruption by"},
+			{ id: 6, col1: "note", col2: false, col3: "replied", col4: "Which would simply be awkward in"}
+		];
+
+		var objectStore = new Memory({data:data});
+
+		var test_store = new ObjectStore({objectStore: objectStore});
+
+		// create the grids.
+		var grid = new DataGrid({
+			store: test_store,
+			structure: cells,
+			rowSelector: "20px",
+			"class": "grid"
+		}, "grid");
+		grid.startup();
+
+		var grid2 = new DataGrid({
+			store: test_store,
+			structure: gridLayout,
+			"class": "grid"
+		}, "grid2");
+		grid2.startup();
+
+		function reportSelection(node){
+			var items = this.selection.getSelected();
+			var tmp = baseArray.map(items, function(item){
+				return item.id;
+			}, this);
+			var msg = "You have selected row" + ((tmp.length > 1) ? "s ": " ");
+			node.innerHTML = msg + tmp.join(", ");
+		}
+		grid.on("SelectionChanged",
+				lang.hitch(grid, reportSelection, document.getElementById("results")), true);
+		grid2.on("SelectionChanged",
+				lang.hitch(grid2, reportSelection, document.getElementById("results2")), true);
+
+	});
+</script>
+</body>
+</html>
