@@ -1,0 +1,29 @@
+/* Any demo specific styling needed for this tutorial only */
+#panel {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 30%;
+    width: 65%;
+    height: 90%;
+}
+.resultPanel {
+    padding: 5px 10px;
+    border: 2px inset #999;
+    background-color: #eee;
+    overflow: auto;
+}
+#panel li {
+    margin-bottom: 0.3em;
+}
+.datelabel {
+    font-weight: bold;
+    display: block;
+}
+#outbox {
+    
+}
+dl dd {
+	margin-left:0.5em;
+	margin-bottom:1em;
+}
