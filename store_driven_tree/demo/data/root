@@ -1,0 +1,20 @@
+{
+	"name": "US Government",
+	"id": "root",
+	"children": [
+		{
+			"name": "Congress",
+			"id": "congress",
+			"children": true
+		},
+		{
+			"name": "Executive",
+			"id": "exec",
+			"children": true
+		},
+		{
+			"name": "Judicial",
+			"id": "judicial"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+[
+	{
+		"name": "US Government",
+		"id": "root"
+	},
+		{
+			"name": "Congress",
+			"id": "congress",
+			"parent": "root"
+		},
+			{
+				"name": "House of Representatives",
+				"id": "house",
+				"parent": "congress"
+			},
+			{
+				"name": "Senate",
+				"id": "senate",
+				"parent": "congress"
+			},
+		{
+			"name": "Executive",
+			"id": "exec",
+			"parent": "root"
+		},
+			{
+				"name": "President",
+				"id": "pres",
+				"parent": "exec"
+			},
+			{
+				"name": "Vice President",
+				"id": "vice-pres",
+				"parent": "exec"
+			},
+			{
+				"name": "Secretary of State",
+				"id": "state",
+				"parent": "exec"
+			},
+			{
+				"name": "Cabinet",
+				"id": "cabinet",
+				"parent": "exec"
+			},
+				{
+					"name": "National Security Council",
+					"id": "security",
+					"parent": "cabinet"
+				},
+				{
+					"name": "Council of Economic Advisers",
+					"id": "economic",
+					"parent": "cabinet"
+				},
+				{
+					"name": "Office of Management and Budget",
+					"id": "budget",
+					"parent": "cabinet"
+				},
+		{
+			"name": "Judicial",
+			"id": "judicial",
+			"parent": "root"
+		}
+]
+
