@@ -1,0 +1,51 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: More Dijit TextBoxes</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<style>
+		body > div { margin-bottom:20px; }
+	</style>
+</head>
+<body class="claro">
+<h1>dijit/form/NumberTextBox, dijit/form/CurrencyTextBox, dijit/form/TimeTextBox, dijit/form/DateTextBox</h1>
+<div>
+	<label for="number">Age:</label>
+	<input id="number" type="text" value="54" required="true" data-dojo-type="dijit/form/NumberTextBox">
+</div>
+<div>
+	<label for="currency">Annual Salary:</label>
+	<input id="currency"  value="54775.53" required="true"
+		   data-dojo-type="dijit/form/CurrencyTextBox"
+		   data-dojo-props="
+						constraints:{fractional:true},
+						currency:'USD',
+						invalidMessage:'Invalid amount. Cents are mandatory.'">
+</div>
+<div>
+	<label for="time">Start Time:</label>
+	<input id="time" required="true" data-dojo-type="dijit/form/TimeTextBox"
+		   data-dojo-props="
+					constraints: {
+						timePattern: 'HH:mm:ss',
+						clickableIncrement: 'T00:15:00',
+						visibleIncrement: 'T00:15:00',
+						visibleRange: 'T01:00:00'
+					},
+					invalidMessage:'Invalid time.'">
+</div>
+<div>
+	<label for="date">Start Date:</label>
+	<input id="date" data-dojo-type="dijit/form/DateTextBox" value="2011-09-15">
+</div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
+<script>
+	// load requirements for declarative widgets in page content
+	require(["dojo/parser", "dijit/form/NumberTextBox", "dijit/form/CurrencyTextBox", "dijit/form/TimeTextBox", "dijit/form/DateTextBox", "dojo/domReady!"]);
+</script>
+</body>
+</html>

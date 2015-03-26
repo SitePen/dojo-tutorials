@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Dijit Buttons</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+</head>
+<body class="claro">
+<h1>Demo: dijit/form/Button</h1>
+<p>
+	Below, we see <code>dijit/form/Button</code> in two forms: as a standard button, and
+	using an icon with no label.  Be sure to open the console to see messages when clicking
+	the buttons!
+</p>
+<div>
+	<button id="btn" data-dojo-type="dijit/form/Button"
+			data-dojo-props="
+					onClick:function(){ console.log('First button was clicked!'); }">
+		Click Me!
+	</button>
+	<button id="btn2" data-dojo-type="dijit/form/Button"
+			data-dojo-props="
+					iconClass:'dijitIconNewTask',
+					showLabel:false,
+					onClick:function(){ console.log('Second button was clicked!'); }">
+		Click Me!
+	</button>
+</div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
+<script>
+	// load requirements for declarative widgets in page content
+	require(["dojo/parser", "dijit/form/Button", "dojo/domReady!"]);
+</script>
+</body>
+</html>
