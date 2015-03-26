@@ -1,0 +1,16 @@
+/* Any demo specific styling needed for this tutorial only */
+.qhead	{
+	display:inline-block;
+	width:100px;
+}
+
+#formResultNode	{ padding:10px; background:#eee; border:1px solid #ccc; display:none; }
+
+
+#availabilityNode { padding-left:20px; }
+.demoAvailable	{ color:green; }
+.demoTaken		{ color:red; }
+
+#tweetsHolder		{  }
+#tweetsHolder ul	{ list-style-type:none; margin:0; padding:0; }
+#tweetsHolder ul li	{ background:#cbe4ff; padding:5px; border-radius:5px; margin-bottom:5px; }
