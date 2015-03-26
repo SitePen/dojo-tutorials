@@ -1,0 +1,84 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Real-Time Stores</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+</head>
+<body>
+<h1>Demo: Real-Time Stores</h1>
+<div id="container"></div>
+<button id="dow-jones">put() Dow Jones index</button>
+<button id="timed-notifications">Start Timed Notifications</button>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="async: true"></script>
+<script>
+	var marketStore;
+	require(["dojo/store/Memory", "dojo/store/Observable", "dojo/query", "dojo/dom", "dojo/dom-construct", "dojo/domReady!"],
+			function(Memory, Observable, query, dom, domConstruct){
+				var data = [
+					{"name": "Dow Jones", "index": 12197.88, "date": new Date()},
+					{"name": "Nasdaq", "index": 2730.68, "date": new Date()},
+					{"name": "S&P 500", "index": 1310.19, "date": new Date()}
+				];
+				// create the store with the data
+				marketStore = new Memory({data: data, idProperty: "name"});
+				// wrap the store with Observable to make it possible to monitor:
+				marketStore = Observable(marketStore);
+
+				function viewResults(results){
+					var container = dom.byId("container");
+					var rows = [];
+
+					// functions called within observe callback below
+					function addRow(market, i){
+						// insert row into DOM, and also into our internal array
+						rows.splice(i, 0, domConstruct.create("div", {
+							innerHTML: market.name + " index: " + market.index.toFixed(2) + " at: " + market.date.toLocaleTimeString()
+						}, container, i));
+					}
+					function removeRow(i){
+						// remove row from DOM and array (splice returns the removed items)
+						domConstruct.destroy(rows.splice(i, 1)[0]);
+					}
+
+					// add initial items, and handle future changes
+					results.forEach(addRow);
+					results.observe(function(market, removedFrom, insertedInto){
+						// this will be called any time a market is added, removed, or updated
+						if(removedFrom > -1){
+							removeRow(removedFrom);
+						}
+						if(insertedInto > -1){
+							addRow(market, insertedInto);
+						}
+					}, true); // we can indicate to be notified of object updates as well
+				}
+
+				var results = marketStore.query({});
+				viewResults(results);
+
+				query("#timed-notifications").on("click", function(){
+					setInterval(function(){
+						// choose a market randomly
+						var market = data[Math.floor(Math.random() * 3)];
+						// change it randomly
+						market.index += Math.random() - 0.5;
+						// update date
+						market.date = new Date();
+						// notify of the change
+						marketStore.notify(market, market.name);
+					}, 1000); // every second
+				});
+				query("#dow-jones").on("click", function(){
+					var dowJones = marketStore.get("Dow Jones");
+					dowJones.index = parseFloat(prompt("New index for Dow Jones")) || 0;
+					dowJones.date = new Date();
+					// we just do a put, the viewer automatically updates
+					marketStore.put(dowJones);
+				});
+			});
+</script>
+</body>
+</html>
