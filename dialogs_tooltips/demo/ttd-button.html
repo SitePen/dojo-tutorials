@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Button Dropdown</title>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+</head>
+<body class="claro">
+<h1>Demo: Button Dropdown</h1>
+<p>Please log into your account.</p>
+<div data-dojo-type="dijit/form/DropDownButton">
+	<span>Login</span><!-- Text for the button -->
+	<!-- The dialog portion -->
+	<div data-dojo-type="dijit/TooltipDialog" id="ttDialog">
+		<strong><label for="email" style="display:inline-block;width:100px;">Email:</label></strong>
+		<div data-dojo-type="dijit/form/TextBox" id="email"></div>
+		<br />
+		<strong><label for="pass" style="display:inline-block;width:100px;">Password:</label></strong>
+		<div data-dojo-type="dijit/form/TextBox" id="pass"></div>
+		<br />
+		<button data-dojo-type="dijit/form/Button" data-dojo-props="onClick:doAlert" type="submit">Submit</button>
+	</div>
+</div>
+
+<!-- load dojo and provide config via data attribute -->
+<!-- load dojo -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script>
+	// Require the Button, TooltipDialog, DropDownButton, and TextBox classes
+	require(["dojo/parser", "dijit/form/Button", "dijit/form/DropDownButton", "dijit/TooltipDialog", "dijit/form/TextBox", "dojo/domReady!"],
+			function(parser){
+				// Alerter
+				parser.parse();
+			});
+	function doAlert() {
+		alert('Logging in!');
+	}
+</script>
+</body>
+</html>

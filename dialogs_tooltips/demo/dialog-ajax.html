@@ -1,0 +1,46 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Ajax Dialog with Black Underlay</title>
+
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<style>
+		/* colors the underlay black instead of white
+		 * We're using '.claro .dijitDialogUnderlay' as our selector,
+		 * to match the specificity in claro.css */
+		.claro .dijitDialogUnderlay { background:#000; }
+	</style>
+</head>
+<body class="claro">
+<h1>Demo: Ajax Dialog with Black Underlay</h1>
+<p>Click the button below to show a dialog which loads its content via Ajax.</p>
+
+<button onclick="showDialog();">Load Ajax Dialog</button>
+
+<div class="dijitHidden">
+	<div data-dojo-type="dijit/Dialog" style="width:600px;" data-dojo-props="title:'Ajax Dialog',href:'dialog-ajax-content.html',loadingMessage:'Loading dialog content...'" id="ajaxDialog"></div>
+</div>
+
+<!-- load dojo and provide config via data attribute -->
+<!-- load dojo -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script>
+	// Require the Dialog class
+	require(["dijit/registry", "dojo/parser", "dijit/Dialog", "dojo/domReady!"], function(registry, parser){
+		// Show the dialog
+		showDialog = function() {
+			registry.byId("ajaxDialog").show();
+		}
+		// Hide the dialog
+		hideDialog = function() {
+			registry.byId("ajaxDialog").hide();
+		}
+
+		parser.parse();
+	});
+</script>
+</body>
+</html>
