@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Event Delegation with dojo/on</title>
+
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+</head>
+<body>
+<h1>Demo: Event Delegation with dojo/on</h1>
+<div id="parentDiv">
+	<button id="button1" class="clickMe">Click me</button>
+	<button id="button2" class="clickMe">Click me also</button>
+	<button id="button3" class="clickMe">Click me too</button>
+	<button id="button4" class="clickMe">Please click me</button>
+</div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="async: true"></script>
+<script>
+
+	require(["dojo/on", "dojo/dom", "dojo/query", "dojo/domReady!"], function(on, dom) {
+		var myObject = {
+			id: "myObject",
+			onClick: function(evt){
+				alert("The scope of this handler is " + this.id);
+			}
+		};
+		var div = dom.byId("parentDiv");
+		on(div, ".clickMe:click", myObject.onClick);
+	});
+</script>
+</body>
+</html>
