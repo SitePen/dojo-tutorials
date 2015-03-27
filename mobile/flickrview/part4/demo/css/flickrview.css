@@ -1,0 +1,35 @@
+/* Dojo Mobile tutorial | Flickrview */
+.photoListItem {
+    line-height: 20px;
+    padding-top: 5px;
+    height: 85px;
+}
+.photoSummary {
+    padding-left: 85px;
+    padding-bottom: 0;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+    height: 100%;
+}
+.photoTitle {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.publishedTime {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+.author {
+    font-size: 0.6em;
+    color: #777;
+    font-weight: normal;
+    position: absolute;
+    bottom: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.summaryClear {
+    clear: both;
+}

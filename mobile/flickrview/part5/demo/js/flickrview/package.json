@@ -1,0 +1,16 @@
+{
+	"name": "flickrview",
+	"version":"1.0",
+	"description": "A Dojo Mobile application that displays images from flickr.",
+	"licenses": [
+		{
+			"type": "AFLv2.1",
+			"url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+		},
+		{
+			"type": "BSD",
+			"url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+		}
+	],
+	"dojoBuild": "flickrview.profile.js"
+}
