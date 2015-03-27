@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: GFX Surface</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+</head>
+<body>
+<h1>Demo: GFX Surface</h1>
+
+<div id="surfaceElement" style="border:1px solid #ccc;width:400px;height:400px;"></div>
+
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
+<script>
+
+	require(["dojox/gfx", "dojo/domReady!"], function(gfx) {
+		surface = gfx.createSurface("surfaceElement", 400, 400);
+	});
+
+</script>
+</body>
+</html>
