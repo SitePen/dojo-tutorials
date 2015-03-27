@@ -4,9 +4,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>dojox/mobile Demo</title>
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
 	</head>
 	<body>
-
 		<div id="settings" data-dojo-type="dojox/mobile/View" data-dojo-props="selected: true">
 			<h1 data-dojo-type="dojox/mobile/Heading">Settings</h1>
 			<ul data-dojo-type="dojox/mobile/RoundRectList">
@@ -73,7 +73,7 @@
 		<script>
 
 			require(["dojox/mobile/parser", "dojox/mobile", "dojox/mobile/deviceTheme", "dojox/mobile/compat", "dojo/domReady!"],
-			function(parser, ready) {
+			function(parser) {
 				parser.parse();
 			});
 		</script>

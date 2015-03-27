@@ -6,6 +6,8 @@ One of the things that differentiates Dojo from many other JavaScript libraries 
 
 Up to this point, you may have only been working with the base functionality of Dojo.  You might have ventured off into other parts of the core of Dojo, which would be modules contained in the `/dojo/` directory of the distribution and have modules IDs that start with `dojo/*`.  If you [downloaded](/download/) a SDK distribution of Dojo, or checked out a version from SVN, you would notice that `dojo` isn't the only package:
 
+![Dojo release](images/dojoRelease.png)
+
 It is unlikely you have gotten this far and not nosed around little in different parts of Dojo, but just in case, let's go over some of the basics again.
 
 ### Packages and Modules
