@@ -1,0 +1,22 @@
+<div class="leftpanel mblBackground">
+	<script type="dojo/require">
+		has: "dojo/has"
+	</script>
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		${nls.contacts}
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				style="position: absolute; right: 0"
+				data-dojo-props="target: 'details',
+					transitionOptions: { params: { edit: true } }"
+				data-dojo-attach-point="add">${nls.add}</button>
+	</div>
+	<div data-dojo-type="dojox/mobile/EdgeToEdgeStoreList"
+			data-dojo-mixins="dojox/mobile/FilteredListMixin"
+			data-dojo-attach-point="contacts"
+			data-dojo-props="store: this.loadedStores.contacts,
+				labelProperty: 'displayName',
+				itemRenderer: this.ContactListItem,
+				placeHolder: '${nls.search}', stateful: !has('phone')">
+	</div>
+</div>

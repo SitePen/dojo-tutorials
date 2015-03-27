@@ -1,0 +1,126 @@
+{
+	"id": "contactsApp",
+	"dependencies": [
+		"dojo/store/Observable",
+		"dojox/mobile/Heading",
+		"dojox/mobile/ScrollableView",
+		"dojox/mobile/ToolBarButton"
+	],
+	"controllers": [
+		"dojox/app/controllers/Load",
+		"dojox/app/controllers/Transition",
+		"dojox/app/controllers/Layout"
+	],
+	"defaultView": "list",
+	"stores": {
+		"contacts": {
+			"type": "dojo/store/Memory",
+			"has": {
+				"cordova": {
+					"type": "dcordova/ContactsStore",
+					"params": { "displayName": true }
+				}
+			},
+			"observable": true,
+			"params": {
+				"data": [
+					{
+						"id": "1",
+						"displayName": "Ed Chatelain",
+						"name": {
+							"givenName": "Ed",
+							"familyName": "Chatelain"
+						},
+						"emails": [
+							{
+								"type": "home",
+								"value": "me@myhome.com"
+							}
+						],
+						"phoneNumbers": [
+							{
+								"type": "home",
+								"value": "10-20-30-40"
+							},
+							{
+								"type": "work",
+								"value": "11-22-33-44"
+							}
+						],
+						"organizations": []
+					},
+					{
+						"id": "2",
+						"displayName": "Christophe Jolif",
+						"name": {
+							"givenName": "Christophe",
+							"familyName": "Jolif"
+						},
+						"emails": [
+							{
+								"type": "home",
+								"value": "him@myhome.com"
+							},
+							{
+								"type": "work",
+								"value": "dev@dev.com"
+							}
+						],
+						"phoneNumbers": [
+							{
+								"type": "home",
+								"value": "11-43-81-63-19"
+							},
+							{
+								"type": "work",
+								"value": "11-48-07-13-38"
+							}
+						],
+						"organizations": []
+					}
+				]
+			}
+		}
+	},
+	"nls": "contactsApp/nls/contacts",
+	"defaultTransition": "slide",
+	"views": {
+		"list": {
+			"controller": "contactsApp/views/list",
+			"template": "contactsApp/views/list.html",
+			"nls": "contactsApp/nls/list",
+			"has": {
+				"!phone": {
+					"constraint": "left"
+				}
+			}
+		},
+		"details": {
+			"controller": "contactsApp/views/details",
+			"template": "contactsApp/views/details.html",
+			"nls": "contactsApp/nls/details"
+		}
+	},
+	"has": {
+		"html5history": {
+			"controllers": [
+				"dojox/app/controllers/History"
+			]
+		},
+		"!html5history": {
+			"controllers": [
+				"dojox/app/controllers/HistoryHash"
+			]
+		},
+		"!cordova": {
+			"dependencies": [
+				"dojo/store/Memory"
+			]
+		},
+		"cordova": {
+			"dependencies": [
+				"dcordova/ContactsStore"
+			]
+		}
+	}
+}

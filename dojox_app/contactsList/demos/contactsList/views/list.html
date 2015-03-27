@@ -1,0 +1,15 @@
+<div class="mblBackground">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		Contacts
+	</div>
+	<div id="selectionMade">None selected.</div>
+	<div data-dojo-type="dojox/mobile/EdgeToEdgeStoreList"
+			data-dojo-mixins="dojox/mobile/FilteredListMixin"
+			data-dojo-attach-point="contacts"
+			data-dojo-props="store: this.loadedStores.contacts,
+				labelProperty: 'displayName',
+				itemRenderer: this.ContactListItem,
+			 	placeHolder: 'Search', stateful: false">
+	</div>
+</div>

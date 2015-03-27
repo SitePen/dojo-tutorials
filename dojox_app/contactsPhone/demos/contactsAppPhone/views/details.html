@@ -1,0 +1,97 @@
+<div>
+	<div data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="backButton"
+				data-dojo-props="arrow: 'left', target: 'list'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.contacts}</button>
+		<button data-dojo-type="dojox/mobile/ToolBarButton" data-dojo-attach-point="cancelButton"
+				style="position: absolute; left: 0; display: none"
+				data-dojo-props="target: 'details', transitionOptions: { params: { edit: false } }">
+			${nls.cancel}
+		</button>
+		${nls.details}
+		<button data-dojo-type="dojox/mobile/ToolBarButton" data-dojo-attach-point="editButton"
+				style="position: absolute; right: 0"
+				data-dojo-props="target: 'details', transitionOptions: { params: { } }"></button>
+	</div>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<div data-dojo-type="dojox/mobile/FormLayout"
+			 data-dojo-attach-point="formLayout">
+			<div>
+				<label for="firstname">${nls.name}</label>
+				<fieldset>
+					<input id="firstname" name="firstname"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+								placeHolder: '${nls.first}'"
+						   data-dojo-attach-point="firstname">
+					<input id="lastname" name="lastname"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.last}'"
+						   data-dojo-attach-point="lastname">
+				</fieldset>
+			</div>
+			<div>
+				<label for="company">${nls.company}</label>
+				<fieldset>
+					<input id="company" name="company"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.company}'"
+						   data-dojo-attach-point="company">
+				</fieldset>
+			</div>
+			<div>
+				<label for="phone-home">${nls.home}</label>
+				<fieldset>
+					<input id="phone-home" name="phone-home"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.phone}'"
+						   data-dojo-attach-point="phonehome">
+				</fieldset>
+			</div>
+			<div>
+				<label for="phone-work">${nls.work}</label>
+	   			<fieldset>
+        	   		<input id="phone-work" name="phone-work"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.phone}'"
+						   data-dojo-attach-point="phonework">
+	   			</fieldset>
+		   </div>
+			<div>
+				<label for="mail-home">${nls.home}</label>
+				<fieldset>
+					<input id="mail-home" name="mail-home"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.mail}'"
+						   data-dojo-attach-point="mailhome">
+				</fieldset>
+			</div>
+			<div>
+				<label for="mail-work">${nls.work}</label>
+				<fieldset>
+					<input id="mail-work" name="mail-work"
+						   data-dojo-type="dojox/mobile/TextArea"
+						   data-dojo-props="readOnly: true,
+						   		placeHolder: '${nls.mail}'"
+						   data-dojo-attach-point="mailwork">
+				</fieldset>
+			</div>
+			<div>
+				<div></div>
+				<button data-dojo-type="dojox/mobile/Button"
+						data-dojo-attach-point="deleteButton"
+						data-dojo-attach-event="onClick: _deleteContact"
+						class="mblRedButton" style="padding: 0 10px">
+					${nls.remove}
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

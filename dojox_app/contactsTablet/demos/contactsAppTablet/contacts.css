@@ -1,0 +1,41 @@
+@media screen and (min-width: 501px) {
+  	.leftpanel {
+    	width: 250px;
+		border-right:1px solid black;
+		z-index:100;
+	}
+	.backButton {
+		display: none;
+	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+.mblFormLayout {
+	margin: 8px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.mblFormLayout > * > *:first-child {
+	font-weight: normal;
+	color: gray;
+}
+
+.mblFormLayoutReadOnly .readOnlyHidden {
+	display: none !important;
+}
+
+.mblFormLayoutReadOnly .mblTextArea {
+	background-color: rgba(0, 0, 0, 0);
+	border-width: 0;
+}
+.android_theme .mblFormLayoutReadOnly .mblTextArea {
+	background-color: #d3d3d3;
+}
+
+.mblFormLayout .mblTextArea {
+	font-weight: bold;
+}

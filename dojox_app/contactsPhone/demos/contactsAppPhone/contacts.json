@@ -1,0 +1,106 @@
+{
+	"id": "contactsApp",
+	"dependencies": [
+		"dojo/store/Observable",
+		"dojox/mobile/Heading",
+		"dojox/mobile/ScrollableView",
+		"dojox/mobile/ToolBarButton",
+		"dojo/store/Memory"
+	],
+	"controllers": [
+		"dojox/app/controllers/Load",
+		"dojox/app/controllers/Transition",
+		"dojox/app/controllers/Layout"
+	],
+	"defaultView": "list",
+	"stores": {
+		"contacts": {
+			"type": "dojo/store/Memory",
+			"observable": true,
+			"params": {
+				"data": [
+					{
+						"id": "1",
+						"displayName": "Ed Chatelain",
+						"name": {
+							"givenName": "Ed",
+							"familyName": "Chatelain"
+						},
+						"emails": [
+							{
+								"type": "home",
+								"value": "me@myhome.com"
+							}
+						],
+						"phoneNumbers": [
+							{
+								"type": "home",
+								"value": "10-20-30-40"
+							},
+							{
+								"type": "work",
+								"value": "11-22-33-44"
+							}
+						],
+						"organizations": []
+					},
+					{
+						"id": "2",
+						"displayName": "Christophe Jolif",
+						"name": {
+							"givenName": "Christophe",
+							"familyName": "Jolif"
+						},
+						"emails": [
+							{
+								"type": "home",
+								"value": "him@myhome.com"
+							},
+							{
+								"type": "work",
+								"value": "dev@dev.com"
+							}
+						],
+						"phoneNumbers": [
+							{
+								"type": "home",
+								"value": "11-43-81-63-19"
+							},
+							{
+								"type": "work",
+								"value": "11-48-07-13-38"
+							}
+						],
+						"organizations": []
+					}
+				]
+			}
+		}
+	},
+	"nls": "contactsAppPhone/nls/contacts",
+	"defaultTransition": "slide",
+	"views": {
+		"list": {
+			"controller": "contactsAppPhone/views/list",
+			"template": "contactsAppPhone/views/list.html",
+			"nls": "contactsAppPhone/nls/list"
+		},
+		"details": {
+			"controller": "contactsAppPhone/views/details",
+			"template": "contactsAppPhone/views/details.html",
+			"nls": "contactsAppPhone/nls/details"
+		}
+	},
+	"has": {
+		"html5history": {
+			"controllers": [
+				"dojox/app/controllers/History"
+			]
+		},
+		"!html5history": {
+			"controllers": [
+				"dojox/app/controllers/HistoryHash"
+			]
+		}
+	}
+}
