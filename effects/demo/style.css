@@ -1,0 +1,36 @@
+button {
+	-webkit-transition: background-color 0.2s linear;
+	border-radius:4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	background-color: #E4F2FF;
+	background-position: center top;
+	background-repeat: repeat-x;
+	border: 1px solid #769DC0;
+	padding: 2px 8px 4px;
+	font-size:1em;
+}
+button:hover {
+	background-color: #AFD9FF;
+	color: #000000;
+}
+.red-block {
+	width: 200px;
+	height: 300px;
+	background-color: red;
+	margin:2em;
+	text-align:center;
+}
+.wipe {
+	font-size: 28px;
+	height: auto;
+	width: auto;
+}
+.slide {
+	position: absolute;
+	left: 0;
+	top: 100px;
+}
+.chain {
+	opacity: 0;
+}

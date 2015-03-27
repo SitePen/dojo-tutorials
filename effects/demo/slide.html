@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tutorial: fx.slideTo</title>
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+</head>
+<body>
+<h1>Tutorial: fx.slideTo</h1>
+<button id="slideAwayButton">Slide block away</button>
+<button id="slideBackButton">Slide block back</button>
+
+<div id="slideTarget" class="red-block slide">
+	A red block
+</div>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="async: true, isDebug: true"></script>
+<script>
+	require(["dojo/fx", "dojo/on", "dojo/dom", "dojo/domReady!"], function(fx, on, dom) {
+		var slideAwayButton = dom.byId("slideAwayButton"),
+				slideBackButton = dom.byId("slideBackButton"),
+				slideTarget = dom.byId("slideTarget");
+
+		on(slideAwayButton, "click", function(evt){
+			fx.slideTo({ node: slideTarget, left: "200", top: "200" }).play();
+		});
+		on(slideBackButton, "click", function(evt){
+			fx.slideTo({ node: slideTarget, left: "0", top: "100" }).play();
+		});
+	});
+</script>
+</body>
+</html>
