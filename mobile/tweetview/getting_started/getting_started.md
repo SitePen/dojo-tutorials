@@ -265,3 +265,11 @@ Here are a few more resources about `dojox/mobile`:
 ### Keep Going!
 
 Now that we've covered the basics of the using `dojox/mobile`, the next series of posts will focus on creating a dynamic, data-driven mobile web application called TweetView. TweetView will feature numerous `dojox/mobile` widgets and work with both Android and iOS-based devices. The web application will pull tweets from Twitter and format them into an elegant and functional user interface.
+
+### The TweetView Series
+
+1.  [Getting Started with dojox/mobile](/documentation/tutorials/1.10/mobile/tweetview/getting_started/)
+2.  [Introduction to TweetView](/documentation/tutorials/1.10/mobile/tweetview/intro_tweetview/)
+3.  [Getting Started with TweetView: Tweets and Mentions](/documentation/tutorials/1.10/mobile/tweetview/starting_tweetview/)
+4.  [Creating the Settings View](/documentation/tutorials/1.10/mobile/tweetview/settings/)
+5.  [Android, Packaging, and Review](/documentation/tutorials/1.10/mobile/tweetview/packaging/)
