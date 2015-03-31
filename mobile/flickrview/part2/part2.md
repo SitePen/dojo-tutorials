@@ -83,8 +83,6 @@ application. Let's add a few cache-preventing META tags to our HTML page before 
 <meta http-equiv="pragma" content="no-cache">
 ```
 
-These META tags will be hugely helpful during development. They will need to be removed once TweetView goes into production.
-
 ### FlickrView HTML structure
 
 The first part, [Getting Started with Dojo Mobile](../part1), provided a solid Dojo Mobile application template 
