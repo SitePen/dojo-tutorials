@@ -77,30 +77,30 @@ We created the basic Tweets and Mentions template view in [the previous tutorial
 
 ```html
 <!-- tweets view -->
-<div id="tweets" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props="selected: true">
-    <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed: 'top'">
+<div id="tweets" data-dojo-type="dojox/mobile/ScrollableView" data-dojo-props="selected: true">
+    <h1 data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
         <!-- the refresh button -->
-        <div data-dojo-type="dojox.mobile.ToolBarButton" class="mblDomButton tweetviewRefresh"
+        <div data-dojo-type="dojox/mobile/ToolBarButton" class="mblDomButton tweetviewRefresh"
                     style="float:right;" data-dojo-props="icon:'images/refresh.png'" ></div>
         Tweets
     </h1>
-    <ul data-dojo-type="dojox.mobile.RoundRectList">
-        <li data-dojo-type="dojox.mobile.ListItem">
+    <ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="dojox/mobile/ListItem">
             Tweet item here
         </li>
     </ul>
 </div>
 
 <!-- mentions view -->
-<div id="mentions" data-dojo-type="dojox.mobile.ScrollableView">
-    <h1 data-dojo-type="dojox.mobile.Heading" data-dojo-props="fixed: 'top'">
+<div id="mentions" data-dojo-type="dojox/mobile/ScrollableView">
+    <h1 data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
         <!-- the refresh button -->
-        <div data-dojo-type="dojox.mobile.ToolBarButton" class="mblDomButton tweetviewRefresh"
+        <div data-dojo-type="dojox/mobile/ToolBarButton" class="mblDomButton tweetviewRefresh"
                     style="float:right;" data-dojo-props="icon:'images/refresh.png'"></div>
         Mentions
     </h1>
-    <ul data-dojo-type="dojox.mobile.RoundRectList">
-        <li data-dojo-type="dojox.mobile.ListItem">
+    <ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="dojox/mobile/ListItem">
             Mention tweet item here
         </li>
     </ul>
