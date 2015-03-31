@@ -1,0 +1,31 @@
+[
+	{
+		"name": "Brian Arnold",
+		"avatar": "./images/brian_arnold/avatar.jpg",
+		"bio": "Brian Arnold is a software engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc</a>. He has a lovely wife, two cute dogs, is an active member of (and presenter at) <a href=\"http://webuquerque.com\">Webuquerque</a>, and ranks among the top 3% of fake guitarists in Rock Band."
+	},
+	{
+		"name": "Bryan Forbes",
+		"avatar": "./images/bryan_forbes/avatar.jpg",
+		"bio": "Bryan Forbes has used Dojo since 2006 and became a Dojo committer shortly thereafter. He rewrote Dojo's effects system for the 0.3 release and currently maintains the DataGrid. He is a senior software engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc</a>."
+	},
+	{
+		"name": "David Walsh",
+		"bio": "David Walsh is a software engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc.</a> that blogs frequently about Dojo <a href=\"http://davidwalsh.name/tutorials/dojo\">at his blog</a>."
+	},
+	{
+		"name": "Kris Zyp",
+		"avatar": "./images/kris_zyp/avatar.jpg",
+		"bio": "Kris Zyp is a Dojo committer and senior software engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc.</a>"
+	},
+	{
+		"name": "Sam Foster",
+		"avatar": "./images/sam_foster/avatar.jpg",
+		"bio": "Sam Foster is a Dojo committer and senior software engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc.</a>"
+	},
+	{
+		"name": "Tom Trenka",
+		"avatar": "./images/tom_trenka/avatar.jpg",
+		"bio": "Tom Trenka is one of the original Dojo committers, owner of many DojoX modules and a Senior Software Engineer at <a href=\"http://www.sitepen.com\">SitePen, Inc</a>. He is also a former university lecturer and an accomplished musician."
+	}
+]

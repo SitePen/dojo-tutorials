@@ -1,0 +1,21 @@
+/* AuthorWidget.css */
+.authorWidget {
+	border: 1px solid black;
+	width: 400px;
+	padding: 10px;
+	overflow: hidden; /* I hear this helps clear floats inside */
+}
+
+.authorWidget h3 {
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: center;
+	margin: 0;
+}
+
+.authorWidgetAvatar {
+	float: left;
+	margin: 4px 12px 6px 0;
+	max-width: 75px;
+	max-height: 75px;
+}

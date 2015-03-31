@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Custom Widget</title>
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="../../../_common/demo.css" media="screen">
+</head>
+<body>
+<h1>Demo: Custom Widget</h1>
+<div id="authorContainer"></div>
+<!-- Configure Dojo -->
+<script>
+	var dojoConfig = (function(){
+		var base = location.href.split("/");
+		base.pop();
+		base = base.join("/");
+		return {
+			async: true,
+			isDebug: true,
+			packages: [{
+				name: "myApp",
+				location: base + "/myApp"
+			}]
+		};
+	})();
+</script>
+<!-- load dojo -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script>
+	// Bring in our custom widget
+	require(["dojo/request", "dojo/dom", "dojo/_base/array", "myApp/widget/AuthorWidget", "dojo/domReady!"],
+		function(request, dom, arrayUtil, AuthorWidget){
+			// Load up our authors
+			request("myApp/data/authors.json", {
+				handleAs: "json"
+			}).then(function(authors){
+				// Get a reference to our container div
+				var authorContainer = dom.byId("authorContainer");
+
+				arrayUtil.forEach(authors, function(author){
+					// Create our widget and place it
+					var widget = new AuthorWidget(author).placeAt(authorContainer);
+				});
+			});
+		});
+</script>
+</body>
+</html>
