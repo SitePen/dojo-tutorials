@@ -75,3 +75,7 @@ html, body {
 	max-height: 60px;
 	overflow: hidden;
 }
+
+.nano-image {
+	position: absolute;
+}

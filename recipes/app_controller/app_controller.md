@@ -25,7 +25,7 @@ components themselves.
 
 [![Flickr Viewer with Fruit Photo](images/fruitLightbox.png)](demo/demo.html)
 
-[View Final Demo](demo/demo.php)
+[View Final Demo](demo/demo.html)
 
 ### Discussion
 

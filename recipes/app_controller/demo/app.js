@@ -19,7 +19,6 @@ define([
 	"demo/module"
 ], function(dom, domStyle, domClass, domConstruct, domGeometry, string, on, aspect, keys, config, lang, baseFx, registry, parser, ContentPane, FlickrRestStore, LightboxNano) {
 	var store = null,
-		preloadDelay = 500,
 		flickrQuery = config.flickrRequest || {},
 
 		itemTemplate = '<img src="${thumbnail}">${title}',
@@ -119,7 +118,7 @@ define([
 			// summary: 
 			// 		Show the full-size image indicated by the given url
 			lightbox.show({ 
-				href: url, origin: originNode 
+				href: url, origin: originNode
 			});
 		},
 		createTab = function (term, items) {
@@ -154,8 +153,7 @@ define([
 			}
 		},
 		onListClick = function (evt) {
-			var node = evt.target, 
-				containerNode = registry.byId("tabs").containerNode;
+			var containerNode = registry.byId("tabs").containerNode;
 
 			for(var node = evt.target; (node && node !==containerNode); node = node.parentNode){
 				if(domClass.contains(node, itemClass)) {
