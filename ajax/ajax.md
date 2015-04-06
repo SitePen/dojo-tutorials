@@ -1,3 +1,7 @@
+---
+Tags:  Fundamentals
+...
+
 ## Ajax with dojo/request
 
 [dojo/request](http://dojotoolkit.org/reference-guide/1.10/dojo/request.html) is a new API (introduced in Dojo 1.8) for making requests to a server from the client.  This tutorial introduces the `dojo/request` API:  you'll learn how to request a text file from the server, handle errors if they occur, post information to the server, take advantage of the notify API, and use the registry to use the same code to request data from different locations.
