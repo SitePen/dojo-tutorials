@@ -1,5 +1,5 @@
 ---
-Tags:  Fundamentals
+Category:  Fundamentals
 ...
 
 ## Ajax with dojo/request
