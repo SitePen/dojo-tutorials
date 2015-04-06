@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Using dojo/query
 
 In this tutorial, we will learn about DOM querying and how the `dojo/query` module allows you to easily select nodes and work with them.

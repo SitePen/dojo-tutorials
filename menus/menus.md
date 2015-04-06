@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Dijit Menus
 
 Dijit is a powerful framework for allowing us to create very clean, professional-looking interfaces. Sometimes, that means that we need a desktop-like experience with a menu of options. With dijit/Menu, we have a very powerful yet easy-to-use tool to create these interfaces.

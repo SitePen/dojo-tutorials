@@ -1,3 +1,7 @@
+---
+Category:  Modules
+...
+
 ## Advanced AMD Usage
 
 Dojo now supports modules written in the Asynchronous Module Definition (AMD) format, which makes code easier to author and debug. In this tutorial, we learn all about this new module format, and explore how to write an application using it.

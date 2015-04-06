@@ -1,4 +1,8 @@
-## Datagrid
+---
+Category:  Working with Data
+...
+
+## Introduction to Datagrid
 
 The DataGrid is the central component of many applications due to its effective and usable presentation of tabular data. In this tutorial we will look at how to define a grid's layout and discuss the scrolling mechanism the DataGrid uses.
 

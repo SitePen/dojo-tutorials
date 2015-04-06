@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Animation
 
 In this tutorial, you will learn how to use Dojo to create and combine effects for customized animation of elements on the page.
@@ -22,7 +26,7 @@ require(["dojo/fx", "dojo/dom", "dojo/domReady!"], function(fx, dom) {
 });
 ```
 
-But elements have countless properties with unit values that we could potentially animate. Suppose we wanted to flash the background, or move the node around on the screen? For that we need Dojo's generic animation utility, `baseFx.animateProperty`. 
+But elements have countless properties with unit values that we could potentially animate. Suppose we wanted to flash the background, or move the node around on the screen? For that we need Dojo's generic animation utility, `baseFx.animateProperty`.
 
 ### Animating Properties
 
@@ -119,7 +123,7 @@ Almost all of the easings have names that end in either "In" or "Out" — or bot
 
 Traditional animation software typically uses a timeline to model what is changing over what period, and it's normal to have things moving simultaneously, as well as one after the other. As we've seen in the earlier Effects tutorial, Dojo provides a mechanism for each: `fx.combine` and `fx.chain`. Let's see how to put the pieces together.
 
-For this demo, the setup is that we have two boxes of content which we want to swap. To highlight the change we'll also fade out the background color behind them. Here's the markup we'll be working with: 
+For this demo, the setup is that we have two boxes of content which we want to swap. To highlight the change we'll also fade out the background color behind them. Here's the markup we'll be working with:
 
 ```html
 <button id="swapButton">Swap</button>
@@ -165,7 +169,7 @@ require(["dojo/_base/fx", "dojo/fx", "dojo/fx/easing", "dojo/dom-style", "dojo/d
 ```
 
 Being able to compose complex animations from distinct pieces is immensely useful. We've broken the animation out into separate pieces here, so we can keep the position-swapping code generic and reusable.
-The implementation for the `swapAnim` function looks like this: 
+The implementation for the `swapAnim` function looks like this:
 
 ```js
 function swapAnim(node1, node2) {

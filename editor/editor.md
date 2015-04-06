@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Dijit Editor
 
 Dijit's Editor widget is everything a developer looks for in a <abbr title="What You See is What You Get">WYSIWYG</abbr>

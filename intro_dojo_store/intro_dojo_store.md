@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Dojo Object Store
 
 Separation of concerns is a fundamental aspect of good programming. Keeping presentation distinct from the data model is a key separation to employ. The Dojo object store architecture establishes a consistent interface for data interaction inspired by the HTML5 object store API.

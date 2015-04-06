@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Real-time Stores
 
 Web applications based on real-time stores give users a level of immediacy not possible with traditional web applications, allowing them to see data as it changes. The Dojo object store interface, which is the data model foundation of Dojo applications, was designed to support real-time data updates. In this tutorial we will see how to leverage the notification system to interact with real-time widgets.

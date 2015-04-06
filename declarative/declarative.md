@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Using Declarative Syntax
 
 One of the quickest ways to start using Dojo, especially with widgets like Dijit, is to leverage the `dojo/parser` and declarative syntax.  This tutorial will help you get the most out of this style of programming.

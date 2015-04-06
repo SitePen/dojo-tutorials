@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Charting
 
 Presenting statistical data in a readable, eye-catching manner is important, but it can also be difficult. The `dojox/charting` system was created to alleviate those pains by allowing developers to create dynamic, unique, and functional charts from varying sets of data. In addition, `dojox/charting` provides numerous themes and chart types to allow developers to display their data any way they'd like. This tutorial will show you how to create basic charts with varying data, plots, axes, and themes.
@@ -402,7 +406,7 @@ You can learn more about an [axis' settings including customization of colors, f
 * **stroke** - Color and width of lines (ex: `{ color:"red", width: 2 }`)
 * **fill** - Fill color of bar / line / pie piece
 
-Adding a series can be as easy as: 
+Adding a series can be as easy as:
 
 ```js
 // Add a simple axis to the chart

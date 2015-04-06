@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Advanced Dijit Selects using Stores
 
 In this tutorial, we will further explore Dijit's select widgets&mdash;particularly how to create instances programmatically, populating their drop-down lists from dojo/data stores.

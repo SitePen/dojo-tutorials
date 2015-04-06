@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Dojo DOM Functions
 
 In this tutorial, you'll learn about how to use Dojo to manipulate the DOM in a simple, cross-browser way. Using basic DOM knowledge and only a few Dojo functions, you will be able to efficiently create, read, update and delete elements in the page on the fly.

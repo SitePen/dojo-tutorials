@@ -1,3 +1,7 @@
+---
+Category:  Getting Started
+...
+
 ## Configuring Dojo with dojoConfig
 
 The `dojoConfig` object (formerly `djConfig`) allows you to set options and default behavior for various aspects of the toolkit.  In this tutorial we'll explore what's possible and how you can put dojoConfig to use in your code.

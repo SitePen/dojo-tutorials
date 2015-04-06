@@ -1,3 +1,7 @@
+---
+Category:  dojox/app
+...
+
 ## Getting Started with dojox/app
 
 In this tutorial, we will cover how to use dojox/app and dojox/mobile to create a simple one page Contacts List Application.

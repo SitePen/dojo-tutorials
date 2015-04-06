@@ -1,3 +1,7 @@
+---
+Category:  Modules
+...
+
 ## CDN
 
 From time to time, it can be useful to load Dojo modules from a CDN. Doing so and using local modules at the same time can seem impossible, however. This tutorial demonstrates how it can be done.

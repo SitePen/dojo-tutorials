@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## HTML5 Multi-File Uploader
 
 The HTML5 multi-file uploader is a widget that creates a stylable file-input button, with optional mult-file selection, using only HTML elements. Non-HTML5 browsers have fallback options of Flash or an iframe.

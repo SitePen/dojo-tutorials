@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Events with Dojo
 
 In this tutorial, we will be exploring `dojo/on` and how Dojo makes it easy to connect to DOM events.  We will also explore Dojo's publish/subscribe framework: `dojo/topic`.

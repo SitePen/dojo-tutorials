@@ -1,24 +1,28 @@
+---
+Category:  Mobile
+...
+
 ## Part 2 - Developing a Dojo Mobile Application: FlickrView
 
-The first article in our series, [Getting Started with Dojo Mobile](../part1), 
-detailed the fundamental concepts and usage of the Dojo Toolkit's `dojox/mobile` library. In the remaining posts in 
-this series, we'll embark on creating our own fully functional Dojo Mobile web application called 
-**FlickrView**. This post will focus on familiarizing you with what FlickrView is, what we want it to do, and we'll 
+The first article in our series, [Getting Started with Dojo Mobile](../part1),
+detailed the fundamental concepts and usage of the Dojo Toolkit's `dojox/mobile` library. In the remaining posts in
+this series, we'll embark on creating our own fully functional Dojo Mobile web application called
+**FlickrView**. This post will focus on familiarizing you with what FlickrView is, what we want it to do, and we'll
 get started on building the mobile application's HTML and CSS layout.
 
 ### What is FlickrView?
 
-FlickrView is the name of the application we're going to create using Dojo Mobile and a few custom Dojo resources of 
-our own. FlickrView won’t simply be a small exercise in using Dojo Mobile; FlickrView will be a useful, fully-functioning 
+FlickrView is the name of the application we're going to create using Dojo Mobile and a few custom Dojo resources of
+our own. FlickrView won’t simply be a small exercise in using Dojo Mobile; FlickrView will be a useful, fully-functioning
 mobile web application. Our goals for FlickrView are as follows:
 
 *   Utilize Dojo Mobile's widgets to create a cross-device compatible mobile application
 *   Add our own custom elements, controls, and functionality to the web application
 *   Connect to [Flickr open API](http://www.flickr.com/services/feeds/docs/photos_public/) using
-[JSONP](http://dojotoolkit.org/reference-guide/dojo/request/script.html#dojo-request-script) to retrieve public 
+[JSONP](http://dojotoolkit.org/reference-guide/dojo/request/script.html#dojo-request-script) to retrieve public
 photos that match search criteria.
 
-Investing time in brainstorming about the design and architecture of the application before jumping into coding is 
+Investing time in brainstorming about the design and architecture of the application before jumping into coding is
 even more critical when creating mobile applications due to the restrictions on bandwidth.
 
 ### Application Design and requirements
@@ -27,39 +31,39 @@ We’ll be creating FlickrView from the following sketches:
 
 ![](resources/SettingsView.png)![](resources/FeedView.png)![](resources/DetailsView.png)
 
-The first view to show up (the default view) is the **Feed view** which displays a list of photos according to search 
-criteria. The header contains a button on the left to display the **Settings view**. Another button on the right allows 
-to refresh the content of the view. The selection of a list item triggers a transition to the **Details view** with the 
+The first view to show up (the default view) is the **Feed view** which displays a list of photos according to search
+criteria. The header contains a button on the left to display the **Settings view**. Another button on the right allows
+to refresh the content of the view. The selection of a list item triggers a transition to the **Details view** with the
 full description of the photo.
 
-Settings view options will be derived from 
+Settings view options will be derived from
 [Flickr public feed JSON query parameters:](http://www.flickr.com/services/feeds/docs/photos_public/)
 
 *   **tags** - defines the_tags_ query parameter
 *   **selection** - defines the_tagmode_ query parameter
-*   **feed language** - defines the_lang_ query parameter. The list of languages conforms to 
+*   **feed language** - defines the_lang_ query parameter. The list of languages conforms to
 [Flickr accepted languages values.](http://www.flickr.com/services/feeds/)
 
 Published date, author, and photo description will result from the JSON request. Will go through this in detail later on.
 
 ### Mobile Development Guidelines
 
-Hold up! Before we jet off into coding FlickrView, there are a few things we need to remember about Dojo Mobile and 
+Hold up! Before we jet off into coding FlickrView, there are a few things we need to remember about Dojo Mobile and
 mobile web development in general:
 
 *   **Size Matter**<br>
-Every byte counts when it comes to creating mobile applications, so taking shortcuts you wouldn't otherwise take in a 
-standard web app is acceptable. Remember that every dependency (in the form of Dojo classes, base or otherwise) you add 
+Every byte counts when it comes to creating mobile applications, so taking shortcuts you wouldn't otherwise take in a
+standard web app is acceptable. Remember that every dependency (in the form of Dojo classes, base or otherwise) you add
 increases download time to your users.
 *   **Best Practices: Mobile != Web**<br>
-Best practices for JavaScript and any JavaScript toolkit dictate certain best practices. A few examples include not 
-extending natives, not using global variables, and creating very flexible/generic classes. These best practices can 
+Best practices for JavaScript and any JavaScript toolkit dictate certain best practices. A few examples include not
+extending natives, not using global variables, and creating very flexible/generic classes. These best practices can
 cost you lots of extra code, so you may have to loosen your rules to create an efficient mobile app.
 *   **Keep It Simple**<br>
-Creating an overly complex mobile application with a million custom styles and widgets and layouts will get you in 
+Creating an overly complex mobile application with a million custom styles and widgets and layouts will get you in
 trouble quickly. Creating a simple layout, then adding to it, is the optimal way to code mobile web applications.
 
-We **will not** be throwing all best practices out the door with FlickrView. We will, however, find a solid balance 
+We **will not** be throwing all best practices out the door with FlickrView. We will, however, find a solid balance
 of size savings vs. strict Dojo best practices.
 
 ### Organizing your project
@@ -68,13 +72,13 @@ of size savings vs. strict Dojo best practices.
 
 The application HTML will be at the root level and JavaScript, images and stylesheets living in dedicated directories.
 
-We choose to name our application HTML file `flickrview.html` and put its CSS resources in `css/flickrview.css`. 
+We choose to name our application HTML file `flickrview.html` and put its CSS resources in `css/flickrview.css`.
 We will add images and javascript resources later.
 
 ### Mobile Devices and Caching
 
-Most mobile devices rely heavily on caching to ease the burden of data transfer. That's great for production apps 
-but we're in the initial development phase so caching will be nothing short of frustrating when testing the 
+Most mobile devices rely heavily on caching to ease the burden of data transfer. That's great for production apps
+but we're in the initial development phase so caching will be nothing short of frustrating when testing the
 application. Let's add a few cache-preventing META tags to our HTML page before developing the Settings view:
 
 ```html
@@ -85,7 +89,7 @@ application. Let's add a few cache-preventing META tags to our HTML page before 
 
 ### FlickrView HTML structure
 
-The first part, [Getting Started with Dojo Mobile](../part1), provided a solid Dojo Mobile application template 
+The first part, [Getting Started with Dojo Mobile](../part1), provided a solid Dojo Mobile application template
 with the required theme stylesheet and SCRIPT tags from which to start from.
 
 Here is now how should look our HTML before we define the three Views (SettingsView, FeedView and DetailsView):
@@ -253,8 +257,8 @@ With this template in place, let's focus on putting together all our views: Feed
 Note that content is static. Getting content from Flickr is covered in the next part of this series:
 [FlickrView: Implementing FeedView](../part3).
 
-*   Instead of using the widget **dojox/mobile/View **, we have choose to use **dojox/mobile/ScrollableView**. 
-ScrollableView allows the header to be fixed to the top of the view while the content will scroll. It is particularly 
+*   Instead of using the widget **dojox/mobile/View **, we have choose to use **dojox/mobile/ScrollableView**.
+ScrollableView allows the header to be fixed to the top of the view while the content will scroll. It is particularly
 well adapted for small screen devices or when the view contains an undetermined number of items.
 *   The header is rendered by the widget **dojox/mobile/Heading **. We also added **dojox/mobile/ToolBarButton** widgets:
 
@@ -263,12 +267,12 @@ well adapted for small screen devices or when the view contains an undetermined 
 *   ![](resources/doneBtn.png) transition to the_Feed_ view
 *   ![](resources/backBtn.png) transition back to the_Feed_ view
 
-*   Note the attribute **data-dojo-props** of **ToolBarButton**: refresh and settings buttons are rendered using 
+*   Note the attribute **data-dojo-props** of **ToolBarButton**: refresh and settings buttons are rendered using
 images we put in our images directory, and declared in the_icon_ property.
-*   Also, note how transitions are declared in **data-dojo-props**.`moveTo` defines the target,`transition` defines 
+*   Also, note how transitions are declared in **data-dojo-props**.`moveTo` defines the target,`transition` defines
 the type of transition and`transitionDir` defines the direction of the transition. See
 [dojox/mobile/heading](http://dojotoolkit.org/reference-guide/dojox/mobile/Heading.html) for more details.
-*   On the _Feed_ view we declared 2 **dojox/mobile/ListItem** widgets for the sake of the mockup. Eventually we will 
+*   On the _Feed_ view we declared 2 **dojox/mobile/ListItem** widgets for the sake of the mockup. Eventually we will
 programmatically generate ListItems from the result of a JSONP request.
 *   Custom CSS are used only to format the ListItem. All other formatting styles are already provided by Dojo Mobile theme.
 
@@ -297,8 +301,8 @@ Our application layout is now complete!
 
 ### FlickrView Has Taken Shape!
 
-Creating the basic layout of FlickrView was simple: add ScrollingView and ToolBar widgets. I'd like to point out that 
-every pieces of our application is currently included within dojox/mobile: Headings, Toolbars, TextBox… they're all 
+Creating the basic layout of FlickrView was simple: add ScrollingView and ToolBar widgets. I'd like to point out that
+every pieces of our application is currently included within dojox/mobile: Headings, Toolbars, TextBox… they're all
 there to be quickly implemented!
 
 Now we want to extend ScrollableView to specialize our views:
@@ -344,9 +348,9 @@ require([
 
 **Congratulation!** Our mock application now uses dedicated classes for the feed and settings view.
 
-In this part we introduced the mobile application we are building with Dojo Mobile: FlickrView. 
-Starting from the application design and requirements, we built the general layout template and came up with a mockup 
-of the application. We also talked about best practices and we extended ScrollableView so we are now ready to implement 
+In this part we introduced the mobile application we are building with Dojo Mobile: FlickrView.
+Starting from the application design and requirements, we built the general layout template and came up with a mockup
+of the application. We also talked about best practices and we extended ScrollableView so we are now ready to implement
 FlickrView to make it work as expected!
 
 Looking forward to the next part in our FlickrView series, where we will implement FeedView to dynamically:
@@ -369,6 +373,6 @@ Download [Part 2 - Developing a Dojo Mobile Application: FlickrView](resources/D
 
 * [Part 1 - Getting Started with Dojo Mobile](../part1/)
 * [Part 2 - Developing a Dojo Mobile Application: FlickrView](../part2/)
-* [Part 3 - FlickrView: Implementing FeedView](../part3/)  
+* [Part 3 - FlickrView: Implementing FeedView](../part3/)
 * [Part 4 - FlickrView: Implementing SettingsView](../part4/)
 * [Part 5 - Build FlickrView for production](../part5/)

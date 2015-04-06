@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Connecting a Store to a DataGrid
 
 The DataGrid is the central component of many applications due to its effective and usable presentation of tabular data. In this tutorial we will look at how to connect the grid to a store for quick and efficient data retrieval and updating.

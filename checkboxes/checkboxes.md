@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Checkboxes
 
 Dijit's collection of form widgets provides a convenient and flexible range of options for creating rich forms. In this tutorial we will look at the options available for checkbox-style interaction.

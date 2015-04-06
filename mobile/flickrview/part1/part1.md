@@ -1,3 +1,7 @@
+---
+Category:  Mobile
+...
+
 ## Part 1 - Getting Started with Dojo Mobile
 
 Content on the web is evolving at a rapid pace, and the path is quickly moving towards mobile devices. As with many
@@ -59,9 +63,9 @@ Let's set up each one of these pieces separately, discussing details about each 
 
 #### The Theme
 
-Dojo Mobile is able to **dynamically apply a visual theme** to your application in order to give it a native 
-look depending on the browser user agent. To apply a native theme (that is, a theme that makes your application 
-look like a native application on the mobile device on which it is displayed), you just need to include the 
+Dojo Mobile is able to **dynamically apply a visual theme** to your application in order to give it a native
+look depending on the browser user agent. To apply a native theme (that is, a theme that makes your application
+look like a native application on the mobile device on which it is displayed), you just need to include the
 following statement in your HTML pages:
 
 ```html
@@ -94,11 +98,11 @@ Lets developers explicitly require `dojox/mobile/parser` and call `parser.parse(
 
 Now, the `require` part:
 
-*   We explicitly require `dojox/mobile/parser` and call `parser.parse()`. The parser will analyze the dojo 
+*   We explicitly require `dojox/mobile/parser` and call `parser.parse()`. The parser will analyze the dojo
 HTML tags (widgets) that we will define in the next part.
-*   The compatibility module `dojox/mobile/compat` is required to ensure functional compatibility when the 
+*   The compatibility module `dojox/mobile/compat` is required to ensure functional compatibility when the
 client is not WebKit-based, such as non-CSS3 desktop PC browsers.
-*   The `dojo/domReady!` is a special kind of AMD module (called a loader_plugin_noticeable by the 
+*   The `dojo/domReady!` is a special kind of AMD module (called a loader_plugin_noticeable by the
 trailing ‘**!**’ character) and is required to ensure our function that runs the parser is called once the DOM is ready.
 
 ```js
@@ -112,7 +116,7 @@ require([
 });
 ```
 
-Requiring `dojox/mobile/compat` is not necessary but is certainly best practice and it does not degrade the 
+Requiring `dojox/mobile/compat` is not necessary but is certainly best practice and it does not degrade the
 performance of mobile browsers.
 
 #### Dojo Mobile template
@@ -173,10 +177,10 @@ As you've seen, there are minimal requirements to create a Dojo Mobile-ready pag
 *   **TabBar & TabBarButton** - Tabbed content management
 *   ...and more!
 
-Remember that all widgets are styled to look like the device's OS. Also remember that you will likely want to 
+Remember that all widgets are styled to look like the device's OS. Also remember that you will likely want to
 make your icons and widgets work and look like each device you intend to support.
 
-Now that you're acquainted with some of the widgets baked into Dojo Mobile, let's create a basic view with 
+Now that you're acquainted with some of the widgets baked into Dojo Mobile, let's create a basic view with
 a **Heading**, a few **ListItems**, and a **Switch:**
 
 ```html
@@ -192,18 +196,18 @@ a **Heading**, a few **ListItems**, and a **Switch:**
 		<div data-dojo-type="dojox/mobile/Switch"></div>
 	</li>
 	<!-- list item with an icon that slides this view away and then loads another page -->
-	<li data-dojo-type="dojox/mobile/ListItem" 
+	<li data-dojo-type="dojox/mobile/ListItem"
 	    data-dojo-props="icon:'images/icon-2.png', rightText:'mac'">Wi-Fi</li>
 	<!-- list item with an icon that slides to a view called "general" -->
-	<li data-dojo-type="dojox/mobile/ListItem" 
+	<li data-dojo-type="dojox/mobile/ListItem"
 	    data-dojo-props="icon:'images/icon-3.png', rightText:'AcmePhone', moveTo:'general'">Carrier</li>
 </ul>
 </div>
 ```
 
-Note the custom attributes used within the widgets. A complete listing of custom options/attributes is available within 
-the [dojox/mobile API docs](/api/dojox/mobile.html) for each widget. Note in particular 
-`data-dojo-props="selected:true"`: It tells Dojo Mobile to display this view by default. Also note that the markup 
+Note the custom attributes used within the widgets. A complete listing of custom options/attributes is available within
+the [dojox/mobile API docs](/api/dojox/mobile.html) for each widget. Note in particular
+`data-dojo-props="selected:true"`: It tells Dojo Mobile to display this view by default. Also note that the markup
 provides for search engine friendly content strategies!
 
 To make this work you’ll need to require the widgets used by the application:
@@ -261,14 +265,14 @@ As usual, you must require the new widget `dojox/mobile/RoundRectCategory` you j
 
 [View Demo](demo/sample2.html)
 
-Dojo Mobile makes creating the basic elements of a mobile application a breeze! While your mobile application will 
-be more complex than our sample above, it's important to note that Dojo Mobile provides the basic themes, widgets, 
+Dojo Mobile makes creating the basic elements of a mobile application a breeze! While your mobile application will
+be more complex than our sample above, it's important to note that Dojo Mobile provides the basic themes, widgets,
 methodology for creating multi-view web applications.
 
 ### Keep Going!
 
-Now that we've covered the basics of the using Dojo Mobile, the next series of posts will focus on creating 
-a dynamic, data-driven mobile application called **FlickrView**. It will feature numerous Dojo Mobile widgets and work 
+Now that we've covered the basics of the using Dojo Mobile, the next series of posts will focus on creating
+a dynamic, data-driven mobile application called **FlickrView**. It will feature numerous Dojo Mobile widgets and work
 with Android, iOS-based, BlackBerry or WindowsPhone devices.
 
 ### Download The Source
@@ -288,6 +292,6 @@ Download [Part 1 - Getting Started with Dojo Mobile](resources/DojoMobilePart1.z
 
 * [Part 1 - Getting Started with Dojo Mobile](../part1/)
 * [Part 2 - Developing a Dojo Mobile Application: FlickrView](../part2/)
-* [Part 3 - FlickrView: Implementing FeedView](../part3/)  
+* [Part 3 - FlickrView: Implementing FeedView](../part3/)
 * [Part 4 - FlickrView: Implementing SettingsView](../part4/)
 * [Part 5 - Build FlickrView for production](../part5/)

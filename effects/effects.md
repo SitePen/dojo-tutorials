@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Dojo Effects
 
 In this tutorial, we will explore the effects that Dojo provides, which allow us to jazz up your page or application!

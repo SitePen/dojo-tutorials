@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Creating Template-based Widgets
 
 In this tutorial, you'll learn about the importance of Dijit's `_TemplatedMixin` mixin, and how to use templates to quickly create your own custom widgets.

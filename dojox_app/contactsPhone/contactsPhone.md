@@ -1,3 +1,7 @@
+---
+Category:  dojox/app
+...
+
 ## Updating the Contacts App for a Phone
 
 In the previous tutorial, [Getting Started with dojox/app](/documentation/tutorials/1.10/dojox_app/contactsList/),

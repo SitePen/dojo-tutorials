@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Dojo Deferreds and Promises
 
 Deferreds are a wonderful and powerful thing, but they're really an implementation of something greater - a promise. In this tutorial, we'll cover what that means, as well as some additional pieces of Dojo's API to work with both promises and regular values in a uniform way.

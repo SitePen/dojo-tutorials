@@ -1,3 +1,7 @@
+---
+Category:  Modules
+...
+
 ## Dojo and Node.js
 
 JavaScript is not just for the client side.  With the rise of technologies like Node.js, server side JavaScript is a

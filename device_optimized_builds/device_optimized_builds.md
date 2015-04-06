@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Feature Detection and Device Optimized Builds
 
 Dojo now uses the popular `has()` pattern for feature detection in

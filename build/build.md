@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Building Web Apps
 
 Dojo's build system provides a way to "build" Dojo and your other JavaScript resources and CSS files, so they can be more efficiently used in a production environment by your applications.

@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## A Loading Overlay
 
 In this tutorial, we'll create an overlay that puts us in control of the user experience while the loading of dependencies and rendering of the UI takes place in the background.

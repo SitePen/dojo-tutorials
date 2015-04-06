@@ -1,4 +1,8 @@
-## Getting Jiggy with JSONP
+---
+Category:  Fundamentals
+...
+
+## JSONP with dojo/request
 
 JSON with Padding (JSONP) has become a common technique for accessing cross-domain resources from the browser.  In this tutorial you learn what JSONP is and how you can use it to retrieve data from cross-domain sources.
 

@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Keyboard Events with Dojo
 In this tutorial, we will be exploring Dojo's event normalization and `dojo/keys` and how Dojo makes it easy to handle
 keyboard events.

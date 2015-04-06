@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Layout with Dijit
 
 Creating dynamic and interactive layouts is a challenge common to any graphical user interface. We have a lot of ability to create layout with HTML and CSS. Where CSS leaves off, Dojo picks up with a set of extensible widgets as a part of Dijit - Dojo's UI framework. In this tutorial, we'll explain how Dijit addresses common layout needs and see how easy it can be to create even complex layouts with just a few flexible widgets.

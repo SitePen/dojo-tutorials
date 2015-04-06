@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Vector Graphics with Dojo's GFX
 
 Vector graphics can have many advantages, including flawless scaling with maximum portability.

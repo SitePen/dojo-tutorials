@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Advanced Charting
 
 While most developers only need basic charts, `dojox/charting` is capable of highly advanced charts:  charts with animations, charts that respond to changes in data, and charts that respond to events. In this tutorial, you will learn about using some these advanced capabilities within `dojox/charting`.
@@ -382,7 +386,7 @@ It's important to realize that every element within a chart is just a GFX graphi
 
 ### Conclusion
 
-Creating basic Dojo charts isn't always enough.  Dynamic data calls for dynamic charts, and the Dojo Toolkit's `dojox/charting` library provides all the tools to make your charts as flexible as your data.  
+Creating basic Dojo charts isn't always enough.  Dynamic data calls for dynamic charts, and the Dojo Toolkit's `dojox/charting` library provides all the tools to make your charts as flexible as your data.
 
 ### dojox/charting Resources
 

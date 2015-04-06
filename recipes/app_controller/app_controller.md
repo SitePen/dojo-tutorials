@@ -1,26 +1,30 @@
+---
+Category:  Creating Apps
+...
+
 ## Application Controller
 
-A page-level controller is the glue that ties together modular functionality to make a living, breathing application. 
-We'll implement configuration and an explicit lifecycle over a loosely coupled architecture to assemble a 
+A page-level controller is the glue that ties together modular functionality to make a living, breathing application.
+We'll implement configuration and an explicit lifecycle over a loosely coupled architecture to assemble a
 single-page-application of many moving parts.
 
 ### Introduction
 
-As a modular toolkit, much of Dojo's documentation and demos concern those individual components in isolation. 
-But when you need to assemble together components to make an application, you need some framework to hang those pieces 
+As a modular toolkit, much of Dojo's documentation and demos concern those individual components in isolation.
+But when you need to assemble together components to make an application, you need some framework to hang those pieces
 on, and flexibility in how they are wired together.
 
 ### The Problem
 
-Best practices suggest keeping a separation of concerns, and to maintain the modularity of the pieces that comprise 
-the application. So, how do you manage the loading and initialization of disparate components and wire them up together 
+Best practices suggest keeping a separation of concerns, and to maintain the modularity of the pieces that comprise
+the application. So, how do you manage the loading and initialization of disparate components and wire them up together
 to get data flowing and user interactions handled in a way that is itself flexible and modular?
 
 ### The Solution
 
-A page-level controller is an object that has responsibility for the management of the page or application at a 
-large-grain level. It assumes control of the lifecycle of the application and the loading of its parts. It initializes 
-and connects together those parts in the correct sequence and keeps specific knowledge of this big picture out of the 
+A page-level controller is an object that has responsibility for the management of the page or application at a
+large-grain level. It assumes control of the lifecycle of the application and the loading of its parts. It initializes
+and connects together those parts in the correct sequence and keeps specific knowledge of this big picture out of the
 components themselves.
 
 [![Flickr Viewer with Fruit Photo](images/fruitLightbox.png)](demo/demo.html)
@@ -29,10 +33,10 @@ components themselves.
 
 ### Discussion
 
-Dojo does not express an opinion on how you should assemble applications out of the components it provides. It has 
-all the nuts, bolts and moving parts, but no blueprints. As a Toolkit, this is by design. You can sprinkle a little 
-Dojo onto an otherwise static web page, or you can build a complete GUI application framework with it, using the design 
-patterns and implementation of your choice. For this tutorial, though, we'll take a sample somewhere in the middle, and 
+Dojo does not express an opinion on how you should assemble applications out of the components it provides. It has
+all the nuts, bolts and moving parts, but no blueprints. As a Toolkit, this is by design. You can sprinkle a little
+Dojo onto an otherwise static web page, or you can build a complete GUI application framework with it, using the design
+patterns and implementation of your choice. For this tutorial, though, we'll take a sample somewhere in the middle, and
 build a concrete implementation that meets some key requirements:
 
 *   Leverage the Dojo package system to facilitate module loading and optimization via the build scripts.
@@ -185,8 +189,8 @@ function(config, FlickrRestStore, LightboxNano) {
 });
 ```
 
-The `demo/app` module gets the query details it will eventually pass to the Flickr store from the Dojo config object. 
-That keeps a lot of the kind of specifics that might change in between testing, development and production out of the 
+The `demo/app` module gets the query details it will eventually pass to the Flickr store from the Dojo config object.
+That keeps a lot of the kind of specifics that might change in between testing, development and production out of the
 module itself. The `dojoConfig` declaration looks like this:
 
 ```js
@@ -214,7 +218,7 @@ While this demo does use a specific API key, in order to properly use the Flickr
 register and use your own API key. Also note that parseOnLoad alone does not make the `dojo/parser` resource available;
 the `dijit` resources we initially required (`BorderContainer`, etc.) makes the parser available.
 
-For more on `dojo/_base/config`, check out the [tutorial](../../dojo_config/) and the 
+For more on `dojo/_base/config`, check out the [tutorial](../../dojo_config/) and the
 [reference guide](/reference-guide/1.10/dojo/_base/config.html).
 
 The`demo/app` module is where we'll keep the data store reference, as well as the query information we have that will be
@@ -230,10 +234,10 @@ componentization of the application functionality.
 
 ### Step 3: Hooking up Search
 
-The controller has the knowledge needed to create the store requests. It connects up the events from the search bar to 
+The controller has the knowledge needed to create the store requests. It connects up the events from the search bar to
 invoke the `doSearch` method, where it assembles a request object and calls the store's `fetch` method with it.
 
-Note that when the search successfully completes, we're not processing it here directly, but handing each result item 
+Note that when the search successfully completes, we're not processing it here directly, but handing each result item
 over to our `renderItem` method, helping us to preserve separation of concerns.
 
 ```js
@@ -384,7 +388,7 @@ startup = function() {
 },
 ```
 
-The `startup` method represents the point in the sequence when the data store is initialized, and in which we create 
+The `startup` method represents the point in the sequence when the data store is initialized, and in which we create
 all the widgets (via `.initUI`), so it's a good place to hook in the loading indicator.
 
 Keeping it at arm's length like this not only allows us to gather together all the loading-related connections into once
@@ -445,7 +449,7 @@ Now that the layout classes are available within the `demo/module` resource, the
 
 ### Step 8: Further Improvements
 
-There's clearly a lot of questions this implementation doesn't yet answer. We're not really handling errors here, and 
+There's clearly a lot of questions this implementation doesn't yet answer. We're not really handling errors here, and
 user experience overall could be improved. One quick thing we can do to improve the responsiveness of the application is
 to start preloading the larger images so they are already cached on disk when the user clicks to view them.
 
@@ -492,9 +496,9 @@ define([
 	"dojox/data/FlickrRestStore",
 	"dojox/image/LightboxNano",
 	"demo/module"
-], function(dom, domStyle, domClass, domConstruct, domGeometry, string, on, aspect, keys, config, lang, 
+], function(dom, domStyle, domClass, domConstruct, domGeometry, string, on, aspect, keys, config, lang,
 	baseFx, registry, parser, ContentPane, FlickrRestStore, LightboxNano) {
-    
+
 	var store = null,
 		preloadDelay = 500,
 		flickrQuery = config.flickrRequest || {},
@@ -711,7 +715,7 @@ different, given different requirements or preferences. For example:
 *   We could certainly have created custom widgets to more neatly encapsulate the result listing.
 *   The controller could have been derived from a class.
 *   We could have used a more generic data store, or even the newer `dojo/store` API.
-*   We could have represented the user interface with its own object — sometimes known as the "whole-UI widget" 
+*   We could have represented the user interface with its own object — sometimes known as the "whole-UI widget"
 which the controller would populate and talk to.
 
 But fundamentally, it wouldn't change what we've built here. By defining an explicit sequence of steps for

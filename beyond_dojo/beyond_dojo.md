@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Beyond Dojo
 
 One of the things that differentiates Dojo from many other JavaScript libraries is its scope. While you can simply use the functionality of Dojo base, [DOM](../dom_functions/), [Ajax](../ajax/), [effects](../effects/) and other common functionality, the toolkit provides much, much more. In this tutorial, we'll go on a quick tour of the Dojo Toolkit, to introduce some of the other components that are shipped with each release.
@@ -195,4 +199,4 @@ The new [dstore](https://github.com/sitepen/dstore) package is the successor to 
 
 The Dojo Toolkit is much more than a DOM and Ajax library. While it has feature and API overlaps with other libraries in this space, it is broader in its scope, and digs deeper in many areas to provide useful abstractions, widgets, and tools to help tackle the large and small, simple and complex, common and uncommon.
 
-You won't learn it all at once - or perhaps ever - but as your requirements grow, Dojo grows with you.  
+You won't learn it all at once - or perhaps ever - but as your requirements grow, Dojo grows with you.

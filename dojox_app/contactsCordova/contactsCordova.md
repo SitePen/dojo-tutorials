@@ -1,3 +1,7 @@
+---
+Category:  dojox/app
+...
+
 ## Using dojox/app Build and Cordova
 
 In the previous tutorial, [Updating the Contacts App for a Tablet](/documentation/tutorials/1.10/dojox_app/contactsTablet/),

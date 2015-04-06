@@ -1,32 +1,36 @@
+---
+Category:  Mobile
+...
+
 ## Part 5 - Build FlickrView for production
 
 In the previous parts, [Developing a Dojo Mobile Application](../part2), [Implementing FeedView](../part3) and
-[Implementing Settings View](../part4), we created the HTML, CSS, and JavaScript code required to power the FlickrView 
-mobile application. This tutorial will focus on updating the code for deployment, leveraging the Dojo build system to 
+[Implementing Settings View](../part4), we created the HTML, CSS, and JavaScript code required to power the FlickrView
+mobile application. This tutorial will focus on updating the code for deployment, leveraging the Dojo build system to
 keep the application compact for production, and a basic review of the entire Dojo Mobile-powered application.
 
 ### Dojo Mobile and Builds
 
-Creating a build for Dojo Mobile applications is extremely important because we want our mobile applications to be a 
+Creating a build for Dojo Mobile applications is extremely important because we want our mobile applications to be a
 small as possible. Let's walk through the steps to create a compact build of our Dojo Mobile application: FlickrView.
 
 ### Dojo's Build System
 
 ![](resources/folders.png)
 
-Typical build scripts are found within the Dojo Toolkit's `util/buildscripts`directory, so, for the rest of the 
+Typical build scripts are found within the Dojo Toolkit's `util/buildscripts`directory, so, for the rest of the
 tutorial, you will need a local copy of a Dojo source distribution. If you don't have that already, visit
 [dojotoolkit.org/download](http://dojotoolkit.org/download).
 
-Make sure you get a **source** distribution, that includes the `util` directory. Once you have that, copy the 
-`dojo`, `dijit`, `dojox` and `util` directories into the `js` directory of your sample application. Your file structure 
+Make sure you get a **source** distribution, that includes the `util` directory. Once you have that, copy the
+`dojo`, `dijit`, `dojox` and `util` directories into the `js` directory of your sample application. Your file structure
 should now be as follows.
 
 ### Build Profile
 
-Let's create a build profile for FlickrView. The build profile is a configuration file that says what the build will 
+Let's create a build profile for FlickrView. The build profile is a configuration file that says what the build will
 include, and what options are used. The Dojo build system is fully documented on the
-[Creating Builds tutorial](http://dojotoolkit.org/documentation/tutorials/1.10/build/), we will just explain 
+[Creating Builds tutorial](http://dojotoolkit.org/documentation/tutorials/1.10/build/), we will just explain
 briefly what it contains here.
 
 The profile starts with some **options**:
@@ -34,7 +38,7 @@ The profile starts with some **options**:
 *   `"basePath"` - defines the origin for all the relative paths in this profile;
 *   `"action": "release"` - the standard action for a build
 *   `"releaseDir"` - specifies the directory where the build results will be output
-*   `"cssOptimize"` - option is useful for a mobile build since it makes sure all the CSS files that make up each 
+*   `"cssOptimize"` - option is useful for a mobile build since it makes sure all the CSS files that make up each
 theme are concatenated into one single CSS file
 
 ```js
@@ -56,13 +60,13 @@ var profile = {
 
 Next are the **layers** definition:
 
-In this tutorial, we define only one layer that contains all the modules needed by the application. A layer will result 
-in one `.js` file being generated, and in our case, we define it as the dojo/dojo layer. It will include only the 
+In this tutorial, we define only one layer that contains all the modules needed by the application. A layer will result
+in one `.js` file being generated, and in our case, we define it as the dojo/dojo layer. It will include only the
 Dojo code that we actually use in our application, and the custom code that is specific to our application.
 
-Note that we could have split our applications into multiple layers, for example one layer for the dojo code and one 
-layer for the application code. But in the context of a mobile application deployed on networks with high latencies, 
-having multiple requests could have a significant impact on the overall application launch time. For the same reason, 
+Note that we could have split our applications into multiple layers, for example one layer for the dojo code and one
+layer for the application code. But in the context of a mobile application deployed on networks with high latencies,
+having multiple requests could have a significant impact on the overall application launch time. For the same reason,
 we specify the builder to include the localized bundle into the layer (by means of the `includeLocales` property).
 
 ```js
@@ -102,7 +106,7 @@ Then we define a set of has **features**:
 
 Features are a way to isolate pieces of code that can be conditionally included or excluded (see dojo/has).
 
-For example, we set the `"ie"` feature to `undefined`. By this, we state that we don't want the application to run on 
+For example, we set the `"ie"` feature to `undefined`. By this, we state that we don't want the application to run on
 old Internet Explorer (only on mobile browsers), so we accept that any IE-specific code is excluded from the build.
 
 ```js
@@ -151,7 +155,7 @@ cd js\util\buildscripts
 ```
 
 The build process is a mix of JavaScript and Java (for code minification/optimization) tasks. By default, the unix
-`build.sh` script uses **node.js** as the default runtime if available, or falls back to **Rhino** otherwise 
+`build.sh` script uses **node.js** as the default runtime if available, or falls back to **Rhino** otherwise
 (this choice is motivated by the fact that **node.js** usually much more faster than **Rhino**).
 
 The Windows `build.bat` script, on the other hand, only leverages **Rhino**. But that does not mean you can’t build with
@@ -167,9 +171,9 @@ After the build is completed, navigate to the `release/js/flickrview/` directory
 
 To implement our newly created build files, update `flickrview.html`
 
-First, update the path to Dojo, so that we now use the `dojo.js` file that was created by the build instead of the 
-original `dojo.js`. This corresponds to the `dojo/dojo` layer in our profile, and the resulting file is in 
-`release/js/dojo/dojo.js`, so we update the path of the Dojo script tag accordingly. We don't need to do other modifications 
+First, update the path to Dojo, so that we now use the `dojo.js` file that was created by the build instead of the
+original `dojo.js`. This corresponds to the `dojo/dojo` layer in our profile, and the resulting file is in
+`release/js/dojo/dojo.js`, so we update the path of the Dojo script tag accordingly. We don't need to do other modifications
 since the layer contains all the modules the application needs.
 
 ```html
@@ -195,12 +199,12 @@ Finally, we can also simplify the `dojoConfig` section like this :
 </script>
 ```
 
-A build version of the HTML file, `flickrview-build.html`, is included in the downloadable archive. You can launch this 
+A build version of the HTML file, `flickrview-build.html`, is included in the downloadable archive. You can launch this
 file once you have run the build.
 
 ### Review
 
-FlickrView is complete! Our simple mobile application has been templated (HTML), styled (CSS), coded (JavaScript), 
+FlickrView is complete! Our simple mobile application has been templated (HTML), styled (CSS), coded (JavaScript),
 and built for production!
 
 Let's review what we learned in the process of create FlickrView:
@@ -212,8 +216,8 @@ Let's review what we learned in the process of create FlickrView:
 *   Strategies behind following good JavaScript practices but also keeping code compact and minimized in dependencies
 *   The special build process needed for dojox/mobile applications
 
-In this tutorial, we saw that Dojo Mobile is an outstanding mobile application framework complete with themes and widgets 
-to match mobile device controls. Dojo Mobile is also easy to learn, extend, and dynamically populate with content. 
+In this tutorial, we saw that Dojo Mobile is an outstanding mobile application framework complete with themes and widgets
+to match mobile device controls. Dojo Mobile is also easy to learn, extend, and dynamically populate with content.
 FlickrView, a basic three-view application, was very easy to create, thanks to Dojo Mobile!
 
 ### Download The Source
@@ -231,6 +235,6 @@ Download [Part 5 - Build FlickrView for production](resources/DojoMobilePart5.zi
 
 * [Part 1 - Getting Started with Dojo Mobile](../part1/)
 * [Part 2 - Developing a Dojo Mobile Application: FlickrView](../part2/)
-* [Part 3 - FlickrView: Implementing FeedView](../part3/)  
+* [Part 3 - FlickrView: Implementing FeedView](../part3/)
 * [Part 4 - FlickrView: Implementing SettingsView](../part4/)
 * [Part 5 - Build FlickrView for production](../part5/)

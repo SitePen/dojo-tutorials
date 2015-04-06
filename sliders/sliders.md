@@ -1,4 +1,8 @@
-## Slippin' Sliders with Dijit
+---
+Category:  Widgets
+...
+
+## Sliders with Dijit
 
 The HTML5 specification provides many new features, such as the `<input type="range">` element which allows users to choose from a range of values.  Unfortunately, this new input type is not supported in all browsers, and looks different in each browser that does support it.  That's where Dijit's `HorizontalSlider` and `VerticalSlider` widgets come in: flexible, themeable, and functional.
 

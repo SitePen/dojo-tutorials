@@ -1,3 +1,7 @@
+---
+Category:  Creating Apps
+...
+
 ## Creating a custom widget
 
 In this recipe, we'll be covering how to leverage pieces of Dojo and the Dijit framework to create your own custom widgets, specifically covering use of `dijit/_WidgetBase` and `dijit/_TemplatedMixin` to quickly and easily set up your widget.

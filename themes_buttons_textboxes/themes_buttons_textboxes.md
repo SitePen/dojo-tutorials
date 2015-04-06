@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Dijit Themes, Buttons, and Textboxes
 
 In this tutorial, we will show you the basics of creating and using simple form elements using

@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Form Management with dojox/form/Manager
 
 While there are elements within Dojo to allow for simple form validation, occasionally you may want a more powerful solution. The Dojo Toolkit offers a fantastic solution for detailed form management: `dojox/form/Manager`.

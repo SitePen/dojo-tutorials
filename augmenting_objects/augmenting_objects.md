@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Augmenting Objects
 
 When you’re working with JavaScript, you’re working with objects. The `dojo/_base/lang` resource makes it easy to augment objects and prototypes using `lang.mixin`, `lang.extend`, and `declare.safeMixin` when using `dojo/_base/declare`.

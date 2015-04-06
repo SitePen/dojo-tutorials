@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Dialogs &amp; Tooltips
 
 User interaction is extremely important in building responsive, interactive web applications.  Web browsers provide basic methods for user interaction in the form of alerts and dialogs, but this functionality is neither elegant nor flexible.  With `dijit/Tooltip`, `dijit/Dialog`, and `dijit/TooltipDialog`, Dijit, the Dojo Toolkit's UI framework, provides cross-browser, extendable, and themeable answers to what the browser's basic functionality lacks.  In this tutorial, you'll learn about each of these widgets, sample usages of each, and the ins and outs of creating them.

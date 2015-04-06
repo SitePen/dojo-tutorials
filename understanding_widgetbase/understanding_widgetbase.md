@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Understanding _WidgetBase
 
 In this tutorial, you'll learn what Dijit's `_WidgetBase` module is, and how it serves as the foundation for all widgets in the Dojo Toolkit.

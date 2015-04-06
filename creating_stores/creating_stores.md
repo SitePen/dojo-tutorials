@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Creating Stores
 
 In this tutorial, you'll learn the basic APIs all `dojo/store`s follow and how to create your own store - including how to handle query results.

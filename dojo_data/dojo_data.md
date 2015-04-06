@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Using Dojo Data
 
 Dojo Data is the legacy data interface used to abstract data consumers (like widgets) from the concerns of data providers. While the new object store interface has superseded the `dojo/data` interface, there are a number of existing data stores that implement this API and is used by quite a few existing widgets. Here we will look at the `dojo/data` interface, see how data providers and widgets connect together, and learn how it can be adapted to the new interface.

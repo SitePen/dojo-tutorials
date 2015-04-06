@@ -1,4 +1,8 @@
-## Classy JavaScript with dojo/_base/declare
+---
+Category:  Fundamentals
+...
+
+## Creating Classes
 
 The `dojo/_base/declare` module is the foundation of class creation within the Dojo Toolkit.  `declare` allows for multiple inheritance to allow developers to create flexible code and avoid writing the same code routines.  Dojo, Dijit, and Dojox modules all use `declare`; in this tutorial, you'll learn why you should too.
 

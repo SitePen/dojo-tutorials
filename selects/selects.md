@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Getting Selective with Dijit
 
 In this tutorial, we will explore widgets in the `dijit/form` namespace which enhance the user experience of HTML select elements: `Select`, `FilteringSelect`, and `ComboBox`.

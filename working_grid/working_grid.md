@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Working with the Grid
 
 In this tutorial, you'll learn about the Grid's event system, how to select rows, and how to set up your grid for editing.

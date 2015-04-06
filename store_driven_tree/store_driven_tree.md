@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Connecting a Store to a Tree
 
 The Dojo `Tree` component is a powerful tool for visual presentation of hierarchical data. In this tutorial we will look at how to connect the tree to a store for quick and efficient data drill-down into nested data.

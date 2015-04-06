@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## NodeList Extensions
 
 Dojo includes a range of extensions to the `NodeList` collection that is used by `dojo/query`. In this tutorial, we’ll look at what extended functionality is available and how to put it to good use.

@@ -1,3 +1,7 @@
+---
+Category:  DOM Basics
+...
+
 ## Arrays
 
 In this tutorial, you'll learn about Dojo's cross-platform solution for easily working with arrays in JavaScript: `dojo/_base/array`.

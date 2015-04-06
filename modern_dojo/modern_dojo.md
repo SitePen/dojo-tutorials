@@ -1,3 +1,7 @@
+---
+Category:  Getting Started
+...
+
 ## Modern Dojo
 
 You may have been away from Dojo for a while, or you have been struggling to keep your older Dojo 1.6 applications working under 1.10 and you find yourself not sure of what is going on.  You keep hearing talk of "AMD" and "baseless", but you aren't sure what to do or where to start.  This tutorial will help you with that.

@@ -1,3 +1,7 @@
+---
+Category:  Working with Data
+...
+
 ## Working with Dates in Dojo
 
 Dates can be awkward to work with in JavaScript. This tutorial walks through the use of `dojo/date`&mdash;Dojo's answer to the need for a standard library for date math, comparisons, parsing and formatting.

@@ -1,3 +1,7 @@
+---
+Category:  dojox/app
+...
+
 ## Updating the Contacts App for a Tablet
 
 In the previous tutorial, [Updating the Contacts App for a Phone](/documentation/tutorials/1.10/dojox_app/contactsPhone/),

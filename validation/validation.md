@@ -1,3 +1,7 @@
+---
+Category:  Widgets
+...
+
 ## Forms and Validation
 
 In this tutorial, you'll learn how to make use of the validation helpers in
@@ -40,8 +44,8 @@ var test = validate.isNumberFormat(someNum, { format: "(###) ###-####" });
 It can also take an array of formats to check against, like so:
 
 ```js
-var test = validate.isNumberFormat(someNum, { 
-	format: ["### ##", "###-##", "## ###"] 
+var test = validate.isNumberFormat(someNum, {
+	format: ["### ##", "###-##", "## ###"]
 });
 ```
 
@@ -116,7 +120,7 @@ The return from `dojox/validate/check` is an object with several methods on it t
 use to inspect any validation information on it.  The methods are as follows:
 
 ```js
-isSuccessful(): Returns true if there were no invalid or missing fields, 
+isSuccessful(): Returns true if there were no invalid or missing fields,
 				else it returns false.
 hasMissing():  Returns true if the results contain any missing fields.
 getMissing():  Returns a list of required fields that have values missing.
@@ -127,7 +131,7 @@ isInvalid(field):  Returns true if the field has an invalid value.
 ```
 
 The basic idea is that you perform the check, and then use the results to find out what parts of your form
-are valid and what are not before letting the browser process it.  Take a look at the demo to see it in 
+are valid and what are not before letting the browser process it.  Take a look at the demo to see it in
 action!
 
 [View Demo](demo/htmlcheck.html)
@@ -158,7 +162,7 @@ require(["dijit/form/ValidationTextBox", "dojox/validate/web"])
     />
 ```
 
-If you want your ValidationTextBox to use an optional keyword arguments object, just set the value of 
+If you want your ValidationTextBox to use an optional keyword arguments object, just set the value of
 the `constraints` property:
 
 ```html

@@ -1,4 +1,8 @@
-## Deferreds
+---
+Category:  Fundamentals
+...
+
+## Getting Started with Deferreds
 
 In this tutorial, you'll learn the basics of using Dojo's Deferred implementation, which are a way to easily work with asynchronous actions, such as Ajax calls.
 

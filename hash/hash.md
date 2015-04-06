@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Using dojo/hash and dojo/router
 
 In JavaScript applications, modifying the URL hash is a great way to provide bookmarkable, history-enabled page states.

@@ -1,3 +1,7 @@
+---
+Category:  Fundamentals
+...
+
 ## Making Functions with hitch and partial
 
 The `dojo/_base/lang` resource contains helpful methods for working with functions in JavaScript.  In this tutorial, you'll learn the basics of the Function object&mdash;and how to bind contexts to functions using
