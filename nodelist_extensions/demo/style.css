@@ -1,0 +1,52 @@
+.required {
+    display: inline-block;
+    _display: inline;
+    color: #f00;
+    margin: 2px 8px;
+}
+
+.emoticon {
+    overflow: hidden;
+    display: inline-block;
+    _display: inline;
+    width: 18px;
+    height: 18px;
+    margin: 0 6px;
+}
+
+.happy {
+    background: url('//ajax.googleapis.com/ajax/libs/dojo/1.8/dojox/editor/plugins/resources/emoticons/emoticonHappy.gif') no-repeat;
+	min-height: 18px;
+}
+
+.sad {
+    background: url('//ajax.googleapis.com/ajax/libs/dojo/1.8/dojox/editor/plugins/resources/emoticons/emoticonFrown.gif') no-repeat;
+	min-height: 18px;
+}
+.done {
+    text-decoration: line-through;
+}
+
+.highlight {
+    border: 1px solid #ff0;
+    background-color: #ffc;
+}
+.fruitList li {
+    width: 300px;
+    cursor: pointer;
+    cursor: hand;
+}
+.fruitList li:hover {
+    border: 1px dotted #ccc;
+}
+
+#console {
+	margin-top: 2em;
+	border-top: 1px solid #333;
+}
+
+#console div {
+	background: #eee; 
+	padding:5px 10px;
+	margin-top: 2px;
+}

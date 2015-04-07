@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: NodeList Extensions: dojo/query Recap</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	</head>
+	<body class="claro">
+		<h1>Demo: NodeList Extensions: dojo/query Recap</h1>
+		<button type="button" id="btn">Pick out fresh fruits</button>
+
+		<h3>Fresh Fruits</h3>
+		<ul id="freshList"></ul>
+
+		<h3>Fruits</h3>
+		<ul>
+			<li class="fresh">Apples</li>
+			<li class="fresh">Persimmons</li>
+			<li class="fresh">Grapes</li>
+			<li class="fresh">Fresh Figs</li>
+			<li class="dried">Dates</li>
+			<li class="dried">Raisins</li>
+			<li class="dried">Prunes</li>
+			<li class="fresh dried">Apricots</li>
+			<li class="fresh">Peaches</li>
+			<li class="fresh">Bananas</li>
+			<li class="fresh">Cherries</li>
+		</ul>
+
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		
+		<script>
+			require(["dojo/query", "dojo/domReady!"], function(query){
+				query("#btn").on("click", function(){
+					query("li.fresh").on("click", function(event){
+						log("I love fresh " + event.target.innerHTML);
+					});
+				});
+
+				function log(msg){
+					var c = document.getElementById("console");
+					if(!c){
+						c = document.createElement("div");
+						c.setAttribute("id", "console");
+						document.body.appendChild(c);
+					}
+					c.innerHTML += "<div>" + msg + "</div>";
+				}
+			});
+		</script>
+	</body>
+</html>

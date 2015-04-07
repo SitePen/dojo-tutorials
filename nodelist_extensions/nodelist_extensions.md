@@ -74,7 +74,7 @@ require(["dojo/query", "dojo/domReady!"], function(query){
 ```
 
 
-[View Demo](demo/nodelist_extensions-queryRecap.php)
+[View Demo](demo/nodelist_extensions-queryRecap.html)
 
 Troubleshooting chains of method calls can be difficult, as there is nowhere to add logging
 	statements or breakpoints in the debugger. Break apart the chain into discrete steps to inspect what each method
@@ -148,7 +148,7 @@ require(["dojo/query", "dojo/NodeList-fx", "dojo/domReady!"], function(query){
 ```
 
 
-[View Demo](demo/nodelist_extensions-fx.php)
+[View Demo](demo/nodelist_extensions-fx.html)
 
 Unlike most `NodeList` methods, **`NodeList-fx` methods return an
 	animation object by default**, which conflicts with the normal chaining behavior of `NodeList`.
@@ -182,7 +182,7 @@ require(["dojo/query", "dojo/NodeList-data", "dojo/domReady!"], function(query, 
 });
 ```
 
-[View Demo](demo/nodelist_extensions-data.php)
+[View Demo](demo/nodelist_extensions-data.html)
 
 Here, we’re doing three things:
 
@@ -226,7 +226,7 @@ require(["dojo/query", "dojo/NodeList-traverse", "dojo/NodeList-dom",
 ```
 
 
-[View Demo](demo/nodelist_extensions-traverse.php)
+[View Demo](demo/nodelist_extensions-traverse.html)
 
 The chain here starts with an initial query to find the list nodes we're interested in, then uses traversal methods
 	to move up and sideways to find the heading elements associated with the lists that contain those list nodes.
@@ -262,7 +262,7 @@ function(query){
 ```
 
 
-[View Demo](demo/nodelist_extensions-manip.php)
+[View Demo](demo/nodelist_extensions-manip.html)
 
 The key to this demo is the use of the `clone` method to create duplicates of the original elements. As
 	with the `NodeList-traverse` methods, `clone` returns a new NodeList containing all newly
@@ -299,7 +299,7 @@ function(query, lang){
 });
 ```
 
-[View Demo](demo/nodelist_extensions-htmlSet.php)
+[View Demo](demo/nodelist_extensions-htmlSet.html)
 
 With the rich capabilities offered by other NodeList methods, especially those in `NodeList-manipulate`,
 	the `NodeList-html` module is probably not one you will use very often, if at all. It is mentioned here
