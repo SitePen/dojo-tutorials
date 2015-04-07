@@ -1,0 +1,7 @@
+[
+	{"name":"Bubble Gum", "quantity": 33, "category": "Food", "id":1},
+	{"name":"Couch", "quantity": 4, "category": "Furniture", "id":2},
+	{"name":"Lamp", "quantity": 7, "category": "Furniture", "id":3},
+	{"name":"Microwave", "quantity": 7, "category": "Appliance", "id":4},
+	{"name":"Fork", "quantity": 57, "category": "Silverware", "id":5}
+]
