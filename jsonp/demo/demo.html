@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: jsonp Dojo pull requests</title>
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+	</head>
+	<body>
+		<h1>Demo: jsonp Dojo pull requests</h1>
+		<ul id="pullrequests">
+
+		<ul>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+			require(["dojo/request/script", "dojo/dom-construct", "dojo/dom", "dojo/_base/array",
+			"dojo/domReady!"
+			], function(script, domConstruct, dom, arrayUtil){
+				script.get("https://api.github.com/repos/dojo/dojo/pulls", {
+					jsonp: "callback"
+				}).then(function(response){
+					return response.data;
+				}).then(function(results){
+					// Create a document fragment to keep from
+					// doing live DOM manipulation
+					var fragment = document.createDocumentFragment();
+					arrayUtil.forEach(results, function(pull){
+						var li = domConstruct.create("li", {}, fragment);
+						var link = domConstruct.create("a", {href: pull.url, innerHTML: pull.title}, li);
+					});
+					domConstruct.place(fragment, dom.byId("pullrequests"));
+				});
+			});
+		</script>
+	</body>
+</html>
