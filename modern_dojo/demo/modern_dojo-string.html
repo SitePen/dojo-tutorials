@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Demo: string</title>
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+</head>
+<body>
+	<h1>Demo: string</h1>
+	<pre id="someNode"></pre>
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+	<script>
+	require(["dojo/dom", "dojo/string", "dojo/domReady!"], function(dom, string){
+		dom.byId("someNode").innerHTML = string.trim("  I Like Trim Strings ");
+	});
+	</script>
+</body>
+</html>
