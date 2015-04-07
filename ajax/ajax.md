@@ -124,7 +124,7 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
 );
 ```
 
-[View Demo](demo/dojo-request-xhr.php)
+[View Demo](demo/dojo-request-xhr.html)
 
 #### Login demo
 
@@ -159,8 +159,6 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 );
 
 ```
-
-[View Demo](demo/dojo-request-xhr-post.php)
 
 #### Headers demo
 
@@ -213,11 +211,9 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form"],
 
 ```
 
-[View Demo](demo/dojo-request-xhr-header.php)
-
 ### JSON (JavaScript Object Notation)
 
-[JSON](http://json.org) is a very common way to encode data for AJAX requests, because it is easy to read, easy to work with, and very compact.  JSON can be used to encode any type of data: JSON support is included in or available for many languages, including [PHP](http://www.php.net/manual/en/ref.json.php), [Java](http://www.json.org/java/), [Perl](http://search.cpan.org/~makamaka/JSON-2.53/lib/JSON.pm), [Python](http://docs.python.org/library/json.html), [Ruby](http://flori.github.com/json/), and [ASP](http://code.google.com/p/aspjson/).
+[JSON](http://json.org) is a very common way to encode data for AJAX requests, because it is easy to read, easy to work with, and very compact.  JSON can be used to encode any type of data: JSON support is included in or available for many languages, including [PHP](http://www.php.net/manual/en/ref.json.html), [Java](http://www.json.org/java/), [Perl](http://search.cpan.org/~makamaka/JSON-2.53/lib/JSON.pm), [Python](http://docs.python.org/library/json.html), [Ruby](http://flori.github.com/json/), and [ASP](http://code.google.com/p/aspjson/).
 
 **JSON encoded object**
 
@@ -285,7 +281,7 @@ require(["dojo/dom", "dojo/request", "dojo/json",
 
 In addition to the encoding the data as JSON in the response, set the [Content-Type](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17) header to _application/json_, either using server configuration such as [Apache's AddType](http://httpd.apache.org/docs/2.0/mod/mod_mime.html#addtype) or adding it to the header with the server side code.
 
-[View Demo](demo/dojo-request-json.php)
+[View Demo](demo/dojo-request-json.html)
 
 ### JSONP (Javascript Object Notation with Padding)
 
@@ -328,8 +324,6 @@ require(["dojo/dom", "dojo/on", "dojo/request/script",
 
 Since the response is JavaScript, not JSON, the **Content-Type** header on the response should be _application/javascript_.
 
-[View Demo](demo/dojo-request-script.php)
-
 #### Using JSONP to request Dojo pull requests from the GitHub API
 
 ```js
@@ -369,7 +363,7 @@ require(["dojo/dom", "dojo/on", "dojo/request/script",
 });
 ```
 
-[View Demo](demo/dojo-request-script-pulls.php)
+[View Demo](demo/dojo-request-script-pulls.html)
 
 ### Reporting Status
 
@@ -433,8 +427,6 @@ require(["dojo/dom", "dojo/request", "dojo/request/notify",
 	}
 );
 ```
-
-[View Demo](demo/dojo-request-notify.php)
 
 ### dojo/request/registry
 
@@ -520,8 +512,6 @@ require(["dojo/request/registry", "dojo/request/script", "dojo/dom",
 	}
 );
 ```
-
-[View Demo](demo/dojo-request-registry.php)
 
 ### Best Practices
 

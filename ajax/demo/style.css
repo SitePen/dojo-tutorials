@@ -1,0 +1,42 @@
+pre {
+	height:25em;
+	width:450px;
+	overflow:auto;
+}
+
+label {
+	font-weight:bolder;
+	display:block;
+}
+
+#resultDiv {
+	margin:15px 0;
+	padding:5px;
+	width:25em;
+}
+
+.error {
+	color:#DF0101;
+	font-weight:bolder;
+}
+
+.success {
+	color:#186421;
+}
+
+.ready {
+	color:#062093;
+}
+
+.hint {
+	font-weight:bolder;
+	background-color:#ff0;
+}
+
+dt {
+	font-weight:bolder;
+}
+
+.json {
+	overflow:scroll;
+}
