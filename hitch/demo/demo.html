@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Misreading the "this" variable</title>
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+		<style type="text/css">
+			#nodeContainer {
+				margin: 1em;
+			}
+			.myNode {
+				border: 1px solid #999;
+				margin: 1em;
+				padding: 0.5em;
+				background-color: #ccc;
+				float: left;
+			}
+
+			#console {
+				margin-top: 2em;
+				border-top: 1px solid #333;
+			}
+
+			#console div {
+				background: #eee;
+				padding:5px 10px;
+				margin-top: 2px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Demo: Misreading the "this" variable</h1>
+		<p>
+		The following demonstrates what happens when the value of the "this" variable in a script
+		is not what you would expect it to be.  Click on any of the fake button nodes below to see,
+		and view the source to see what we are doing.
+		</p>
+		<div id="nodeContainer"></div>
+		<div style="clear: both;"></div>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+			// Retrieve the dependencies
+			require(["dojo/query", "dojo/dom-construct", "dojo/domReady!"],
+				function(query, domConstruct) {
+
+					function log(msg){
+						var c = document.getElementById("console");
+						if(!c){
+							c = domConstruct.create("div", {
+								id: "console"
+							}, document.body);
+						}
+						c.innerHTML += "<div>" + msg + "</div>";
+					}
+
+					var myObject = {
+						foo: "bar",
+						myHandler: function(evt){
+							//	still contrived!
+							log("The value of foo is " + this.foo + ", from " + (evt && evt.target ? evt.target.id : window.event.srcElement.id));
+						}
+					};
+
+					var container = document.getElementById("nodeContainer");
+					for(var i=0; i<10; i++){
+						domConstruct.create("div", {
+							id: "node-" + i,
+							className: "myNode",
+							innerHTML: "Fake button " + (i+1)
+						}, container);
+					}
+
+					query(".myNode").forEach(function(node){
+						node.onclick = myObject.myHandler;
+					});
+
+			});
+		</script>
+	</body>
+</html>
