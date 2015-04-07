@@ -58,7 +58,7 @@ require(["dijit/registry", "dojo/parser", "dojo/json", "dojo/_base/config", "dij
 
 ```
 
-[View Demo](demo/dojoConfig.php)
+[View Demo](demo/dojoConfig.html)
 
 Notice that `dojoConfig` is defined in a script block
 _before_ dojo.js is loaded.  This is of paramount
@@ -85,7 +85,7 @@ Here's the same example written declaratively:
 </script>
 ```
 
-[View Demo](demo/data-dojo-config.php)
+[View Demo](demo/data-dojo-config.html)
 
 In this case, we use the same `data-dojo-config` attribute
 on the Dojo `script` element that you've seen in other tutorials and examples.
@@ -251,7 +251,7 @@ Now let's create a simple demo that puts the basic parameters to use.  One very 
 
 By using the `packages` configuration, we've made all references to `demo/*` point to our local `/documentation/tutorials/1.10/dojo_config/demo/` directory, while allowing any references to `dojo`, `dijit`, and `dojox` to come from Google CDN.  Had the `demo` package not been defined, the request for `demo/AuthoredDialog` would have gone to `//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/demo/AuthoredDialog.js`.  We also used alias, by associating `ready` with `dojo/domReady`.
 
-[View Demo](demo/packages.php)
+[View Demo](demo/packages.html)
 
 Extensive [documentation about the new loader](/reference-guide/1.10/loader/amd.html) provides even more details.
 
@@ -302,7 +302,7 @@ by your browser. A simple demo shows it at work:
 </script>
 ```
 
-[Demo with dojo.config.locale ='zh' (Chinese)](demo/localeConfig.php?locale=zh)
+[Demo with dojo.config.locale ='zh' (Chinese)](demo/localeConfig.html?locale=zh)
 
 In the demo, where we define the `locale` property of the
 `dojoConfig` object, we look for a `locale=xx` parameter
@@ -387,7 +387,7 @@ behavior and page- or application-wide properties. Consider the following:
 </script>
 ```
 
-[View Application Config Demo](demo/appConfig.php)
+[View Application Config Demo](demo/appConfig.html)
 
 In this example, we've tacked on an "`app`"
 `dojoConfig` property, which we later reference via `dojo.config`

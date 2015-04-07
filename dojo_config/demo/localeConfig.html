@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Locale options for dojo.config</title>
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+		<style>
+			#dialog { min-width: 200px; }
+		</style>
+	</head>
+	<body class="claro">
+		<h1>Demo: Locale options for dojo/_base/config</h1>
+				// look for a locale=xx query string param, else default to 'en-us'
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+			// require the locale, Dialog, json, config, dojo body, i18n, and domReady plugin
+			require(["dojo/date/locale", "dijit/Dialog", "dojo/json", "dojo/_base/config", "dojo/_base/window", "dojo/i18n", "dojo/domReady!"]
+			, function(locale, Dialog, JSON, config, win) {
+				var now = new Date();
+				var dlg = new Dialog({
+					id: 'dialog',
+					// set a title on the dialog of today's date, 
+					// using a localized date format
+					title: 'Today: '+ locale.format(now, {
+							formatLength:'full',selector:'date'
+					})
+				}).placeAt(win.body());
+				dlg.startup();
+				
+				dlg.set("content", '<pre>' + JSON.stringify(config, null, '\t') + '</pre>');
+				dlg.show();
+			});
+		</script>
+	</body>
+</html>

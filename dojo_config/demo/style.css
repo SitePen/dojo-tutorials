@@ -1,0 +1,23 @@
+.claro .demoAuthoredDialog .dijitDialogPaneContent {
+    border-top-style: none;
+}
+
+.demoAuthoredDialogContentWrapper {
+    position: relative;
+    padding-left: 50px;
+    background-color: #eee;
+    border-top: 1px solid #769DC0;
+}
+.demoAuthoredDialogCreditBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    ;
+    background-color: #eee;
+    padding: 0;
+}
+.demoAuthoredDialogAuthorPic {
+    width: 45px;
+    margin: 2px;
+    display: block;
+}
