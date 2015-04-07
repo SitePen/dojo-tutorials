@@ -38,7 +38,7 @@ require(["dojo/store/Memory"],
 
 This will call an alert with the name of each employee in the sales department.
 
-[View Demo](demo/demo.php)
+[View Demo](demo/demo.html)
 
 We could go on to create new objects in the store, and delete objects:
 

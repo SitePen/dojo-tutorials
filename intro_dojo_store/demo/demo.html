@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Object Store Demonstration</title>
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+
+	</head>
+	<body>
+		<h1>Object Store Demonstration</h1>
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		</script>
+		<script>
+			require(["dojo/store/Memory"], function(Memory){
+				var employees = [
+					{name:"Jim", department:"accounting"},
+					{name:"Bill", department:"engineering"},
+					{name:"Mike", department:"sales"},
+					{name:"John", department:"sales"}
+				];
+
+				employeeStore = new Memory({data:employees, idProperty: "name"});
+
+				employeeStore.query({department:"sales"}).forEach(function(employee){
+					// this is called for each employee in the sales department
+					alert(employee.name);
+				});
+			});
+		</script>
+	</body>
+</html>
