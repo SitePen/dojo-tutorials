@@ -1,0 +1,15 @@
+/* Any demo specific styling needed for this tutorial only */
+
+.someWidget {
+	border: 1px solid #999;
+}
+.someWidgetTitle {
+	background-color: #efefef;
+	font-weight: bold;
+	cursor: pointer;
+}
+.someWidgetContainer {
+	margin: 1em;
+	border: 1px solid #ccc;
+	padding: 1em;
+}

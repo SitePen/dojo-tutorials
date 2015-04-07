@@ -262,7 +262,7 @@ We also need to modify our widget template:
 </div>
 ```
 
-[View Demo](demo/templated-demo.php)
+[View Demo](demo/templated-demo.html)
 
 <div class="proTip">
 Demo files:
