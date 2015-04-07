@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Tutorial: NodeList Events</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<link rel="stylesheet" href="../../_common/demo.css" media="screen" type="text/css">
+	</head>
+	<body>
+		<h1>Tutorial: NodeList Events</h1>
+
+		<button class="hookUp demoBtn">Click Me!</button>
+		<button class="hookUp demoBtn">Click Me!</button>
+		<button class="hookUp demoBtn">Click Me!</button>
+		<button class="hookUp demoBtn">Click Me!</button>
+
+		<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+		<script>
+			// Wait for the DOM to be ready before working with it
+			require(["dojo/query", "dojo/domReady!"], function(query) {
+				query(".hookUp").on("click", function(){
+					alert("This button is hooked up!");
+				});
+			});
+		</script>
+	</body>
+</html>

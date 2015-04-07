@@ -117,7 +117,7 @@ var allA = query("li a");
 var someA = query("li > a");
 ```
 
-[View Demo](demo/queries.php)
+[View Demo](demo/queries.html)
 
 `allA` will contain a total of 6 `<a>`'s, whereas `someA` will only contain 2 `<a>`'s. Any selector can be on either side of ">", including class selectors. We've only covered a few of the more common selectors here, but `query` is fully CSS3 compliant and accepts [many more selectors](/reference-guide/1.10/dojo/query.html#standard-css3-selectors) which you can experiment with on your own.
 
@@ -187,7 +187,7 @@ Other DOM methods that are defined by `dojo/NodeList-dom` are `style`, `toggleCl
 query(".even").style("color", "white").addClass("italic");
 ```
 
-[View Demo](demo/nodelist.php)
+[View Demo](demo/nodelist.html)
 
 ### Events
 
@@ -208,7 +208,7 @@ Another convenience method that `NodeList` provides is `on` for connecting to DO
 </script>
 ```
 
-[View Demo](demo/events.php)
+[View Demo](demo/events.html)
 
 This convenient `on` method attaches to every node returned by the query!
 

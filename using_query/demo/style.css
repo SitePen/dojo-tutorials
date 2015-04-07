@@ -1,0 +1,41 @@
+body {
+	padding:2em;
+}
+
+h1 {
+	margin-bottom:2em;
+}
+
+
+.add-borders ul, .add-borders li, .add-borders div, .add-borders a {
+	padding: 2px;
+}
+.add-borders ul {
+	border: 1px solid red;
+}
+.add-borders li {
+	border: 1px solid blue;
+}
+.add-borders div {
+	border: 1px solid green;
+}
+.add-borders a {
+	border: 1px solid black;
+}
+
+.bold {
+	font-weight: bold;
+}
+.italic {
+	font-style: italic;
+}
+.highlight {
+	background-color: yellow;
+}
+
+.red {
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
