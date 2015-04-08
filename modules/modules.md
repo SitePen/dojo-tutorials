@@ -29,6 +29,7 @@ define(5);
 ```
 
 Not very sophisticated, but valid - the value of this module is the number 5.
+
 ```js
 define({
 	library: 'dojo',
@@ -37,6 +38,7 @@ define({
 ```
 
 Getting a little more interesting - when this module is loaded, we get an object with 2 properties.
+
 ```js
 define(function(){
 	var privateValue = 0;
@@ -62,16 +64,21 @@ In this case, we've passed a function to `define`. The function is evaluated and
 
 For starters, we need to understand how modules are identified. In order to load a module, you need some way of identifying it. Similar to the module/package systems of other programming languages, an AMD module is identified by its path and file name. Let's save the code from the above example in a folder:
 
-<pre>app/counter.js```
+```
+app/counter.js
+
+```
 
 
 Let's also add a loader (Dojo of course!) and an index.html - the entry-point for our application. This gives us the following file structure:
 
-<pre>/
+```
+/
 	index.html
 	/dojo/
 	/app/
-		counter.js```
+		counter.js
+```
 
 
 The index page will look like this:
