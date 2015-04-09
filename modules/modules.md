@@ -103,7 +103,7 @@ The index page will look like this:
 ```
 
 
-[View Demo](demo/demo.php)
+[View Demo](demo/demo.html)
 
 Let's review what's going on here:
 

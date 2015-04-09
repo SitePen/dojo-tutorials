@@ -28,8 +28,8 @@ Let’s say we are creating a simple page that uses Ajax to load new content int
 		</head>
 		<body>
 			<ul id="menu">
-				<li><a href="index.php">Home</a></li>
-				<li><a href="about.php">About us</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About us</a></li>
 			</ul>
 			<div id="content">Welcome to the home page!</div>
 			<!-- load dojo and provide config via data attribute -->
@@ -47,7 +47,7 @@ Let’s say we are creating a simple page that uses Ajax to load new content int
 					on(dom.byId("menu"), "a:click", function(event){
 						// prevent loading a new page - we're doing a single page app
 						event.preventDefault();
-						var page = domAttr.get(this, "href").replace(".php", "");
+						var page = domAttr.get(this, "href").replace(".html", "");
 						loadPage(page);
 					});
 
@@ -85,7 +85,7 @@ This code updates the content and title of the page using JavaScript. It doesn�
 		on(dom.byId("menu"), "a:click", function(event){
 			// prevent loading a new page - we're doing a single page app
 			event.preventDefault();
-			var page = domAttr.get(this, "href").replace(".php", "");
+			var page = domAttr.get(this, "href").replace(".html", "");
 			loadPage(page);
 		});
 
@@ -201,12 +201,12 @@ lines:
 		var contentNode = dom.byId("content"),
 			prefix = "!",
 			// store the last requested page so we do not make multiple requests for the same content
-			lastPage = (/([^\/]+).php$/.exec(location.pathname) || [])[1] || "index";
+			lastPage = (/([^\/]+).html$/.exec(location.pathname) || [])[1] || "index";
 
 		on(dom.byId("menu"), "a:click", function(event){
 			// prevent loading a new page - we're doing a single page app
 			event.preventDefault();
-			var page = domAttr.get(this, "href").replace(".php", "");
+			var page = domAttr.get(this, "href").replace(".html", "");
 			loadPage(page);
 		});
 
@@ -243,7 +243,7 @@ application:
 This makes the application bookmarkable, allows natural navigation with the browser’s back and forward controls, and
 makes the site easily indexable by search engines. The site is even navigable by clients with JavaScript disabled.
 
-[View Demo](demo/index.php)
+[View Demo](demo/index.html)
 
 ### Conclusion
 
