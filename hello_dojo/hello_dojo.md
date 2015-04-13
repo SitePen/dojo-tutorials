@@ -177,7 +177,7 @@ require([
 });
 ```
 
-<iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/1/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/1/embedded/result,js,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 The example above simply adds some text to the `greeting` element &mdash; something that can only be done reliably once the DOM is loaded (we did not use this in previous code since the `script` element is included at the bottom of the `body` element &mdash; this delays processing of the script until the DOM has loaded). Again, note that the module identifier ends with **!**; without this, the `dojo/domReady` module would simply function like any other module.
 
@@ -208,7 +208,7 @@ require([
 });
 ```
 
-<iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="//jsfiddle.net/5nkopbb1/2/embedded/result,js,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 As you can see, we've added one more dependency with `dojo/fx`, then used that module to play an animation on our `greeting` element.
@@ -231,35 +231,38 @@ Follow these steps to get starting using the Dojo source, which is generally how
     If you are experienced with [git](http://git-scm.com/) and [GitHub](https://github.com/), you can [clone Dojo from GitHub](https://github.com/dojo/). At a minimum, get [dojo](https://github.com/dojo/dojo). You will likely want [dijit](https://github.com/dojo/dijit), [dojox](https://github.com/dojo/dojox), and [util](https://github.com/dojo/util) at some point as well (these are all included in the source download).
 
 2.  Extract the Dojo archive into your project folder, e.g.:
-```
-demo/
-    myModule.js
-dojo/
-dijit/
-dojox/
-util/
-hellodojo.html
 
-```
+	```
+	demo/
+	    myModule.js
+	dojo/
+	dijit/
+	dojox/
+	util/
+	hellodojo.html
+
+	```
 
 3.  Load `dojo.js` locally, rather than from the CDN:
 
-```js
-<script src="dojo/dojo.js"></script>
-```
+	```js
+	<script src="dojo/dojo.js"></script>
+	```
+
 4.  Update your package configuration:
-```js
-var dojoConfig = {
-    async: true,
-	baseUrl: '.',
-    packages: [
-	    'dojo',
-		'dijit',
-		'dojox',
-		'demo'
-    ]
-};
-```
+
+	```js
+	var dojoConfig = {
+	    async: true,
+		baseUrl: '.',
+	    packages: [
+		    'dojo',
+			'dijit',
+			'dojox',
+			'demo'
+	    ]
+	};
+	```
 
 ### Getting Help
 
