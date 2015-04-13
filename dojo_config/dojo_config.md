@@ -102,6 +102,7 @@ Lets see what options there are and how we can use them.
 ### has() Configuration
 
 One of the major features added in Dojo 1.7+ was the use of the has() pattern for feature detection. We can specify features for the has() feature set in `dojoConfig`, by including an object hash of features as the value of the `has` property. This feature set is now used for determining certain supported capabilities in Dojo. For example, we could disable the amd factory scan (scanning the module for CommonJS require(module) statements to load as deps) with:
+
 ```html
 <script>
 	dojoConfig = {
@@ -117,6 +118,7 @@ One of the major features added in Dojo 1.7+ was the use of the has() pattern fo
 You may be familiar by now with the `isDebug` config flag from other tutorials or usage of Dojo in versions prior to Dojo 1.7, to explicitly enable debug information. In Dojo 1.7+, this is now also specified with a has() feature at a higher level of granularity. To enable debugging assistance with Firebug Lite for older versions of Internet Explorer, we can set the dojo-firebug feature (isDebug can still be used to load this, but using the feature will load earlier in the loading cycle in async mode). If you have Firebug or another console available and open, it does nothing. But if you don't have a console, it will load Dojo's version of Firebug Lite, and create the console UI at the bottom of the page. This can be handy when debugging in earlier versions of IE or other browsers without nice developer tools.
 
 To enable debugging messages for deprecated and experimental features, we can set dojo-debug-messages to true (this defaults to false, unless you have set isDebug). if this feature is set to `false`, these warnings will be suppressed. For example, to enable a developer console (browser provided or use Firebug Lite) and log debugging messages:
+
 ```html
 <script>
 	dojoConfig = {
@@ -141,66 +143,92 @@ The following additional options are available to further configure this in-page
 Dojo received a new loader in Dojo 1.7 to accommodate for the toolkit's new AMD module format.  This new loader added a few new configuration options that are crucial to defining packages, maps, and more.  For details on the loader, see the [Advanced AMD Usage tutorial](../modules_advanced/). Important loader configuration parameters include:
 
 *   **`baseUrl`**: The base URL prepended to a module identifier when converting it to a path or URL.
-		```js
-			baseUrl: "/js"```
-*   **`packages`**: An array of objects which provide the package name and location:
-		```js
-			packages: [{
-				name: "myapp",
-				location: "/js/myapp"
-			}]```
-*   **`map`**: Allows you to map paths in module identifiers to different paths:
-		```js
-			map: {
-				dijit16: {
-					dojo: "dojo16"
-				}
-			}
-		```
-*   **`paths`**: a map of module id fragments to file paths:
-		```js
-		var dojoConfig = {
-			packages: [
-				"package1",
-				"package2"
-			],
-			paths: {
-				package1: "../lib/package1",
-				package2: "/js/package2"
-			}
-		};
 
-    		// ...is equivalent to:
-		var dojoConfig = {
-			packages: [
-				{ name: "package1", location: "../lib/package1" },
-				{ name: "package2", location: "/js/package2" }
-			]
-		};
-		```
+```js
+	baseUrl: "/js"
+```
+
+*   **`packages`**: An array of objects which provide the package name and location:
+
+```js
+	packages: [{
+		name: "myapp",
+		location: "/js/myapp"
+	}]
+```
+
+*   **`map`**: Allows you to map paths in module identifiers to different paths:
+
+```js
+	map: {
+		dijit16: {
+			dojo: "dojo16"
+		}
+	}
+```
+
+*   **`paths`**: a map of module id fragments to file paths:
+
+```js
+var dojoConfig = {
+	packages: [
+		"package1",
+		"package2"
+	],
+	paths: {
+		package1: "../lib/package1",
+		package2: "/js/package2"
+	}
+};
+
+	// ...is equivalent to:
+var dojoConfig = {
+	packages: [
+		{ name: "package1", location: "../lib/package1" },
+		{ name: "package2", location: "/js/package2" }
+	]
+};
+
+```
 *   **`async`**: Defines if Dojo core should be loaded asynchronously.  Values can be `true`, `false` or `legacyAsync`, which puts the loader permanently in legacy cross-domain mode.
-		```js
-			async: true```
+
+```js
+	async: true
+```
+
 *   **`parseOnLoad`**: If true, parses the page with `dojo/parser` when the DOM and all initial dependencies (including those in the `dojoConfig.deps` array) have loaded.
-		```js
-			parseOnLoad: true```
+
+```js
+	parseOnLoad: true
+```
 
 			It is recommended that `parseOnLoad` be left at false (it defaults to false, so you can simply omit this property), and that developers explicitly require `dojo/parser` and call `parser.parse()`.
 
 *   **`deps`**: An array of resource paths which should load immediately once Dojo has loaded:
-		```js
-			deps: ["dojo/parser"]```
+
+```js
+	deps: ["dojo/parser"]
+```
+
 *   **`callback`**: The callback to execute once `deps` have been retrieved:
-		```js
-			callback: function(parser) {
-				// Use the resources provided here
-			}```
+
+```js
+	callback: function(parser) {
+		// Use the resources provided here
+	}
+```
+
 *   **`waitSeconds`**: Amount of time to wait before signaling load timeout for a module; defaults to 0 (wait forever):</strong>
-		```js
-			waitSeconds: 5```
+
+```js
+	waitSeconds: 5
+```
+
 *   **`cacheBust`**: If true, appends the time as a querystring to each module URL to avoid module caching:
-		```js
-			cacheBust: true```
+
+```js
+	cacheBust: true
+```
 
 Now let's create a simple demo that puts the basic parameters to use.  One very common scenario is using Dojo Toolkit from CDN with local modules.  Let's say we use Google CDN with modules in the `/documentation/tutorials/1.10/dojo_config/demo` space:
 
