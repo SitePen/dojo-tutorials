@@ -1,5 +1,5 @@
 ---
-Category:  DOM Basics
+Category:  Fundamentals
 ...
 
 ## Arrays
