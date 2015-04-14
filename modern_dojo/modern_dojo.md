@@ -277,7 +277,7 @@ Now "modern" Dojo would work like this:
 
 <div class="proTip">There is quite a bit more to `Deferred`s, so check out the [Getting Started with Deferreds](../deferreds/) tutorial.</div>
 
-<div class="proTip">`dojo/DeferredList` while still there, is _deprecated_.  You will find a more robust, but similar functionality in `[dojo/promise/all](/reference-guide/1.10/dojo/promise/all.html)` and `[dojo/promise/first](/reference-guide/1.10/dojo/promise/first.html)`.</div>
+<div class="proTip">`dojo/DeferredList` while still there, is _deprecated_.  You will find a more robust, but similar functionality in [`dojo/promise/all`](/reference-guide/1.10/dojo/promise/all.html) and [`dojo/promise/first`](/reference-guide/1.10/dojo/promise/first.html).</div>
 
 ### Requests
 
