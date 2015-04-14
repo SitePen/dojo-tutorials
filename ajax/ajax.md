@@ -48,7 +48,7 @@ the `dojo/request` API allows for request customization.
 Every request needs one thing: an end-point. Because of this, `dojo/request`'s first parameter is
 the URL to request.
 
-<p>Web developers need flexibility in their tools in order to adapt them for their applications and for multiple
+Web developers need flexibility in their tools in order to adapt them for their applications and for multiple
 environments. The `dojo/request` API takes this into account: the first, non-optional, parameter to
 `dojo/request` is the URL to request. A second parameter can be specified to customize a request using
 an `Object`. Some of the most-used options available are:
@@ -69,7 +69,7 @@ an `Object`. Some of the most-used options available are:
 		"javascript", and "xml".
 *   **headers** - A key-value object containing extra headers to send with the request.
 
-<p>Let's take a look at an example using some of these options:
+Let's take a look at an example using some of these options:
 
 ```js
 require(["dojo/request"], function(request){
@@ -441,13 +441,13 @@ request.register(url, provider, first);
 
 #### dojo/request/registry parameters
 
-*   **url** - The url may be a string, regEx, or function.
+*	**url** - The url may be a string, regEx, or function.
 
-        *   **string** - If the url is a string, the provider will be used if the url is an exact match.
-    *   **regExp** - If the url is regular expression, the provider will be used if the regular expression matches the requested URL.
-    *   **function** - If the url is a function, the function will be passed the URL and options object of the request. If the function returns a [truthy](http://www.sitepoint.com/javascript-truthy-falsy/) value, the provider will be used for the request
-*   **provider** - The provider to use to handle the request.
-*   **first** - An optional boolean parameter. If truthy, registers the provider before other already registered providers.
+	*	**string** - If the url is a string, the provider will be used if the url is an exact match.
+    *	**regExp** - If the url is regular expression, the provider will be used if the regular expression matches the requested URL.
+    *	**function** - If the url is a function, the function will be passed the URL and options object of the request. If the function returns a [truthy](http://www.sitepoint.com/javascript-truthy-falsy/) value, the provider will be used for the request
+*	**provider** - The provider to use to handle the request.
+*	**first** - An optional boolean parameter. If truthy, registers the provider before other already registered providers.
 
 Let's take a look at one final example:
 
@@ -531,7 +531,7 @@ Best practices for using `dojo/request` include:
 ### Resources
 
 *   [dojo/request Documentation](/reference-guide/1.10/dojo/request.html)
-*   [Getting Jiggy with JSONP Tutorial](../jsonp)
+*   [JSONP Tutorial](../jsonp)
 *   [Getting Started with Deferreds Tutorial](../deferreds)
 *   [Dojo Deferreds and Promises Tutorial](../promises)
 *   [JSON](http://json.org/) Introducing JSON
