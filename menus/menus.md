@@ -568,6 +568,7 @@ For example, we could create a ComboButton with a Menu as follows:
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush:js; html-script: true; highlight:[2,16]">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="comboButton" data-dojo-type="dijit/form/ComboButton"&gt;
 			&lt;span&gt;Do Something&lt;/span&gt;
@@ -591,6 +592,7 @@ For example, we could create a ComboButton with a Menu as follows:
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
