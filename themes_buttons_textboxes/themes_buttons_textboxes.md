@@ -65,6 +65,7 @@ action, such as submitting a form or resetting the values on a form.  Dijit's im
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true">
+	<code>
 	&lt;body class="claro"&gt;
 		&lt;button id="btn" data-dojo-type="dijit/form/Button"
 			data-dojo-props="
@@ -76,10 +77,12 @@ action, such as submitting a form or resetting the values on a form.  Dijit's im
 			require(["dijit/form/Button", "dojo/parser", "dojo/domReady!"]);
 		&lt;/script&gt;
 	&lt;/body&gt;
+	</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 	<pre class="brush: js; html-script: true;">
+	<code>
 	&lt;body class="claro"&gt;
 		&lt;button id="btn"&gt;&lt;/button&gt;
 		&lt;script&gt;
@@ -92,6 +95,7 @@ action, such as submitting a form or resetting the values on a form.  Dijit's im
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+	</code>
 	</pre>
 	</div>
 	</div>
@@ -116,6 +120,7 @@ conjunction with a label&mdash;or even the image alone&mdash;like so:
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true">
+	<code>
 	&lt;body class="claro"&gt;
 		&lt;button id="btn2" data-dojo-type="dijit/form/Button"
 			data-dojo-props="
@@ -129,10 +134,12 @@ conjunction with a label&mdash;or even the image alone&mdash;like so:
 			require(["dojo/parser", "dijit/form/Button", "dojo/domReady!"]);
 		&lt;/script&gt;
 	&lt;/body&gt;
+	</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 		<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div&gt;
 			&lt;button id="btn2"&gt;&lt;/button&gt;
@@ -150,6 +157,7 @@ conjunction with a label&mdash;or even the image alone&mdash;like so:
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	</div>
@@ -209,6 +217,7 @@ The following example shows these three widgets in action:
 		data-dojo-props="doLayout: false, 'class': 'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: 'Declarative'">
 	<pre class="brush: js; html-script: true">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;button id="toggle" data-dojo-type="dijit/form/ToggleButton"
 			data-dojo-props="iconClass: 'dijitCheckBoxIcon', checked: true"&gt;
@@ -248,10 +257,12 @@ The following example shows these three widgets in action:
 			require(["dijit/form/ToggleButton", "dijit/form/ComboButton", "dijit/Menu", "dijit/MenuItem", "dijit/form/DropDownButton", "dijit/TooltipDialog", "dojo/parser"]);
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 		<pre class="brush: js; html-script: true;">
+			<code>
 	&lt;body class="claro"&gt;
 		&lt;button id="toggle"&gt;&lt;/button&gt;
 		&lt;button id="combo"&gt;&lt;/button&gt;
@@ -304,6 +315,7 @@ The following example shows these three widgets in action:
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+			</code>
 		</pre>
 	</div>
 	</div>
@@ -370,6 +382,7 @@ after creating the buttons above.
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div&gt;
 			&lt;label for="text"&gt;Name:&lt;/label&gt;
@@ -391,10 +404,12 @@ after creating the buttons above.
 			require(["dijit/form/TextBox", "dijit/form/SimpleTextarea", "dojo/parser", "dojo/domReady!"]);
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 		<pre class="brush: js; html-script: true;">
+			<code>
 	&lt;body class="claro"&gt;
 		&lt;div&gt;
 			&lt;label for="text"&gt;Name:&lt;/label&gt;
@@ -424,6 +439,7 @@ after creating the buttons above.
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 		</pre>
 	</div>
 	</div>
@@ -441,6 +457,7 @@ The following example demonstrates basic functionality of `dijit/form/NumberText
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div&gt;
 			&lt;label for="number"&gt;Age:&lt;/label&gt;
@@ -477,10 +494,12 @@ The following example demonstrates basic functionality of `dijit/form/NumberText
 			require(["dijit/form/NumberTextBox", "dijit/form/CurrencyTextBox", "dijit/form/TimeTextBox", "dijit/form/DateTextBox", "dojo/domReady!", "dojo/parser"]);
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 		<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div&gt;
 			&lt;label for="number"&gt;Age:&lt;/label&gt;
@@ -533,6 +552,7 @@ The following example demonstrates basic functionality of `dijit/form/NumberText
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 		</pre>
 	</div>
 	</div>
@@ -561,8 +581,6 @@ widgets.  Tests for button and textbox widgets can be found
 [online](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dijit/tests/form/),
 or in the `dijit/tests/form` folder of your local copy.
 
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
 <script>
 	require(['dojo/parser',
 		'dojo/dom-style',

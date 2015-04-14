@@ -41,6 +41,7 @@ to refresh your memory.
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="mainMenu" data-dojo-type="dijit/Menu"&gt;
 			&lt;div id="edit" data-dojo-type="dijit/MenuItem"&gt;Edit&lt;/div&gt;
@@ -60,10 +61,12 @@ to refresh your memory.
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="mainMenu"&gt;&lt;/div&gt;
 
@@ -99,6 +102,7 @@ to refresh your memory.
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	</div>
@@ -157,6 +161,7 @@ is used as the label for the item.
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true; highlight: [3,4,5]">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="mainMenu" data-dojo-type="dijit/Menu"&gt;
 			&lt;div id="edit" data-dojo-type="dijit/MenuItem"&gt;Edit&lt;/div&gt;
@@ -189,10 +194,12 @@ is used as the label for the item.
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 	<pre class="brush: js; html-script: true; highlight: [49]">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="mainMenu"&gt;&lt;/div&gt;
 		&lt;script&gt;
@@ -252,6 +259,7 @@ is used as the label for the item.
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	</div>
@@ -305,6 +313,7 @@ achieve this, both declaratively and programmatically:
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;div id="task"
 		 data-dojo-type="dijit/MenuItem"
 		 data-dojo-props="iconClass: 'taskIcon'"&gt;
@@ -320,10 +329,12 @@ achieve this, both declaratively and programmatically:
 			parser.parse();
 		});
 	&lt;/script&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 	<pre class="brush:js;">
+		<code>
 	// Require dependencies
 	require([
 		"dijit/MenuItem",
@@ -335,6 +346,7 @@ achieve this, both declaratively and programmatically:
 			iconClass: "taskIcon"
 		});
 	});
+		</code>
 	</pre>
 	</div>
 	</div>
@@ -431,6 +443,7 @@ Usage is generally the same, but you do have to remember to use the
 		data-dojo-props="doLayout:false, 'class':'code-tabs'">
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Declarative'">
 	<pre class="brush: js; html-script: true;">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="mainMenu" data-dojo-type="dijit/MenuBar"&gt;
 			&lt;div id="edit" data-dojo-type="dijit/MenuBarItem"&gt;Edit&lt;/div&gt;
@@ -466,6 +479,7 @@ Usage is generally the same, but you do have to remember to use the
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
@@ -581,6 +595,7 @@ For example, we could create a ComboButton with a Menu as follows:
 	</div>
 	<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title:'Programmatic'">
 	<pre class="brush:js; html-script: true; highlight: [27,28,29,30]">
+		<code>
 	&lt;body class="claro"&gt;
 		&lt;div id="comboBtn"&gt;&lt;/div&gt;
 
@@ -617,6 +632,7 @@ For example, we could create a ComboButton with a Menu as follows:
 			});
 		&lt;/script&gt;
 	&lt;/body&gt;
+		</code>
 	</pre>
 	</div>
 	</div>
@@ -669,8 +685,6 @@ building great user experiences.
 *   [dijit/Menu API docs](/api/?qs=1.10/dijit/Menu)
 *   [dijit/MenuItem API docs](/api/?qs=1.10/dijit/MenuItem)
 
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" />
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: true, async: true"></script>
 <script>
 	require(['dojo/parser',
 		'dojo/dom-style',
