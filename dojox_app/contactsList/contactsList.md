@@ -51,7 +51,7 @@ Before starting on the application let's see how the **Contacts List Application
 
 ### The Contacts List Application
 
-<div style="float: left; width: 100%; margin-top: 20px; margin-bottom: 20px;">
+
 
 The **Contacts List Application** on an **iPhone** iOS Simulator.
 
