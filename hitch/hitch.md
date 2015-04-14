@@ -73,14 +73,9 @@ Let's look at why this happens:
 
 *   `node.onclick = myObject.myHandler`
 
-        *   The expression `myObject.myHandler` evaluates to a function &mdash; the function `myHandler`.
-				However, the fact that `myHandler` is a defined as a method on `myObject`
-				is discarded.
-    *   So now `node.onclick` is a reference to the function `myHandler` &mdash; just the function, no
-				context of `myObject`.
-	<li>DOM event handlers run in the context of the node that triggers the event - that is, the function, regardless of how or
-		where it was defined, is executed as if it is a method of the node &mdash; the result is that the value of `this`
-		inside the function at run-time is the node.
+	*	The expression `myObject.myHandler` evaluates to a function &mdash; the function `myHandler`. However, the fact that `myHandler` is a defined as a method on `myObject` is discarded.
+	*	So now `node.onclick` is a reference to the function `myHandler` &mdash; just the function, no context of `myObject`.
+	*	DOM event handlers run in the context of the node that triggers the event - that is, the function, regardless of how or where it was defined, is executed as if it is a method of the node &mdash; the result is that the value of `this` inside the function at run-time is the node.
 
 <div class="proTip">
 

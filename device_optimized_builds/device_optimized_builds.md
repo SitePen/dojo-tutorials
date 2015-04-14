@@ -121,7 +121,7 @@ var dojoConfig = {
 }
 ```
 
-## Using has()
+### Using has()
 
 In running a build with known features, so far we have simply been taking advantage of the existing feature detection branching in the Dojo code base. However, we may want to use `has()` in our own application. While Dojo normalizes most of the major discrepancies between browsers, there may still be situations where your application needs to detect a feature or bug in the browser and respond accordingly. We can use the `dojo/has` module to access the `has()` function. If we are using an existing feature that Dojo detects, this is very simple:
 
