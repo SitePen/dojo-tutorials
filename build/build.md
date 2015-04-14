@@ -2,49 +2,10 @@
 Category:  Fundamentals
 ...
 
-## Building Web Apps
+## Creating Builds
 
 Dojo's build system provides a way to "build" Dojo and your other JavaScript resources and CSS files, so they can be more efficiently used in a production environment by your applications.
 
-<style type="text/css">
-table.options {
-	border-collapse:collapse;
-	margin: 20px 0;
-}
-
-table.options th {
-	text-align:center;
-	padding:3px 6px;
-	background-color: #DDDDDD;
-	background: #fdfdfd; /* Old browsers */
-	background: -moz-linear-gradient(top, #fdfdfd 0%, #f0f0f0 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #fdfdfd 0%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #fdfdfd 0%,#f0f0f0 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #fdfdfd 0%,#f0f0f0 100%); /* IE10+ */
-	background: linear-gradient(top, #fdfdfd 0%,#f0f0f0 100%); /* W3C */
-	border: 1px solid #E6E6E7;
-	color: #333333;
-	text-shadow: 0 1px 0 rgba(255,255,255,.9);
-}
-
-table.options td {
-	padding:3px;
-	vertical-align: top;
-}
-
-dl {
-	font-size: 14px;
-	line-height: 1.5em;
-}
-
-dt {
-	font-size: 18px;
-	font-weight: normal !important;
-	font-family: Helvetica, Arial, sans-serif;
-	margin-bottom: 6px;
-}
-</style>
 
 ### "Building" Dojo or JavaScript?
 
@@ -360,8 +321,8 @@ There are lots of features available, but here is a list of features that would 
 		<tr><td>`dojo-amd-factory-scan`</td><td>0</td><td>Assumes that all modules are AMD</td></tr>
 		<tr><td>`dojo-combo-api`</td><td>0</td><td>Disables some of the legacy loader API</td></tr>
 		<tr><td>`dojo-config-api`</td><td>1</td><td>Ensures that the build is configurable</td></tr>
-		<tr><td>`dojo-config-require`</td><td>0</td><td>Disables configuration via the `require()<code>.</td></tr>
-		<tr><td><code>dojo-debug-messages`</td><td>0</td><td>Disables some diagnostic information</td></tr>
+		<tr><td>`dojo-config-require`</td><td>0</td><td>Disables configuration via the `require()`.</td></tr>
+		<tr><td>`dojo-debug-messages`</td><td>0</td><td>Disables some diagnostic information</td></tr>
 		<tr><td>`dojo-dom-ready-api`</td><td>0</td><td>Ensures that the DOM ready API is available</td></tr>
 		<tr><td>`dojo-firebug`</td><td>0</td><td>Disables Firebug Lite for browsers that don't have a developer console (e.g. IE6)</td></tr>
 		<tr><td>`dojo-guarantee-console`</td><td>1</td><td>Ensures that the console is available in browsers that don't have it available (e.g. IE6)</td></tr>
