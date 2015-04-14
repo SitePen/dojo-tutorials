@@ -202,7 +202,7 @@ var dojoConfig = {
 	parseOnLoad: true
 ```
 
-			It is recommended that `parseOnLoad` be left at false (it defaults to false, so you can simply omit this property), and that developers explicitly require `dojo/parser` and call `parser.parse()`.
+>	It is recommended that `parseOnLoad` be left at false (it defaults to false, so you can simply omit this property), and that developers explicitly require `dojo/parser` and call `parser.parse()`.
 
 *   **`deps`**: An array of resource paths which should load immediately once Dojo has loaded:
 
@@ -283,7 +283,7 @@ By using the `packages` configuration, we've made all references to `demo/*` poi
 
 Extensive [documentation about the new loader](/reference-guide/1.10/loader/amd.html) provides even more details.
 
-	The new loader also supports the legacy `dojo.require()` resource loading and configuration properties like `modulePaths` covered in this [same tutorial for Dojo 1.6](../../1.6/dojo_config), thus allowing developers to safely upgrade existing applications easily and without worry.
+>	The new loader also supports the legacy `dojo.require()` resource loading and configuration properties like `modulePaths` covered in this [same tutorial for Dojo 1.6](../../1.6/dojo_config), thus allowing developers to safely upgrade existing applications easily and without worry.
 
 ### Locale and Internationalization
 
@@ -341,12 +341,12 @@ correct localized message bundle dependencies are loaded where necessary.
 In this case, we use the `dojo/date/locale` module to format a
 date object to a localized string for the Dialog title.
 
-	For multi-lingual pages, you will need to load bundles for the other locales
+>	For multi-lingual pages, you will need to load bundles for the other locales
 	as well as the one specified by your browser or the
 	`dojoConfig.locale` property. In this case, use the
 	`extraLocale` config property, with an array of string locale names.
 
-	When using the `dojo/parser`, the `lang=` setting on an ancestor DOMNode overrides the `dojoConfig.locale` setting. This behavior will change in Dojo 2.0. You can also specify the `lang `for individual widgets, overriding the `dojoConfig.locale` setting for only that widget.
+>	When using the `dojo/parser`, the `lang=` setting on an ancestor DOMNode overrides the `dojoConfig.locale` setting. This behavior will change in Dojo 2.0. You can also specify the `lang `for individual widgets, overriding the `dojoConfig.locale` setting for only that widget.
 
 ### Custom Properties
 

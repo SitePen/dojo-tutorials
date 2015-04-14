@@ -23,7 +23,7 @@ callme({id: "dojo", some: "parameter"})
 
 When the browser then evaluates the code in the script, it will call the `callme()` method&mdash;passing its data along. The local application, having defined the `callme` method, will then receive it.  Note that this is essentially executing script from a third party; because you are executing script from a third party service, it is implied that you are trusting the third party service with your application.  This is not to imply that JSONP is bad or should be avoided, only that its use should be limited to communication with trusted parties.
 
-	Using cross-domain resources with JSONP also reduces contention for connections to your applications' webservers.  Browsers limit the number of requests that can be made to the server at one time. In the worst case, this is two concurrent connections on IE6.   This defaults to 6-8 connections in newer browsers.  When accessing a cross-domain resource, it does not count against the total number of connections to your server.
+>	Using cross-domain resources with JSONP also reduces contention for connections to your applications' webservers.  Browsers limit the number of requests that can be made to the server at one time. In the worst case, this is two concurrent connections on IE6.   This defaults to 6-8 connections in newer browsers.  When accessing a cross-domain resource, it does not count against the total number of connections to your server.
 
 `dojo/request/script` automates the creation of the script element and callback methods, and provides you the familiar [`Deferred`](../deferreds/) interface you are accustomed to from Dojo.
 

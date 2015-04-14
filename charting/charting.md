@@ -58,7 +58,7 @@ With these minimal dependencies loaded, your application is now empowered to cre
 
 #### Declaratively
 
-	There are two ways to create a basic chart:  declaratively and programmatically.  Before creating the chart, however, it's important to first create/access data.  The following data sample will be used for creating the basic chart:
+There are two ways to create a basic chart:  declaratively and programmatically.  Before creating the chart, however, it's important to first create/access data.  The following data sample will be used for creating the basic chart:
 
 ```js
 // x and y coordinates used for easy understanding of where they should display
@@ -91,7 +91,9 @@ With data properly formatted and available, a chart created declaratively would 
 ```
 [View Demo](demo/basic-declarative.html)
 
-[![Dojo Pie Chart](images/pie.png)](demo/basic-declarative.html) A pie chart using the Claro theme
+[![Dojo Pie Chart](images/pie.png)](demo/basic-declarative.html)
+
+*A pie chart using the Claro theme*
 
 With declarative chart creation, the main chart settings go within the container node.  Plots and series get their own nodes with custom attributes containing chart settings, as would plugins and other chart pieces.
 
@@ -505,7 +507,9 @@ require([
 
 [View Demo](demo/monthly-sales.html)
 
-<p class="tutorial_image">[![Dojo Line Chart](images/tom.png)](demo/monthly-sales.html) A line chart using the Tom theme
+[![Dojo Line Chart](images/tom.png)](demo/monthly-sales.html)
+
+*A line chart using the Tom theme*
 
 #### Stacked Areas Chart:  Monthly Sales
 
@@ -569,7 +573,9 @@ require([
 
 [View Demo](demo/monthly-sales-stacked.html)
 
-[![Dojo StackedAreas Chart](images/stacked.png)](demo/monthly-sales-stacked.html) A stacked areas chart using the Dollar theme
+[![Dojo StackedAreas Chart](images/stacked.png)](demo/monthly-sales-stacked.html)
+
+*A stacked areas chart using the Dollar theme*
 
 #### Columns Chart:  Monthly Sales
 
@@ -635,7 +641,9 @@ require([
 
 [View Demo](demo/monthly-sales-column.html)
 
-[![Dojo Column Chart](images/column.png)](demo/monthly-sales-column.html) A column chart using the MiamiNice theme
+[![Dojo Column Chart](images/column.png)](demo/monthly-sales-column.html)
+
+*A column chart using the MiamiNice theme*
 
 ### Charting Plugins
 
@@ -791,7 +799,9 @@ require([
 
 We are using Tooltips which are based on the Dijit Tooltip, therefore we need to make sure we load a Dijit theme stylesheet. In this example we loaded Claro.
 
-[![Dojo Chart with Legend, Tooltips, and Magnify](images/legend.png)](demo/monthly-sales-legend.html)A line chart with a legend, tooltips, and magify enabled, using the Claro theme
+[![Dojo Chart with Legend, Tooltips, and Magnify](images/legend.png)](demo/monthly-sales-legend.html)
+
+*A line chart with a legend, tooltips, and magify enabled, using the Claro theme*
 
 #### Monthly Sales Pie Chart with MoveSlice
 
@@ -866,7 +876,9 @@ require([
 
 [View Demo](demo/monthly-sales-moveslice.html)
 
-[![Dojo Pie Chart with MoveSlice](images/moveslice.png)](demo/monthly-sales-moveslice.html)A pie chart with MoveSlice, using the Claro theme
+[![Dojo Pie Chart with MoveSlice](images/moveslice.png)](demo/monthly-sales-moveslice.html)
+
+*A pie chart with MoveSlice, using the Claro theme*
 
 #### Monthly Sales with Highlights
 
@@ -931,7 +943,9 @@ require([
 
 [View Demo](demo/monthly-sales-highlight.html)
 
-[![Dojo column chart with highlight](images/highlight.png)](demo/monthly-sales-highlight.html)A column chart with highlight, using the MiamiNice theme
+[![Dojo column chart with highlight](images/highlight.png)](demo/monthly-sales-highlight.html)
+
+*A column chart with highlight, using the MiamiNice theme*
 
 ### Conclusion
 

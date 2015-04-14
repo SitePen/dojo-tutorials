@@ -107,26 +107,43 @@ For the rest of the tutorial, we'll continue using the declarative approach, but
 An additional set of Editor plugins is available yet within the dijit/_editor/plugins object.  These additional plugins include:
 
 <table class="info">
+    <tr>
+        <th>Short Name (add to extraPlugins list)</th>
+        <th>Resource</th>
+    </tr>
 	<tr>
-		<td>**dijit/_editor/plugins/ToggleDir**toggleDir</td>
-		<td>**dijit/_editor/plugins/TextColor**foreColor, hiliteColor</td>
+		<td>toggleDir</td>
+        <td>`dijit/_editor/plugins/ToggleDir`</td>
+    </tr>
+    <tr>
+        <td>foreColor, hiliteColor</td>
+		<td>`dijit/_editor/plugins/TextColor`</td>
 	</tr>
 	<tr>
-		<td>**dijit/_editor/plugins/FontChoice**fontName, fontSize, formatBlock</td>
-		<td>**dijit/_editor/plugins/LinkDialog**createLink, insertImage</td>
+        <td>fontName, fontSize, formatBlock</td>
+		<td>`dijit/_editor/plugins/FontChoice`</td>
 	</tr>
+    <tr>
+        <td>createLink, insertImage</td>
+        <td>`dijit/_editor/plugins/LinkDialog`</td>
 	<tr>
-		<td>**dijit/_editor/plugins/FullScreen**fullscreen</td>
-		<td>**dijit/_editor/plugins/ViewSource**viewsource</td>
+        <td>fullscreen</td>
+		<td>`dijit/_editor/plugins/FullScreen`</td>
+    </tr>
+    <tr>
+        <td>viewsource</td>
+		<td>`dijit/_editor/plugins/ViewSource`</td>
 	</tr>
+    <tr>
+        <td>print</td>
+        <td>`dijit/_editor/plugins/Print`</td>
+    </tr>
 	<tr>
-		<td>**dijit/_editor/plugins/Print**print</td>
-		<td>**dijit/_editor/plugins/NewPage**newpage</td>
+        <td>newpage</td>
+		<td>`dijit/_editor/plugins/NewPage`</td>
 	</tr>
 </table>
 
-<!-- protip -->
-> The bolded text represents the resource; the basic text represents the "short name" to be added to the extraPlugins list.
 
 [![Intermediate Editor](images/middle-editor.png)](demo/editor-dijit-plugins.html)
 
@@ -157,24 +174,87 @@ To use these extra plugins, require their resources and add their "short names" 
 Along with the the host of extra plugins within the `dijit` namespace, `dojox/editor/plugins` provides numerous additional plugins for Editor:
 
 <table class="info">
-	<tr><td>**dojox/editor/plugins/PrettyPrint**prettyprint</td>
-	<td>**dojox/editor/plugins/PageBreak**pagebreak</td></tr><tr>
-	<td>**dojox/editor/plugins/ShowBlockNodes**showblocknodes</td>
-	<td>**dojox/editor/plugins/Preview**preview</td></tr><tr>
-	<td>**dojox/editor/plugins/Save**save</td>
-	<td>**dojox/editor/plugins/ToolbarLineBreak**|| or toolbarlinebreak</td></tr><tr>
-	<td>**dojox/editor/plugins/NormalizeIndentOutdent**normalizeindentoutdent</td>
-	<td>**dojox/editor/plugins/Breadcrumb**breadcrumb</td></tr><tr>
-	<td>**dojox/editor/plugins/FindReplace**findreplace</td>
-	<td>**dojox/editor/plugins/PasteFromWord**pastefromword</td></tr><tr>
-	<td>**dojox/editor/plugins/InsertAnchor**insertanchor</td>
-	<td>**dojox/editor/plugins/CollapsibleToolbar**collapsibletoolbar</td></tr><tr>
-	<td>**dojox/editor/plugins/TextColor**foreColor hiliteColor</td>
-	<td>**dojox/editor/plugins/Blockquote**blockquote</td></tr>
+    <tr>
+        <th>Short Name (add to extraPlugins list)</th>
+        <th>Resource</th>
+    </tr>
 	<tr>
-		<td>**dojox/editor/plugins/Smiley**smiley</td>
-		<td>**dojox/editor/plugins/UploadImage**uploadImage</td>
-	</tr>
+    <td>prettyprint</td>
+    <td>`dojox/editor/plugins/PrettyPrint`</td>
+    </tr>
+
+    <tr>
+    <td>pagebreak</td>
+    <td>`dojox/editor/plugins/PageBreak`</td>
+    </tr>
+
+    <tr>
+    <td>showblocknodes</td>
+    <td>`dojox/editor/plugins/ShowBlockNodes`</td>
+    </tr>
+
+    <tr>
+    <td>preview</td>
+    <td>`dojox/editor/plugins/Preview`</td>
+    </tr>
+
+    <tr>
+    <td>save</td>
+    <td>`dojox/editor/plugins/Save`</td>
+    </tr>
+
+    <tr>
+    <td>|| or toolbarlinebreak</td>
+    <td>`dojox/editor/plugins/ToolbarLineBreak`</td>
+    </tr>
+
+    <tr>
+    <td>normalizeindentoutdent</td>
+    <td>`dojox/editor/plugins/NormalizeIndentOutdent`</td>
+    </tr>
+
+    <tr>
+    <td>breadcrumb</td>
+    <td>`dojox/editor/plugins/Breadcrumb`</td>
+    </tr>
+
+    <tr>
+    <td>findreplace</td>
+    <td>`dojox/editor/plugins/FindReplace`</td>
+    </tr>
+
+    <tr>
+    <td>pastefromword</td>
+    <td>`dojox/editor/plugins/PasteFromWord`</td>
+    </tr>
+
+    <tr>
+    <td>insertanchor</td>
+    <td>`dojox/editor/plugins/InsertAnchor`</td>
+    </tr>
+
+    <tr>
+    <td>collapsibletoolbar</td>
+    <td>`dojox/editor/plugins/CollapsibleToolbar`</td>
+    </tr>
+
+    <tr>
+    <td>foreColor hiliteColor</td>
+    <td>`dojox/editor/plugins/TextColor`</td>
+    </tr>
+
+    <tr>
+    <td>blockquote</td>
+    <td>`dojox/editor/plugins/Blockquote`</td>
+    </tr>
+    <tr>
+            <td>smiley</td>
+    		<td>`dojox/editor/plugins/Smiley`</td>
+    </tr>
+    <tr>
+        <td>uploadImage</td>
+        <td>`dojox/editor/plugins/UploadImage`</td>
+    </tr>
 </table>
 
 [![dijit Advanced Editor](images/advanced-editor.png)](demo/editor-dojox-plugins.html)

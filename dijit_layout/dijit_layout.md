@@ -103,7 +103,7 @@ We've given the `DIV` that will become the left column a fixed width in `em`s. T
 ### Adding Widgets
 
 To implement the layout, we'll be using three widget classes from Dijit: `dijit/layout/BorderContainer`, `dijit/layout/TabContainer` and `dijit/layout/ContentPane`.
-You can see a sampling of the available Dijit widgets on the [Dojo Toolkit "Features" page](/features/desktop).
+
 
 To get started, let's add a `require` call to load these dependencies.
 
