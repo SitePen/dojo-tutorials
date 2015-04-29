@@ -190,7 +190,7 @@ remember to return `false` in it to prevent the browser's normal actions.
 
 Now that we have a good overview of `dojox/form/Manager`, let's put it all together!
 
-[View Demo](demo/manager.html)
+<a href="demo/manager.html" class="button">View Demo</a>
 
 ### Conclusion
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo: Using require</title>
+	<link rel="stylesheet" href="../../_common/demo.css" media="screen">
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+	<style>
+
+	</style>
+</head>
+<body class="claro">
+	<h1>Demo: Using require to load AMD modules</h1>
+	<p>
+	The output below was generated with a simple module that was loaded.
+	</p>
+
+	<!-- Our file structure doesn't exactly match what's described in the tutorial, so
+		a little extra configuration is necessary - we'll cover this in detail later -->
+	<script>
+		dojoConfig = {
+			async: true,
+			isDebug: true,
+			baseUrl: '.',
+			tlmSiblingOfDojo: false
+		};
+	</script>
+<!-- load dojo and provide config via data attribute -->
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug:1, async:1"></script>
+<script>
+	require([
+		"app/counter"
+	], function(counter) {
+		log(counter.getValue());
+		counter.increment();
+		log(counter.getValue());
+		counter.decrement();
+		log(counter.getValue());
+
+		// Define the "log" function to display console-like messages directly on the page
+		function log(msg){
+			var c = document.getElementById("console");
+			if(!c){
+				c = document.createElement("div");
+				c.id = "console"
+				document.body.appendChild(c);
+			}
+			c.innerHTML += "<div>" + msg + "</div>";
+		}
+	});
+</script>
+
+</body>
+</html>

@@ -352,7 +352,7 @@ require([
 });
 ```
 
-[View Demo](demo/circular.html)
+<a href="demo/circular.html" class="button">View Demo</a>
 
 This looks like it should print "apples and oranges", but instead you get an error in `moduleB`: `Object has no method 'getValue'`.
 Let's take a look at what the loader will do when you load and run "index.html":
@@ -400,7 +400,7 @@ require([
 });
 ```
 
-[View Demo](demo/exports.html)
+<a href="demo/exports.html" class="button">View Demo</a>
 
 What happens now when you load and run "index.html":
 
@@ -463,7 +463,7 @@ require([
 });
 ```
 
-[View Demo](demo/exports2.html)
+<a href="demo/exports2.html" class="button">View Demo</a>
 
 ### Loading non-AMD code
 

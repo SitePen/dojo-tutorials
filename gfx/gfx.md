@@ -112,7 +112,7 @@ That's all that's needed to create the surface!  Each rendering engine (SVG, VML
 ```
 
 <!-- button for example links -->
-[View Demo](demo/surface.html)
+<a href="demo/surface.html" class="button">View Demo</a>
 
 ### Creating Shapes
 
@@ -204,7 +204,7 @@ surface.createPath("m100 100 100 0 0 100c0 50-50 50-100 0s-50-100 0-100z")
 	.setStroke("black");
 ```
 
-[View Demo](demo/shapes.html)
+<a href="demo/shapes.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Each shape type has its own creation properties; visit the [dojox/gfx](/reference-guide/1.10/dojox/gfx.html)
@@ -272,7 +272,7 @@ surface.createEllipse({
 	]
 });
 ```
-[View Demo](demo/fills.html)
+<a href="demo/fills.html" class="button">View Demo</a>
 
 <!-- protip -->
 > The `colors` array accepts objects with `offset` and `color` keys.  The `offset` property represents a number between 0 and 1, and the `color` property represents the color at that offset.  You may provide any number of `colors` objects.
@@ -307,7 +307,7 @@ Properties may include:
 *   **color**: the stroke's color
 *   **cap**: the shape of the end of the stroke
 
-[View Demo](demo/strokes.html)
+<a href="demo/strokes.html" class="button">View Demo</a>
 
 #### Choosing a Font
 
@@ -366,7 +366,7 @@ require("dojox/gfx", "dojox/gfx/Moveable", function(gfx, Moveable) {
 
 The above snippet allows users to click and hold any shape within the group to move every shape in the group around.
 
-[View Demo](demo/moveable.html)
+<a href="demo/moveable.html" class="button">View Demo</a>
 
 ### Animations and Transformations
 
@@ -429,7 +429,7 @@ gfxFx.animateFont({
 Each method has its own properties relative to the property (stroke, fill, text) being changed.  Also note that gradient
 backgrounds cannot be animated;  solid colors are animated flawlessly.
 
-[View Demo](demo/animate-fill.html)
+<a href="demo/animate-fill.html" class="button">View Demo</a>
 
 #### Rotating a Shape
 
@@ -464,7 +464,7 @@ animation.play();
 
 The `transform` property passed to `gfxFx.animateTransform` allows for any number of animations to be added.
 
-[View Demo](demo/rotate.html)
+<a href="demo/rotate.html" class="button">View Demo</a>
 
 <!-- protip -->
 > If you are wondering why there are `rotateAt` and `rotategAt` methods, it is because geometry with
@@ -492,7 +492,7 @@ Skewing (transforming or moving points of a shape along a single axis) is just a
 shapeGroup.applyTransform(gfx.matrix.skewYg(-20));
 ```
 
-[View Demo](demo/scale.html)
+<a href="demo/scale.html" class="button">View Demo</a>
 
 <!-- protip -->
 > The `gfx.matrix` resource contains numerous helpers to invert, rotate, scale, and skew shapes so that you don't
@@ -531,7 +531,7 @@ group.on("click", function(e) {
 
 The event object is very much like a standard DOM event object.  The `target` property provides the GFX-generated DOM element which was clicked.
 
-[View Demo](demo/events.html)
+<a href="demo/events.html" class="button">View Demo</a>
 
 <div class="proTip">
 
@@ -599,9 +599,9 @@ changing GFX's default rendering engine order.  The graphic shapes and propertie
 [This demo](demo/logo.html) uses many of the animation techniques described in this tutorial to modify and animate the
 Dojo Toolkit logo.
 
-[View Demo - Dojo Logo](demo/logo.html)
+<a href="demo/logo.html" class="button">View Demo - Dojo Logo</a>
 
-[View Demo - London Ajax Logo](demo/london.html)
+<a href="demo/london.html" class="button">View Demo - London Ajax Logo</a>
 
 <!-- tutorials end with a "Conclusion" block -->
 

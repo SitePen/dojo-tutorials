@@ -60,7 +60,7 @@ script.get("https://api.github.com/repos/dojo/dojo/pulls", {
 ```
 
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 <!-- pro-tip blocks -->
 <p class="proTip">

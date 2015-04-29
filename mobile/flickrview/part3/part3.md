@@ -292,7 +292,7 @@ registry.byId("feed").refresh();
 We are all set. FeedView now get its content from Flickr! Click on the demo link to see the result and browse the full
 code. In the next part we will implement the Settings view to allow users to change the request options.
 
-[View Demo](demo/flickrview.html)
+<a href="demo/flickrview.html" class="button">View Demo</a>
 
 ### Download The Source
 

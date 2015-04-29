@@ -227,7 +227,7 @@ require([
 
 Let see the result:
 
-[View Demo](demo/sample1.html)
+<a href="demo/sample1.html" class="button">View Demo</a>
 
 Above we created one simple view. Of course most mobile applications will want more than one view so let's create the
 **General** view we reference in the sample above, as well as a basic **About** view:
@@ -263,7 +263,7 @@ As usual, you must require the new widget `dojox/mobile/RoundRectCategory` you j
 
 **Congratulations**, you've just created your first Dojo Mobile application!
 
-[View Demo](demo/sample2.html)
+<a href="demo/sample2.html" class="button">View Demo</a>
 
 Dojo Mobile makes creating the basic elements of a mobile application a breeze! While your mobile application will
 be more complex than our sample above, it's important to note that Dojo Mobile provides the basic themes, widgets,

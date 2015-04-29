@@ -59,7 +59,7 @@ chart.addSeries("y", new StoreSeries(store, { query: { site: 1 } }, "value"));
 
 With the StoreSeries in place, each time the data store is notified of a change, the series is re-rendered on the chart.
 
-[View Demo](demo/store-series.html)
+<a href="demo/store-series.html" class="button">View Demo</a>
 
 ### Charting Animation:  Zooming, Scrolling, and Panning
 
@@ -275,7 +275,7 @@ The following example allows the user to zoom, pan, and scroll the chart using s
 <div id="chart" style="width: 800px; height: 400px;"></div>
 ```
 
-[View Demo](demo/zooming-scrolling-panning.html)
+<a href="demo/zooming-scrolling-panning.html" class="button">View Demo</a>
 
 ### dojox/charting Events
 
@@ -380,7 +380,7 @@ require(["dojox/charting/Chart", "dojox/charting/action2d/Tooltip", "dojox/chart
 });
 ```
 
-[View Demo](demo/chart-events.html)
+<a href="demo/chart-events.html" class="button">View Demo</a>
 
 It's important to realize that every element within a chart is just a GFX graphic, so elements of the chart may be treated and animated as such, allowing for us to create some unique effects.
 

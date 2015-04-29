@@ -76,7 +76,7 @@ from standard `select` markup with just a couple of additions:
 </body>
 ```
 
-[View Demo](demo/Select.html)
+<a href="demo/Select.html" class="button">View Demo</a>
 
 In this simple declarative example, you can see that the only difference between a
 standard HTML select and `dijit/form/Select` is indeed a
@@ -148,7 +148,7 @@ report an empty string.
 </body>
 ```
 
-[View Demo](demo/FilteringSelect.html)
+<a href="demo/FilteringSelect.html" class="button">View Demo</a>
 
 <!-- protip -->
 > In combination with `required: true`, you can specify
@@ -211,7 +211,7 @@ users get started&mdash;much like a feature seen in popular search engines.
 </body>
 ```
 
-[View Demo](demo/ComboBox.html)
+<a href="demo/ComboBox.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Again, it is very important to remember that `dijit/form/ComboBox`

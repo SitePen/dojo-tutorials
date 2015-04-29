@@ -63,7 +63,7 @@ require([
 });
 ```
 
-[View Demo](demo/datagrid.html)
+<a href="demo/datagrid.html" class="button">View Demo</a>
 
 Another way to populate your grid is to manually fetch the data you want from the store. Instead of giving the `DataGrid` a `query` parameter, you would pass it the array of items from the store as an `items` parameter:
 
@@ -99,7 +99,7 @@ require([
 });
 ```
 
-[View Demo](demo/datagrid-items.html)
+<a href="demo/datagrid-items.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Each population method has its advantages: using a `query` will allow the grid to use the store's sorting, but using `items` will provide faster rendering since the store isn't queried for each page of data. It's up to you to decide which method fits your application the best.
@@ -173,7 +173,7 @@ One last approach to formatting data is to separate the calculation from the for
 }
 ```
 
-[View Demo](demo/datagrid-formatting.html)
+<a href="demo/datagrid-formatting.html" class="button">View Demo</a>
 
 <!-- protip -->
 > By using `get`, `fields`, or `field` set to `"_item"`, the `DataGrid` will not be able to sort your data. If you need sorting and advanced calculations client-side, you will need to transform the data before it gets to your store.</code>

@@ -38,7 +38,7 @@ require(["dojo/store/Memory"],
 
 This will call an alert with the name of each employee in the sales department.
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 We could go on to create new objects in the store, and delete objects:
 

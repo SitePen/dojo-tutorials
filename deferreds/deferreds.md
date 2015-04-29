@@ -51,7 +51,7 @@ require(["dojo/Deferred", "dojo/request", "dojo/_base/array", "dojo/dom-construc
 });
 ```
 
-[View Demo](demo/deferred.html)
+<a href="demo/deferred.html" class="button">View Demo</a>
 
 In this example, we create a `Deferred` and register a callback and an errback. We also call `request.get`, an asynchronous operation, to fetch "users.json". If our fetch succeeds, it will resolve the deferred and our callback will be called; if our fetch fails, it will reject the deferred and our errback will be called.
 
@@ -82,7 +82,7 @@ require(["dojo/request", "dojo/_base/array", "dojo/dom-construct", "dojo/dom", "
 });
 ```
 
-[View Demo](demo/xhr.html)
+<a href="demo/xhr.html" class="button">View Demo</a>
 
 We're registering a callback with `then`. If the Ajax call succeeds, the Deferred is resolved and the first argument that would normally be passed to the `load` function is passed to the callback. If the Ajax call fails, the Deferred is rejected and the error is passed to the errback.
 
@@ -150,7 +150,7 @@ original.then(function(res){
 });
 ```
 
-[View Demo](demo/chaining.html)
+<a href="demo/chaining.html" class="button">View Demo</a>
 
 This example is fairly arbitrary, but chaining can be used to modify data for your application's consumption. In the case of the example, something like the following could have been done:
 
@@ -184,7 +184,7 @@ require(["dojo/request", "dojo/_base/array", "dojo/dom-construct", "dojo/dom", "
 });
 ```
 
-[View Demo](demo/chaining-practical.html)
+<a href="demo/chaining-practical.html" class="button">View Demo</a>
 
 Now any code that uses `getUserList` will always get a list of user objects.
 

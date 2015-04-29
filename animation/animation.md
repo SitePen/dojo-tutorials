@@ -54,7 +54,7 @@ require(["dojo/_base/fx", "dojo/dom", "dojo/domReady!"], function(baseFx, dom) {
 
 Notice that we use the JavaScript lower camelCase property name `borderWidth`, not the hyphenated CSS `border-width` property name. We're still passing in a node property, but this time we're using a new '`properties`' key to specify what it is we want to animate.
 
-[View Demo](demo/animateBorder.html)
+<a href="demo/animateBorder.html" class="button">View Demo</a>
 
 That same principal works for all properties that can have numeric values, and we can specify as many as we like. In this example, we'll animate top, left and opacity at the same time, to have the element drop out and fade away to the left. By providing specific `start` and `end` properties for each, we can make very specific, repeatable animations.
 
@@ -72,7 +72,7 @@ baseFx.animateProperty({
 
 Notice that we've also provided a `duration` property. This is the number of milliseconds the whole animation should take, and in this case it gives us a bit more time to see what's going on.
 
-[View Demo](demo/animateProperties.html)
+<a href="demo/animateProperties.html" class="button">View Demo</a>
 
 ### Easing
 
@@ -115,7 +115,7 @@ require(["dojo/_base/fx", "dojo/dom", "dojo/fx/easing", "dojo/window", "dojo/on"
 In this example, we're calculating the viewport height so we can position the box to appear to sit at the bottom. By using the bounceOut easing function, it reaches the value for that floor, then winds it back up a bit, before settling back to the final value.
 Notice also that the top property is an object with `start` and `end` properties, which lets us be very specific about the range of values we want to animate over for each style property.
 
-[View Demo](demo/easing.html)
+<a href="demo/easing.html" class="button">View Demo</a>
 
 Almost all of the easings have names that end in either "In" or "Out" — or both, as "InOut". The name implies whether the easing is going to affect the beginning (In), ending (Out), or both ends (InOut) of the animation. Be sure to check out [the dojo/fx/easing Reference Guide](/reference-guide/1.10/dojo/fx/easing.html) for more detail.
 
@@ -225,7 +225,7 @@ on(swapButton, "click", function(evt){
 
 Here is that calling code - the click handler. As with `fx.combine` before, the array passed to `fx.chain` has two separate animations. However, we want to run these in series: the node-swap, then the background-color animation. The container's initial background-color is set by connecting to the `beforeBegin` event, and during `onEnd` we have a little bookkeeping to do, to ensure that when we click next, the nodes are reversed.
 
-[View Demo](demo/index.html)
+<a href="demo/index.html" class="button">View Demo</a>
 
 The resulting code is flexible, logical and easily extended. What would you need to do to have the background animation run in parallel with the swap? How about pushing back the opacity of the content as it moves to the right? As frequently happens, it turns out the hardest bit is knowing where to stop!
 

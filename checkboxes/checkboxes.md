@@ -34,7 +34,7 @@ require(["dijit/form/CheckBox"], function(CheckBox) {
 });
 ```
 
-[View Demo](demo/CheckBox.html)
+<a href="demo/CheckBox.html" class="button">View Demo</a>
 
 Clicking on either the label or the input itself toggles it between a checked and unchecked state. You can also use the tab key to navigate between controls using the keyboard and check/uncheck elements with the space bar, just as you can with native controls. By referencing the corresponding CheckBox widget's ID, HTML labels also continue to work the same as they would with a native form element.
 
@@ -57,7 +57,7 @@ require(["dijit/registry"], function(registry){
 	}
 ```
 
-[View Demo](demo/checkboxValues.html)
+<a href="demo/checkboxValues.html" class="button">View Demo</a>
 
 This demo also wires up an additional CheckBox which modifies the value of one of the others, providing an example of the `value` property setter:
 
@@ -98,7 +98,7 @@ Otherwise, its use is very similar to the checkbox. Let's see an example:
 </ul>
 ```
 
-[View Demo](demo/radioButtons.html)
+<a href="demo/radioButtons.html" class="button">View Demo</a>
 
 The key difference here is the use of the `name` property. Just as with native HTML radio controls, you associate a group of Dijit radio buttons by having them share a `name` property. Now, when you check one of the options in the list, the others are automatically unchecked.
 
@@ -127,7 +127,7 @@ registry.byId("crust").on("change", function(isChecked){
 }, true);
 ```
 
-[View Demo](demo/onChange.html)
+<a href="demo/onChange.html" class="button">View Demo</a>
 
 We saw a sneak preview of this in our earlier `value` getters &amp; setters demo. The pattern is simple since `dojo/aspect` lets us treat the widget method just the same way that we might treat a DOM event on a regular element. The listener function receives the checked state as a sole argument, and we respond by updating a message on the screen. The many events provided by these widgets opens up a broad range of interaction and form-logic options.
 
@@ -147,7 +147,7 @@ var myToggleButton = new ToggleButton({
 }, "toggleButtonProgrammatic");
 ```
 
-[View Demo](demo/ToggleButton.html)
+<a href="demo/ToggleButton.html" class="button">View Demo</a>
 
 In this widget, the `label` property is mandatory for correct functionality. Like all other properties, after initialization, `label` and `iconClass` can be updated via the `set` method:
 

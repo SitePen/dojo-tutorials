@@ -108,7 +108,7 @@ var darthsaber = new Lightsaber({
 console.log("darthsaber:", darthsaber.settings);
 ```
 
-[View Demo](demo/mixin.html)
+<a href="demo/mixin.html" class="button">View Demo</a>
 
 ### declare.safeMixin
 
@@ -169,7 +169,7 @@ lang.extend(Lightsaber, weaponMixin);
 darthsaber.swing(); // "hit!" (or "miss!" if you are unlucky)
 ```
 
-[View Demo](demo/extend.html)
+<a href="demo/extend.html" class="button">View Demo</a>
 
 This is much more performant than calling `lang.mixin` on every new object that is created, as it modifies one inherited object rather than several child objects. It is also faster than using `declare.safeMixin`. However, should you need to augment a `declare`d constructor with functions that respect calls to `this.inherited`, you should use `declare.safeMixin`, or the `extend` method on the constructor:
 
@@ -232,7 +232,7 @@ console.log("bar baz - a change to one subObject no longer affects all:",
 	a.subObject.foo, b.subObject.foo);
 ```
 
-[View Demo](demo/clone.html)
+<a href="demo/clone.html" class="button">View Demo</a>
 
 Keep in mind that deep copies can be _significantly_ slower than shallow copies, and will cause scripts to hang if used on recursive data structures. Deep copies should be used only when absolutely necessary.
 

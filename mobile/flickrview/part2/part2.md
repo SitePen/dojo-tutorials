@@ -297,7 +297,7 @@ require([
 
 Our application layout is now complete!
 
-[View Demo](demo/mockup2.html)
+<a href="demo/mockup2.html" class="button">View Demo</a>
 
 ### FlickrView Has Taken Shape!
 

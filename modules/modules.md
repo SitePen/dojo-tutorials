@@ -103,7 +103,7 @@ The index page will look like this:
 ```
 
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 Let's review what's going on here:
 

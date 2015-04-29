@@ -275,7 +275,7 @@ With all of these items in place, we have a working widget! However, as you can 
 
 ![](resources/widget_unstyled.png)
 
-[View Demo](demo/unstyled.html)
+<a href="demo/unstyled.html" class="button">View Demo</a>
 
 #### Step 5: Style as appropriate
 
@@ -311,7 +311,7 @@ Now, with that in place, we just need to add the CSS to our `head` on our page, 
 
 ![](resources/widget_final.png)
 
-[View Demo](demo/index.html)
+<a href="demo/index.html" class="button">View Demo</a>
 ### Summary
 
 As you can see, using `dijit/_WidgetBase` and `dijit/_TemplatedMixin` makes it fairly easy to create a custom widget. We were able to quickly set up a template, and with a little bit of work, we were able to create our AuthorWidget class based off of `dijit/_WidgetBase` and `dijit/_TemplatedMixin`.

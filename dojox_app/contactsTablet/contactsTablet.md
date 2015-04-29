@@ -213,7 +213,7 @@ The "details" view does not require any changes to move from a phone form factor
 
 [Run the Contacts Application](demos/contactsAppTablet/contacts.html)
 
-[View the contactsAppTablet source on github](https://github.com/edchat/dojox_app_tutorial/tree/master/contactsTablet/demos/contactsAppTablet)
+<a href="https://github.com/edchat/dojox_app_tutorial/tree/master/contactsTablet/demos/contactsAppTablet" class="button">View the contactsAppTablet source on github</a>
 
 ### Conclusion
 

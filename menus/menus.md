@@ -108,9 +108,7 @@ to refresh your memory.
 	</div>
 </div>
 
-[View Declarative Demo](demo/simpleDeclarativeMenu.html)
-
-[View Programmatic Demo](demo/simpleProgMenu.html)
+<a href="demo/simpleDeclarativeMenu.html" class="button">View Declarative Demo</a> <a href="demo/simpleProgMenu.html" class="button">View Programmatic Demo</a>
 
 When using `dijit/Menu`, a menu is composed of a collection of menu items.
 Each Menu is a widget instance, and each menu item is its own widget instance.
@@ -265,9 +263,7 @@ is used as the label for the item.
 	</div>
 </div>
 
-[View Declarative Demo](demo/nestedDeclarativeMenu.html)
-
-[View Programmatic Demo](demo/nestedProgMenu.html)
+<a href="demo/nestedDeclarativeMenu.html" class="button">View Declarative Demo</a> <a href="demo/nestedProgMenu.html" class="button">View Programmatic Demo</a>
 
 Notice that in the declarative example, the only "magic" is in
 the convention where the first element in the item markup is interpreted as the
@@ -363,7 +359,7 @@ define in our stylesheet&mdash;for example:
 }
 ```
 
-[View Demo](demo/iconClass.html)
+<a href="demo/iconClass.html" class="button">View Demo</a>
 
 ### Menu Variations
 
@@ -415,7 +411,7 @@ after the menu was created.
 Our next demo hooks up menus as noted above, resulting in one context menu
 on the document as a whole, and another context menu specific to task items.
 
-[View Demo](demo/contextMenus.html)
+<a href="demo/contextMenus.html" class="button">View Demo</a>
 
 In the demo, you will notice that there is also a "Task" popup menu item in the global
 context menu (which reuses the same menu as the context menu for task items).
@@ -552,9 +548,7 @@ Usage is generally the same, but you do have to remember to use the
 	</div>
 </div>
 
-[View Declarative Demo](demo/nestedDeclarativeMenuBar.html)
-
-[View Programmatic Demo](demo/nestedProgMenuBar.html)
+<a href="demo/nestedDeclarativeMenuBar.html" class="button">View Declarative Demo</a> <a href="demo/nestedProgMenuBar.html" class="button">View Programmatic Demo</a>
 
 ### Menus in Widgets
 
@@ -640,7 +634,7 @@ For example, we could create a ComboButton with a Menu as follows:
 	</div>
 </div>
 
-[View Demo](demo/ComboButton.html)
+<a href="demo/ComboButton.html" class="button">View Demo</a>
 
 ### Going Further
 

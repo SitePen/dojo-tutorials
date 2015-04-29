@@ -63,7 +63,7 @@ require(["dojo/dom", "dojo/domReady!"], function(dom) {
 });
 ```
 
-[View Demo](demo/byid.html)
+<a href="demo/byid.html" class="button">View Demo</a>
 
 The `setText` function sets the text of a node, but since it passes the `node` argument to `dom.byId` it will take either a node ID as a string or a DOM node.
 
@@ -100,7 +100,7 @@ require(["dojo/dom", "dojo/dom-construct", "dojo/domReady!"],
 });
 ```
 
-[View Demo](demo/create.html)
+<a href="demo/create.html" class="button">View Demo</a>
 
 A simple list item is created with the content of "Six" and appended to the list. Next, another list item is created with the content of "Seven", its `className` property is set to "seven", it's styled so it has a bold font, and then appended to the list. Finally, a list item is created with the contents "Three and a half" and is inserted after the list item with the ID "three".
 
@@ -159,7 +159,7 @@ require(["dojo/dom", "dojo/dom-construct", "dojo/on", "dojo/domReady!"],
 });
 ```
 
-[View Demo](demo/place.html)
+<a href="demo/place.html" class="button">View Demo</a>
 
 The possible values for the placement argument are "before", "after", "replace", "only", "first", and "last". Please see the [reference guide for domConstruct.place](/reference-guide/1.10/dojo/dom-construct.html#dojo-dom-construct-place) for more details as to what each placement option does, though the names are decently intuitive.
 
@@ -192,7 +192,7 @@ on(dom.byId("destroyFirst"), "click", destroyFirst);
 on(dom.byId("destroyAll"), "click", destroyAll);
 ```
 
-[View Demo](demo/destroy.html)
+<a href="demo/destroy.html" class="button">View Demo</a>
 
 The first button will destroy the first item in the list on each click. The second empties the list entirely.
 

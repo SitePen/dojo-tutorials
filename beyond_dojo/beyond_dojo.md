@@ -85,7 +85,7 @@ require([
 });
 ```
 
-[View Demo](demo/basecore.html)
+<a href="demo/basecore.html" class="button">View Demo</a>
 
 There is a wealth of functionality in Dojo Base and Core for common web and general-purpose programming tasks. These tutorials aim to introduce you to some of it, but it should not replace the broader familiarity you'll get from browsing the [Reference Guide](/reference-guide/1.10/dojo/) and the [API Reference](/api/?qs=1.10).
 
@@ -99,13 +99,13 @@ Dijit provides a series of controls which enhances basic HTML form controls with
 
 See the [Dijit Themes, Buttons, and Textboxes](../themes_buttons_textboxes/) tutorial for additional reading.
 
-[View Demo](demo/dijitForm.html)
+<a href="demo/dijitForm.html" class="button">View Demo</a>
 
 Dijit also has powerful tools for creating dynamic user interfaces that adapt to viewport size, and respond to resize and user interaction. It includes widgets for creating desktop-like application layouts and standard items like Tab and Accordion controls for making the best use of the space available.
 
 <iframe src="demo/dijitLayout.html" style="height: 252px; width: 582px; border: 1px solid #CCCCCC;"></iframe>
 
-[View Demo](demo/dijitLayout.html)
+<a href="demo/dijitLayout.html" class="button">View Demo</a>
 
 You don't have to use Dijit when you are building interactivity, but the controls and patterns it comprises have grown out of a combined and cumulative experience of many years of building web applications, making it a great base to build on and with.
 
@@ -128,7 +128,7 @@ One of the most widely used modules of DojoX (let alone Dojo as a whole) was `do
 
 A cross-platform vector graphics API
 
-[View Demo](demo/dojoxGfx.html)
+<a href="demo/dojoxGfx.html" class="button">View Demo</a>
 
 See the [Vector Graphics with Dojo's GFX](../gfx/) tutorial for additional reading.</a>
 
@@ -138,7 +138,7 @@ See the [Vector Graphics with Dojo's GFX](../gfx/) tutorial for additional readi
 
 Native charting built on dojox/gfx, with a broad selection of chart types, themes and features for visualizing data.
 
-[View Demo](demo/dojoxCharting.html)
+<a href="demo/dojoxCharting.html" class="button">View Demo</a>
 
 See the [Dojo Charting](../charting/) tutorial for additional reading.
 
@@ -148,7 +148,7 @@ See the [Dojo Charting](../charting/) tutorial for additional reading.
 
 A lightweight, cross platform, mobile widgets and application framework for mobile devices.
 
-[View Demo](demo/dojoxMobile.html)
+<a href="demo/dojoxMobile.html" class="button">View Demo</a>
 
 See the [Getting Started with Dojox Mobile](../mobile/flickrview/part1/) tutorial for additional reading.
 

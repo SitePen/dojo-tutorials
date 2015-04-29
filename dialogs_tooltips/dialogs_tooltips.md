@@ -98,7 +98,7 @@ The following are some very common usages of `dijit/Tooltip`.
 <div class="dijitHidden"><span data-dojo-type="dijit/Tooltip" data-dojo-props="connectId:'TooltipButton4'">I am <strong>before</strong> the button</span></div>
 ```
 
-[View Demo](demo/tooltip-mixed.html)
+<a href="demo/tooltip-mixed.html" class="button">View Demo</a>
 
 #### Programmatic Tooltip Creation
 
@@ -125,7 +125,7 @@ var myTip = new Tooltip({
 	"class": "customTip"
 });
 ```
-[View Demo](demo/tooltip-mixed.html)
+<a href="demo/tooltip-mixed.html" class="button">View Demo</a>
 
 #### Product Details
 
@@ -157,7 +157,7 @@ var myTip = new Tooltip({
     </div>
 </div>
 ```
-[View Demo](demo/tooltip-details.html)
+<a href="demo/tooltip-details.html" class="button">View Demo</a>
 
 [![Dijit Tooltip](images/tip.png "A Tooltip featuring rich HTML content")](demo/tooltip-details.html)
 
@@ -235,7 +235,7 @@ The following are some very common usages of `dijit/Dialog`:
 </div>
 ```
 
-[View Demo](demo/dialog-terms.html)
+<a href="demo/dialog-terms.html" class="button">View Demo</a>
 
 [![Dijit Dialog](images/dialog.png ""Agree to Terms" dialog")](demo/dialog-terms.html)
 
@@ -265,7 +265,7 @@ The following are some very common usages of `dijit/Dialog`:
 <button onclick="createDialog(true);">Create New Dialog</button>
 ```
 
-[View Demo](demo/dialog-stacked.html)
+<a href="demo/dialog-stacked.html" class="button">View Demo</a>
 
 #### Ajax Dialogs with Black Underlay
 
@@ -297,7 +297,7 @@ The following are some very common usages of `dijit/Dialog`:
 </div>
 ```
 
-[View Demo](demo/dialog-ajax.html)
+<a href="demo/dialog-ajax.html" class="button">View Demo</a>
 
 ### Getting Started with dijit/TooltipDialog
 
@@ -335,7 +335,7 @@ The following is a very common usage of `dijit/TooltipDialog`.
 </div>
 ```
 
-[View Demo](demo/ttd-button.html)
+<a href="demo/ttd-button.html" class="button">View Demo</a>
 
 [![Dijit TooltipDialog](images/ttd.png "A TooltipDialog  used to log into a website")](demo/ttd-button.html)
 

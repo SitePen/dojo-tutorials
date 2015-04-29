@@ -104,7 +104,7 @@ Note how we had to implemented two methods ourselves:
 	can return false if you can tell just by looking at an item that it couldn't possibly have any children,
 	currently or in the future (due to drag and drop or other data store updates).
 
-[View Demo](demo/basic.html)
+<a href="demo/basic.html" class="button">View Demo</a>
 
 ### Dynamic Updates and Drag & Drop
 
@@ -112,7 +112,7 @@ Here we will learn how to use the `Tree` with drag-n-drop, and real-time respons
 
 [![Drag and drop on Tree component](images/dndTreeScreenshot.png)](demo/demo.html)
 
-[View Complete Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Complete Demo</a>
 
 For a Tree to work with dynamic data updates, including DnD,
 the store needs to be able to understand and track parent-child relationships,
@@ -515,7 +515,7 @@ That's because by default ObjectStoreModel tries to get the root node by executi
 Since our server is merely serving static files, and cannot respond to queries, we overrode the
 getRoot() method to just do a get() call.
 
-[View Demo](demo/lazy.html)
+<a href="demo/lazy.html" class="button">View Demo</a>
 
 ### Dynamic Updates and DnD with a client/server store
 

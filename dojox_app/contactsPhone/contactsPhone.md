@@ -695,7 +695,7 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 
 [Run the Contacts Application](demos/contactsAppPhone/contacts.html)
 
-[View the contactsAppPhone source on github](https://github.com/edchat/dojox_app_tutorial/tree/master/contactsPhone/demos/contactsAppPhone)
+<a href="https://github.com/edchat/dojox_app_tutorial/tree/master/contactsPhone/demos/contactsAppPhone" class="button">View the contactsAppPhone source on github</a>
 
 ### Conclusion
 

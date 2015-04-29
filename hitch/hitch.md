@@ -64,7 +64,7 @@ require(["dojo/query", "dojo/domReady!"],
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 When someone clicks on any node with the CSS class "myNodes", you might expect the above function
 definition to show a JavaScript alert box saying "The value of 'foo' is bar"; however, because of the way we
@@ -105,7 +105,7 @@ query(".myNodes").forEach(function(node){
 });
 ```
 
-[View Demo](demo/call.html)
+<a href="demo/call.html" class="button">View Demo</a>
 <div class="proTip">
 
 In most examples on the Intertubes&trade;, `Function.apply` is used, and usually
@@ -153,7 +153,7 @@ require(["dojo/_base/lang"],
 });
 ```
 
-[View Demo](demo/hitch.html)
+<a href="demo/hitch.html" class="button">View Demo</a>
 
 As you can see, `lang.hitch` ensures that a particular function&mdash;_bound_ to
 a specific execution context&mdash;will _always_ be invoked without fear of having that
@@ -233,7 +233,7 @@ someObject.setValueHandler = lang.partial(putValue, myStore);
 someObject.setValueHandler(someItem, "foo", "bar");
 ```
 
-[View Demo](demo/partial.html)
+<a href="demo/partial.html" class="button">View Demo</a>
 
 The above can be confusing, so let's break down what is happening:
 

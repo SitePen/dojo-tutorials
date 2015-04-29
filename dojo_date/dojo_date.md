@@ -43,7 +43,7 @@ this.showResult("Leap Years",
 ].join("\n&lt;br>"))
 });
 ```
-[View Demo](demo/inspectingDates.html)
+<a href="demo/inspectingDates.html" class="button">View Demo</a>
 
 As you can see, `dojo/date` gives you simple APIs for plumbing information out of a JavaScript Date object.  But what if you need to
 perform basic math based on dates?
@@ -63,7 +63,7 @@ var lastYear = date.add(testDate, "year", -1);
 var nextWeek = date.add(testDate, "week", 1),
 ```
 
-[View Demo](demo/addDates.html)
+<a href="demo/addDates.html" class="button">View Demo</a>
 
 ### Date Comparisons
 
@@ -81,7 +81,7 @@ sortEntries.sort(function(a, b){
 return sortEntries;
 ```
 
-[View Demo](demo/compareDates.html)
+<a href="demo/compareDates.html" class="button">View Demo</a>
 
 As you can see in our example, a lot of [@astro_nicole](http://twitter.com/astro_nicole)'s tweets are photos taken from the International
 Space Station (at the time we captured them), so we thought it might be nice to sort them by the time of day each tweet was created. At the heart of this
@@ -149,7 +149,7 @@ require(["dojo/date", "dojo/date/locale"],
 	}
 ```
 
-[View Demo](demo/l10nDateParsing.html)
+<a href="demo/l10nDateParsing.html" class="button">View Demo</a>
 
 In the UK (and Australia), 1/5/2011 reads as day/month/year, i.e. 1st May, 2011. In the U.S. the convention is month/day/year, so we get a
 completely different date: January 5th, 2011.  The `dojo/date/locale` module supports a number of date formats for
@@ -188,7 +188,7 @@ formatL10NDates: function() {
 	].join("\n"))
 },
 ```
-[View Demo](demo/l10nDateFormatting.html)
+<a href="demo/l10nDateFormatting.html" class="button">View Demo</a>
 
 Each bundle enables various formats. Here, we've specified "short" and "full" length. You can also try "long" or "medium" (the default). Finally, you can
 pluck out and format just the date part you need by setting the `selector` property to `year`,
@@ -223,7 +223,7 @@ formatResults[firstTweet.toUTCString()+" (tweet date)"]
 formatResults[now.toUTCString()+ " (now) - date only"]
 	= stamp.toISOString(now, { selector: "date" });
 ```
-[View Demo](demo/isoDates.html)
+<a href="demo/isoDates.html" class="button">View Demo</a>
 
 ### Conclusion
 

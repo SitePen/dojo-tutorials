@@ -154,7 +154,7 @@ application to be cached on the device:
 **Congratulations!** You just developed a complete Dojo Mobile application. The next part will show you how to make
 your application ready for production.
 
-[View Demo](demo/flickrview.html)
+<a href="demo/flickrview.html" class="button">View Demo</a>
 
 ### Download The Source
 

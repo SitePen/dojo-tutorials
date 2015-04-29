@@ -98,7 +98,7 @@ require(["dojo/on", "dojo/dom", "dojo/_base/lang", "dojo/domReady!"],
 
 });
 ```
-[View Demo](demo/on.html)
+<a href="demo/on.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Unlike `on`'s predecessor, `dojo.connect`, `on` does not accept the handler scope and method arguments.  You will need to make use of `lang.hitch` for the third argument if you wish to preserve execution context.
@@ -137,7 +137,7 @@ require(["dojo/query", "dojo/_base/lang", "dojo/domReady!"],
 <!-- protip -->
 > Note that unlike `NodeList.connect`, the `NodeList.on` method does _not_ return the NodeList back for further chaining; instead, it returns an array of `on` handles that can be `remove`d later.  The array also includes a convenient top-level `remove` method, which will remove all of the listeners at once.
 
-[View Demo](demo/query.html)
+<a href="demo/query.html" class="button">View Demo</a>
 
 ### Event Delegation
 
@@ -189,7 +189,7 @@ directly.  This is because `dojo/on` needs a selector engine exposed by
 This is not pulled in automatically by `dojo/on` in order to reduce its footprint
 and avoid "penalizing" developers for a feature that might not always be used.
 
-[View Demo](demo/delegation.html)
+<a href="demo/delegation.html" class="button">View Demo</a>
 
 When running the above demo, notice how `this` still refers to the
 actual node we are interested in, not the `parentDiv` node.
@@ -247,7 +247,7 @@ require(["dojo/on", "dojo/topic", "dojo/dom-construct", "dojo/dom", "dojo/domRea
 </script>
 ```
 
-[View Demo](demo/pubsub.html)
+<a href="demo/pubsub.html" class="button">View Demo</a>
 
 One useful advantage to this pattern of events is that now our alerting routine can be tested in a unit test without the need to create any DOM objects: the routine is decoupled from the event producer.
 

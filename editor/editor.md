@@ -72,7 +72,7 @@ Once the Dijit theme is in place, the following code snippet is all you need to 
 <div data-dojo-type="dijit/Editor"></div>
 ```
 
-[View Demo](demo/editor-basic.html)
+<a href="demo/editor-basic.html" class="button">View Demo</a>
 
 While the Editor displays numerous tools by default, it's very easy to choose which tools you'd like displaying and which you'd prefer not be available:
 
@@ -82,7 +82,7 @@ While the Editor displays numerous tools by default, it's very easy to choose wh
 
 ```
 
-[View Demo](demo/editor-custom.html)
+<a href="demo/editor-custom.html" class="button">View Demo</a>
 
 For the rest of the tutorial, we'll continue using the declarative approach, but it's quite simple to create one programmatically as well. The attributes that get set in the `data-dojo-props` are just passed through as an object to the constructor, along with a DOM node or an ID of a node to replace with the editor, like so:<p>
 
@@ -100,7 +100,7 @@ For the rest of the tutorial, we'll continue using the declarative approach, but
 </script>
 ```
 
-[View Demo](demo/editor-programmatic.html)
+<a href="demo/editor-programmatic.html" class="button">View Demo</a>
 
 ### Using Plugins
 
@@ -169,7 +169,7 @@ To use these extra plugins, require their resources and add their "short names" 
 </div>
 ```
 
-[View Demo](demo/editor-dijit-plugins.html)
+<a href="demo/editor-dijit-plugins.html" class="button">View Demo</a>
 
 Along with the the host of extra plugins within the `dijit` namespace, `dojox/editor/plugins` provides numerous additional plugins for Editor:
 
@@ -304,7 +304,7 @@ Requiring these resources and adding their short names to the `extraPlugins` arr
 </div>
 ```
 
-[View Demo](demo/editor-dojox-plugins.html)
+<a href="demo/editor-dojox-plugins.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Many of the Editor plugins within the dojox namespace have their own stylesheet, so don't forget to check the `dojox/editor/plugins/resources` folder to see if the given plugin has one. Note that in production, you would typically combine your CSS resources into a single CSS file @import rules, and allow the Dojo build system to combine your CSS files into a single file.

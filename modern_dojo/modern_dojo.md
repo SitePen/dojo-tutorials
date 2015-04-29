@@ -45,7 +45,7 @@ Now let's look at the modern version of this:
   });
 ```
 
-[View Demo](demo/modern_dojo-helloworld.html)
+<a href="demo/modern_dojo-helloworld.html" class="button">View Demo</a>
 
 Welcome to the brave new world.  The foundation for "modern" Dojo is the `require()` function.  It creates a closure of JavaScript code and provides it with the modules it needs to do the job as return variables passed as arguments to the function.  Typically, the first argument is an array of module IDs (MIDs) and the second is the function.  Within the closure of the `require()`, we reference the modules based on the variable name we declared in the argument.  While we could call a module anything, there are some common conventions that are used and are usually noted in the Reference Guide.
 
@@ -93,7 +93,7 @@ You would now do a `require()`:
   });
 ```
 
-[View Demo](demo/modern_dojo-string.html)
+<a href="demo/modern_dojo-string.html" class="button">View Demo</a>
 
 ### Events and Advice
 
@@ -164,7 +164,7 @@ In "modern" Dojo, only using `dojo/on`, you can specify your code, both programm
   </body>
 ```
 
-[View Demo](demo/modern_dojo-button.html)
+<a href="demo/modern_dojo-button.html" class="button">View Demo</a>
 
 <div class="proTip">Notice how `dijit.byId` isn't used.  In "modern" Dojo, the `dijit/registry` is used for widgets and `registry.byId()` retrieves a reference to the widget.  Also, notice how `dojo/on` handles both the DOM node and widget events in the same way.</div>
 
@@ -439,7 +439,7 @@ If you are just developing with dijits or other widgets, then there were a few c
   });
 ```
 
-[View Demo](demo/modern_dojo-watch.html)
+<a href="demo/modern_dojo-watch.html" class="button">View Demo</a>
 
 `dojo/Evented` provides `emit()` and `on()` functionality for classes and this is incorporated into Dijits and widgets.  In particular, it is "modern" to use `widget.on()` to set your event handling.  For example, you can do the following:
 
@@ -456,7 +456,7 @@ If you are just developing with dijits or other widgets, then there were a few c
   });
 ```
 
-[View Demo](demo/modern_dojo-on.html)
+<a href="demo/modern_dojo-on.html" class="button">View Demo</a>
 
 ### Parser
 
@@ -494,7 +494,7 @@ With the changes mentioned above in regards to the concepts introduced with `doj
   </button>
 ```
 
-[View Demo](demo/modern_dojo-parser.html)
+<a href="demo/modern_dojo-parser.html" class="button">View Demo</a>
 
 
 In addition, the parser also supports the concepts introduced with `dojo/aspect` and you can provide code for "before", "after" and "around" advice.  See [dojo/parser](/reference-guide/1.10/dojo/parser.html#changing-the-behavior-of-a-method) reference guide for more information about this.

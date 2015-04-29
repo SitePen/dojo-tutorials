@@ -47,7 +47,7 @@ All animation functions take one argument: an object with properties. The most i
 
 Animation functions return a [`dojo/_base/fx::Animation`](/reference-guide/1.10/dojo/_base/fx.html#dojo-base-fx-animation) object with several methods: play, pause, stop, status, and gotoPercent. Animations are not started when they are created and must be manually started with the play method, as shown above.
 
-[View Demo](demo/fade.html)
+<a href="demo/fade.html" class="button">View Demo</a>
 
 ### Wiping
 
@@ -78,7 +78,7 @@ Another effect you might have seen is wiping: changing the height of a node whil
 
 The wipe effect is in the `dojo/fx` module. In this example, we have added the "wipe" class to our target node. Because the wipe functions operate on the height of the contents of a node rather than a definite height, our "wipe" class sets the target node's height to "auto".
 
-[View Demo](demo/wipe.html)
+<a href="demo/wipe.html" class="button">View Demo</a>
 
 ### Sliding
 
@@ -107,7 +107,7 @@ So far we've covered hiding nodes, but what if we're looking to move them around
 </script>
 ```
 
-[View Demo](demo/slide.html)
+<a href="demo/slide.html" class="button">View Demo</a>
 
 ### Animation Events
 
@@ -186,7 +186,7 @@ As discussed previously, all of these animation methods return a [`dojo/_base/fx
 
 You might have noticed that `beforeBegin` is being passed as a property of the arguments object. The reason for passing it in more directly is that certain animations connect to `beforeBegin` when they are created. Therefore, if you connect to `beforeBegin` after the animation is created, your handler will be executed after the animation's `beforeBegin` handler, which may not be what you want to happen. By passing your handler as a property of the arguments object, you guarantee that your handler will execute first.
 
-[View Demo](demo/connect.html)
+<a href="demo/connect.html" class="button">View Demo</a>
 
 ### Chaining
 
@@ -227,7 +227,7 @@ What if we want to fire animations in sequence? We could use the `End` event tha
 
 As you can see here, we create a few effects directly inline the call to `fx.chain`, and immediately call `play` on the returned [`dojo/_base/fx::Animation`](/reference-guide/1.10/dojo/_base/fx.html#dojo-base-fx-animation) to start the chained animation. We don't start playing each individual effect within the chain: `fx.chain` handles that for us.
 
-[View Demo](demo/chain.html)
+<a href="demo/chain.html" class="button">View Demo</a>
 
 ### Combining
 
@@ -268,7 +268,7 @@ In this case, rather than playing the fade and then the slideTo in sequence, the
 
 Using `fx.chain` and `fx.combine`, you can build up some fairly elaborate animation sequences. Also, given that both chain and combine return animation objects, the end results of those methods can also be chained and combined, allowing for you to build everything from very simple animations to very rich and detailed sequences.
 
-[View Demo](demo/combine.html)
+<a href="demo/combine.html" class="button">View Demo</a>
 
 ### Conclusion
 

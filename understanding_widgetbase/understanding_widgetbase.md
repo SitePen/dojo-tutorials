@@ -41,7 +41,7 @@ They are listed here, organized according to the sequence in which they are call
 		* `postCreate`
 *   `startup`
 
-[View Demo](demo/lifecycle.html)
+<a href="demo/lifecycle.html" class="button">View Demo</a>
 
 These methods exist to handle a number of things:
 

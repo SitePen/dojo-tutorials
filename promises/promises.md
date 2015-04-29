@@ -96,7 +96,7 @@ original.then(function(response){
 });
 ```
 
-[View Demo](demo/chaining.html)
+<a href="demo/chaining.html" class="button">View Demo</a>
 
 As we saw before, chaining is powerful; it's even more powerful when you know that each link in the chain is immutable.
 
@@ -184,7 +184,7 @@ require(["dojo/_base/array", "dojo/when", "dojo/request",
 });
 ```
 
-[View Demo](demo/when.html)
+<a href="demo/when.html" class="button">View Demo</a>
 
 It also could be that you're in charge of the API for creating the user list, and want a clean API for your developers to hand you a list of users from either the server (via a Deferred) or an array. In this case, you might come up with a function similar to the following:
 
@@ -226,7 +226,7 @@ createUserList("userlist2",
 	[{ id: 100, username: "username100", name: "User 100" }]);
 ```
 
-[View Demo](demo/when-create.html)
+<a href="demo/when-create.html" class="button">View Demo</a>
 
 As you can see, `dojo/when` allows developers to elegantly handle both synchronous and asynchronous usecases with one API, on both the producer and consumer ends of the spectrum.
 
@@ -278,7 +278,7 @@ function(all, Deferred, request, arrayUtil, domConstruct, dom, JSON){
 
 Here we want to take a list of users from the server and combine it with a list of statuses. After registering a callback that will return a hash of users by ID, we pass both Deferreds to `dojo/promise/all` and register a callback with it. That callback then checks for an error and if it finds none, it iterates through the statuses and matches them up with a user. It doesn't matter which request finishes first, as `dojo/promise/all` will always give us the results in the order in which the Deferreds were passed in.
 
-[View Demo](demo/all.html)
+<a href="demo/all.html" class="button">View Demo</a>
 
 ### Conclusion
 

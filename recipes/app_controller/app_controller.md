@@ -29,7 +29,7 @@ components themselves.
 
 [![Flickr Viewer with Fruit Photo](images/fruitLightbox.png)](demo/demo.html)
 
-[View Final Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Final Demo</a>
 
 ### Discussion
 
@@ -142,7 +142,7 @@ These are the modules we'll need for the initial layout. The markup is as follow
 </body>
 ```
 
-[View Step 1](demo/step1.html)
+<a href="demo/step1.html" class="button">View Step 1</a>
 
 If you are working along with this demo, you will want to include [its CSS](demo/style.css).
 
@@ -212,7 +212,7 @@ dojoConfig = {
 };
 ```
 
-[View Step 2](demo/step2.html)
+<a href="demo/step2.html" class="button">View Step 2</a>
 
 While this demo does use a specific API key, in order to properly use the Flickr API, do make sure that you properly
 register and use your own API key. Also note that parseOnLoad alone does not make the `dojo/parser` resource available;
@@ -264,7 +264,7 @@ doSearch = function() {
 	},
 ```
 
-[View Step 3](demo/step3.html)
+<a href="demo/step3.html" class="button">View Step 3</a>
 
 #### Step 4: Search Results
 
@@ -302,7 +302,7 @@ renderItem = function(item, refNode, position) {
 };
 ```
 
-[View Step 4](demo/step4.html)
+<a href="demo/step4.html" class="button">View Step 4</a>
 
 ### Step 5: View Large Image
 
@@ -351,7 +351,7 @@ showItemById = function (id, originNode) {
 },
 ```
 
-[View Step 5](demo/step5.html)
+<a href="demo/step5.html" class="button">View Step 5</a>
 
 Using event delegation to register a single click event listener on the whole list is both more efficient and flexible.
 Having nothing bound to the list nodes leaves you free to change or remove those at will, without needing to disconnect
@@ -396,7 +396,7 @@ place, but it also means we don't have to put code inside the functions of inter
 store's `fetch` method call, but might also serve us down the road if we want to inherit some of these application
 controller methods from a base class.
 
-[View Step 6](demo/step6.html)
+<a href="demo/step6.html" class="button">View Step 6</a>
 
 ### Step 7: Staggered Loading
 
@@ -445,7 +445,7 @@ define([/* all previous dependencies */, "demo/module"], function() {
 
 Now that the layout classes are available within the `demo/module` resource, the page may now be parsed properly.
 
-[View Step 7](demo/step7.html)
+<a href="demo/step7.html" class="button">View Step 7</a>
 
 ### Step 8: Further Improvements
 
@@ -470,7 +470,7 @@ The result is much improved with no change to the application flow.  `renderItem
 preloading code in there would have been awkward. The new `preloadItems` is definitely an application or page-level
 concern, and not something that the renderer needs to bother with.
 
-[View Final Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Final Demo</a>
 
 ### Final Code
 
@@ -673,7 +673,7 @@ define([
 });
 ```
 
-[View full source](demo/app-step7.js)
+<a href="demo/app-step7.js" class="button">View full source</a>
 
 The final HTML structure looks like:
 

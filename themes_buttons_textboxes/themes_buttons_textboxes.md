@@ -163,9 +163,7 @@ conjunction with a label&mdash;or even the image alone&mdash;like so:
 	</div>
 </div>
 
-[View Declarative Demo](demo/Button.html)
-
-[View Programmatic Demo](demo/ProgButton.html)
+<a href="demo/Button.html" class="button">View Declarative Demo</a> <a href="demo/ProgButton.html" class="button">View Programmatic Demo</a>
 
 Several widget properties are employed in the example above:
 
@@ -321,9 +319,7 @@ The following example shows these three widgets in action:
 	</div>
 </div>
 
-[View Declarative Demo](demo/MoreButtons.html)
-
-[View Programmatic Demo](demo/ProgMoreButtons.html)
+<a href="demo/MoreButtons.html" class="button">View Declarative Demo</a> <a href="demo/ProgMoreButtons.html" class="button">View Programmatic Demo</a>
 
 Notice that `dijit/form/ComboButton` and `dijit/form/DropDownButton` cooperate with popup widgets, such as
 `dijit/Menu`, `dijit/TooltipDialog`, and `dijit/ColorPalette`.
@@ -445,9 +441,7 @@ after creating the buttons above.
 	</div>
 </div>
 
-[View Declarative Demo](demo/TextBox.html)
-
-[View Programmatic Demo](demo/ProgTextBox.html)
+<a href="demo/TextBox.html" class="button">View Declarative Demo</a> <a href="demo/ProgTextBox.html" class="button">View Programmatic Demo</a>
 
 The following example demonstrates basic functionality of `dijit/form/NumberTextBox`,
 `dijit/form/CurrencyTextBox`, `dijit/form/TimeTextBox`, and `dijit/form/DateTextBox`.
@@ -558,9 +552,7 @@ The following example demonstrates basic functionality of `dijit/form/NumberText
 	</div>
 </div>
 
-[View Declarative Demo](demo/MoreBox.html)
-
-[View Programmatic Demo](demo/ProgMoreBox.html)
+<a href="demo/MoreBox.html" class="button">View Declarative Demo</a> <a href="demo/ProgMoreBox.html" class="button">View Programmatic Demo</a>
 
 <!--protip -->
 > Again, if you are going to define your widgets declaratively, don't forget to

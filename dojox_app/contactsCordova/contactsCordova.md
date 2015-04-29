@@ -146,7 +146,7 @@ We can not run in Cordova/PhoneGap as part of this demo, you will need to instal
 
 [Run the Contacts Application Demo](demos/contactsApp/contacts.html)
 
-[View the contactsApp source on github](https://github.com/edchat/dojox_app_tutorial/tree/master/contactsCordova/demos/contactsApp)
+<a href="https://github.com/edchat/dojox_app_tutorial/tree/master/contactsCordova/demos/contactsApp" class="button">View the contactsApp source on github</a>
 
 ### Contacts Application on github
 

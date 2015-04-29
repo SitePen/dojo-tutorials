@@ -18,7 +18,7 @@ To give you a taste of the DataGrid's ability to handle a massive amount of data
 
 [![DataGrid](images/DataGrid.png)](demo/datagrid.html)
 
-[View Demo](demo/datagrid.html)
+<a href="demo/datagrid.html" class="button">View Demo</a>
 
 As you can see, the DataGrid easily handles this data set containing 17,452 records. For the purposes of this tutorial, we will be using a smaller set of data: batting statistics only for those players that are in the hall of fame. Let's get started.
 
@@ -74,7 +74,7 @@ require(["dojox/grid/DataGrid" /*, other deps */, "dojo/domReady!"],
 });
 ```
 
-[View Demo](demo/datagrid-simple.html)
+<a href="demo/datagrid-simple.html" class="button">View Demo</a>
 
 The DataGrid also provides a way to control visual styling via CSS styles or CSS classes. The cell definition properties `headerStyles`, `cellStyles`, and `styles` are strings of CSS style definitions (that must be terminated with a semi-colon) that are applied to only the header cell, only the content cells, and to all cells respectively. Likewise, the cell definition properties `headerClasses`, `cellClasses`, and `classes` are space separated strings of class names to apply to the respective cells:
 
@@ -116,7 +116,7 @@ grid = new DataGrid({
 </script>
 ```
 
-[View Demo](demo/datagrid-style.html)
+<a href="demo/datagrid-style.html" class="button">View Demo</a>
 
 #### Sub-Row
 
@@ -151,7 +151,7 @@ grid = new DataGrid({
 }, "grid");
 ```
 
-[View Demo](demo/datagrid-subrows.html)
+<a href="demo/datagrid-subrows.html" class="button">View Demo</a>
 
 #### Views
 
@@ -196,7 +196,7 @@ grid = new DataGrid({
 }, "grid");
 ```
 
-[View Demo](demo/datagrid-noscroll.html)
+<a href="demo/datagrid-noscroll.html" class="button">View Demo</a>
 
 View definitions provide one more property that is helpful in reducing redundant code: `defaultCell`. This property allows you to define a default cell definition that the DataGrid will use if a property is missing from a cell definition:
 
@@ -237,7 +237,7 @@ grid = new DataGrid({
 }, "grid");
 ```
 
-[View Demo](demo/datagrid-defaultcell.html)
+<a href="demo/datagrid-defaultcell.html" class="button">View Demo</a>
 
 As you can see, by defining the `width` of the `defaultCell`, we only have to specify a `width` if it differs from the default value.
 

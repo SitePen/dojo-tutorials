@@ -58,7 +58,7 @@ require(["dijit/registry", "dojo/parser", "dojo/json", "dojo/_base/config", "dij
 
 ```
 
-[View Demo](demo/dojoConfig.html)
+<a href="demo/dojoConfig.html" class="button">View Demo</a>
 
 Notice that `dojoConfig` is defined in a script block
 _before_ dojo.js is loaded.  This is of paramount
@@ -85,7 +85,7 @@ Here's the same example written declaratively:
 </script>
 ```
 
-[View Demo](demo/data-dojo-config.html)
+<a href="demo/data-dojo-config.html" class="button">View Demo</a>
 
 In this case, we use the same `data-dojo-config` attribute
 on the Dojo `script` element that you've seen in other tutorials and examples.
@@ -279,7 +279,7 @@ Now let's create a simple demo that puts the basic parameters to use.  One very 
 
 By using the `packages` configuration, we've made all references to `demo/*` point to our local `/documentation/tutorials/1.10/dojo_config/demo/` directory, while allowing any references to `dojo`, `dijit`, and `dojox` to come from Google CDN.  Had the `demo` package not been defined, the request for `demo/AuthoredDialog` would have gone to `//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/demo/AuthoredDialog.js`.  We also used alias, by associating `ready` with `dojo/domReady`.
 
-[View Demo](demo/packages.html)
+<a href="demo/packages.html" class="button">View Demo</a>
 
 Extensive [documentation about the new loader](/reference-guide/1.10/loader/amd.html) provides even more details.
 
@@ -415,7 +415,7 @@ behavior and page- or application-wide properties. Consider the following:
 </script>
 ```
 
-[View Application Config Demo](demo/appConfig.html)
+<a href="demo/appConfig.html" class="button">View Application Config Demo</a>
 
 In this example, we've tacked on an "`app`"
 `dojoConfig` property, which we later reference via `dojo.config`

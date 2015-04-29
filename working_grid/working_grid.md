@@ -53,7 +53,7 @@ myGrid.on("RowClick", function(evt){
 		"You have clicked on " + rowData.last + ", " + rowData.first + ".";
 }, true);
 ```
-[View Demo](demo/rowclick.html)
+<a href="demo/rowclick.html" class="button">View Demo</a>
 
 We focus on rows instead of cells for events because a Grid is a representation
 (or view) of a collection of data items.  Since each row represents a single item,
@@ -228,7 +228,7 @@ require(["dojo/_base/array", "dojo/_base/lang"], function(baseArray, lang){
 	myGrid.on("SelectionChanged",
 		lang.hitch(grid, reportSelection, document.getElementById("results")), true);
 ```
-[View Demo](demo/selector.html)
+<a href="demo/selector.html" class="button">View Demo</a>
 
 <!-- protip -->
 > The return from `selection.getSelected()` is **always** an array, regardless
@@ -286,7 +286,7 @@ column definition, like so:
 			]
 		}];
 ```
-[View Demo](demo/edit.html)
+<a href="demo/edit.html" class="button">View Demo</a>
 
 <!-- protip -->
 > Note that when defining a Grid's structure declaratively, cell editor type is specified

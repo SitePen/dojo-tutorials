@@ -262,7 +262,7 @@ We also need to modify our widget template:
 </div>
 ```
 
-[View Demo](demo/templated-demo.html)
+<a href="demo/templated-demo.html" class="button">View Demo</a>
 
 <div class="proTip">
 Demo files:

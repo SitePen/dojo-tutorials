@@ -75,7 +75,7 @@ html, body {
 
 ![Step 1: Animated loading overlay](images/step1loading.png)
 
-[View Demo (Step 1)](demo/step1.html)
+<a href="demo/step1.html" class="button">View Demo (Step 1)</a>
 
 > The Dijit themes each come with their own `images` directory, with icons, gradients and other handy graphic assets used by the Dijit widgets - including this loading animation.
 Even if you don't use Dijit on your page, all the graphics are licensed under the same terms as the code and ready for your use.
@@ -121,7 +121,7 @@ We can test this from the console. Load up the page, and in your browser's conso
 
 [![Invoking demo.endLoading from the Firebug console](images/endLoadingConsole.png)](demo/step2.html)
 
-[View Demo (Step 2)](demo/step2.html)
+<a href="demo/step2.html" class="button">View Demo (Step 2)</a>
 
 ### Adding a Transition
 
@@ -173,7 +173,7 @@ require(["dijit/layout/BorderContainer",
     "dijit/_editor/plugins/LinkDialog"]);
 ```
 
-[View Demo (no overlay)](demo/start.html)
+<a href="demo/start.html" class="button">View Demo (no overlay)</a>
 
 ### Planning a Load Sequence
 
@@ -208,7 +208,7 @@ require(["dojo/_base/lang", "dojo/domReady!"], function (lang) {
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 Other options here are to take down the overlay, and lazily-create the editor when we first click on that tab.  Experiment.
 

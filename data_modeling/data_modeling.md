@@ -107,7 +107,7 @@ function viewResults(results){
 }
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 We now have a view that can respond directly to model changes and our controller code can make changes to the data in the store in response to user interaction. The controller could `put()`, `add()`, and `remove()` methods to affect changes. Typically controller code is concerned with handling events, so for example, we can create a new data object when a user clicks on the add button:
 
@@ -121,7 +121,7 @@ on(addButton, "click", function(){
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 This will trigger an update in the view, we don't need to directly interact with the view at all. This controller code is solely concerned with responding to user actions and controlling the model. The model's data storage and the view's rendering are completely separated from this code.
 
@@ -155,7 +155,7 @@ inventoryStore.put({
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 </p>
 This should correctly throw an error to reject this change.
 </p>
@@ -362,7 +362,7 @@ require(["dojo/Stateful", "dojo/_base/Deferred"],
 	});
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 And now controller code could modify this object, and the viewer will respond instantly:
 
@@ -381,7 +381,7 @@ on(saveButton, "click", function(){
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 ### dstore: The future of dojo/store
 

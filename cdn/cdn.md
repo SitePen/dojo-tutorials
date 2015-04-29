@@ -59,7 +59,7 @@ Now that we’ve defined the package that contains our local modules, we’re do
 require([ 'custom/thinger' ], function(thinger){ … });
 ```
 
-[View Demo](demo/index.html)
+<a href="demo/index.html" class="button">View Demo</a>
 
 ### Caveats
 

@@ -62,7 +62,7 @@ require([
 	grid.startup();
 });
 ```
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 ### Widgets that use Dojo Data
 
@@ -104,7 +104,7 @@ require([
 });
 ```
 
-[View Demo](demo/store-adapter.html)
+<a href="demo/store-adapter.html" class="button">View Demo</a>
 
 We will be upgrading our components to directly utilize the object store API in the future, to eliminate the need for the adapter, but for now it is still very easy to use the object stores with these components via the adapter.
 

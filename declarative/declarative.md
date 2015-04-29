@@ -56,7 +56,7 @@ Now, what we need to do is invoke the `dojo/parser`.  Before the adoption of AMD
 ```
 
 
-[View Demo](demo/button.html)
+<a href="demo/button.html" class="button">View Demo</a>
 
 Notice how we required in the `dijit/form/Button` but omitted it from the `require` callback.  That is because we weren't directly referring to it in our codeblock, but we wanted to make sure the module was loaded before we invoked the `dojo/parser`.  While the parser is capable of auto-requiring modules, which we will talk about later, it is best to be explicit about your requirements.
 
@@ -114,7 +114,7 @@ In declarative our markup would look something like this:
 ```
 
 
-[View Demo](demo/tab.html)
+<a href="demo/tab.html" class="button">View Demo</a>
 
 By convention, the value of the `data-dojo-props` attribute is a JavaScript object literal, just without the outer braces (`{}`).</code>
 
@@ -148,7 +148,7 @@ So for example, let's say we wanted to create a memory store to feed a drop down
 ```
 
 
-[View Demo](demo/nonwidget.html)
+<a href="demo/nonwidget.html" class="button">View Demo</a>
 
 One thing to be aware of, because there is no registry for these non-visual objects, and the reference is used in the global scope, garbage collection will not happen, even when the DOM node that "created" the object is no longer in memory.  This could be perceived as a memory leak in a large application.  You should ensure you remove this variables from the global scope when no longer needed.
 
@@ -194,7 +194,7 @@ In order to do this all in markup, we will need to use something called "declara
 ```
 
 
-[View Demo](demo/scripting.html)
+<a href="demo/scripting.html" class="button">View Demo</a>
 
 All declarative scripts run in their own scope, so they only have access to the global scope, which is why we had to do the "trick" with the `require("dijit/registry");` in order to get a reference to the module.  There is a way to declaratively add modules to the global scope which we will talk about later.
 
@@ -223,7 +223,7 @@ And I wanted to dynamically load that into a tab, I would do something like this
 ```
 
 
-[View Demo](demo/href.html)
+<a href="demo/href.html" class="button">View Demo</a>
 
 There are several `<script type="dojo/*">` that are supported by the parser:
 
@@ -280,7 +280,7 @@ Of course though, you could use declarative require.  As mentioned before, all d
 ```
 
 
-[View Demo](demo/require.html)
+<a href="demo/require.html" class="button">View Demo</a>
 
 If you are concerned about namespace clashes with scoping your modules globally, you can put your modules in their own namespace by using the dot notation for the property name: `"myApp.registry": "dijit/registry"`.  The parser will then deep create the objects needed to allow you then to access the registry as `myApp.registry.byId("someId")` in your code.
 
@@ -294,7 +294,7 @@ In order to inform you of this, so you can make a conscious decision about using
 
 To see it in action, the TabContainer example from above has been re-written to auto-require in all the Dijits it needs.  It is also in debug mode as well, so check out your JavaScript console for the warnings.
 
-[View Demo](demo/autorequire.html)
+<a href="demo/autorequire.html" class="button">View Demo</a>
 
 There is a way to have the builder analyze your static HTML files for dependencies and build those into a layer.  This is covered in the builder transform [depsDeclarative](/reference-guide/1.10/build/transforms/depsDeclarative.html) Reference Guide page.
 

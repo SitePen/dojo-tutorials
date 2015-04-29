@@ -113,7 +113,7 @@ add or subtract 1 from the slider's value when clicked.
 to achieve increments of 1 in this example&mdash;this is because there are
 really 11 whole numbers within the range 0 to 10, _including zero_.
 
-[View Demo](demos/simple.html)
+<a href="demos/simple.html" class="button">View Demo</a>
 
 Programmatic creation of a vertical slider would look like this:
 
@@ -145,7 +145,7 @@ The vertical slider above ranges from 0 to 100, has an initial value of 20,
 operates at per-pixel increments since `discreteValues` is not set,
 and fires an onChange event during each step of the slider's movement.
 
-[View Demo](demos/simple.html)
+<a href="demos/simple.html" class="button">View Demo</a>
 
 ### Adding Rules and Rule Labels
 
@@ -240,7 +240,7 @@ the slider.  The code would end up looking something like this:
 </body>
 ```
 
-[View Demo](demos/rules.html)
+<a href="demos/rules.html" class="button">View Demo</a>
 
 We can also augment our programmatically-created vertical slider to show
 rules and rule labels, as follows:
@@ -287,7 +287,7 @@ rules and rule labels, as follows:
 </body>
 ```
 
-[View Demo](demos/rules.html)
+<a href="demos/rules.html" class="button">View Demo</a>
 
 Note that rules and labels are each given their own `<div>` element and are
 injected into the node which will become the VerticalSlider ("vertSlider").

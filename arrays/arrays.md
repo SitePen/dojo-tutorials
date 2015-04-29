@@ -39,7 +39,7 @@ arrayUtil.indexOf(arr2, obj1);
 arrayUtil.indexOf(arr2, { id: 1 });
 ```
 
-[View Demo](demo/searching.html)
+<a href="demo/searching.html" class="button">View Demo</a>
 
 ### Looping
 
@@ -109,7 +109,7 @@ myObject.outputItems(arr, list2);
 
 This is probably one of the most-used patterns for the scope parameter: passing `this` so the callback function will be called in the same scope as the method calling it. This pattern is very useful when you're working with widgets, so store it away for later use.
 
-[View Demo](demo/looping.html)
+<a href="demo/looping.html" class="button">View Demo</a>
 
 ### Manipulating
 
@@ -150,7 +150,7 @@ var filtered = arrayUtil.filter(mapped, function(item, index){
 }); // [ { id: 100, text: "two" }, { id: 200, text: "three" },
     //   { id: 300, text: "four" } ]
 ```
-[View Demo](demo/manipulating.html)
+<a href="demo/manipulating.html" class="button">View Demo</a>
 
 ### Matching
 
@@ -172,7 +172,7 @@ arrayUtil.some(arr2, function(item){ return item == 2; });  // returns false
 
 An easy way to think of these two functions is that `every` is like using the `&&` operator in an `if` statement, and `some` is like using the `||` operator.
 
-[View Demo](demo/matching.html)
+<a href="demo/matching.html" class="button">View Demo</a>
 
 ### Conclusion
 

@@ -59,7 +59,7 @@ the browser, and the grid will render the array. The JSON array response could l
 	{"id":1,"name":"Alaska","abbreviation":"AK","capital":"Juneau"}
 ]
 ```
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 Now we should have a functioning grid that is retrieving data from our server. Let's look at other things we can do to
 improve our component.

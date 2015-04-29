@@ -89,7 +89,7 @@ With data properly formatted and available, a chart created declaratively would 
 	<div class="series" name="Last Week&#x27;s Visits" array="chartData"></div>
 </div>
 ```
-[View Demo](demo/basic-declarative.html)
+<a href="demo/basic-declarative.html" class="button">View Demo</a>
 
 [![Dojo Pie Chart](images/pie.png)](demo/basic-declarative.html)
 
@@ -135,7 +135,7 @@ Programmatic chart creation requires a bit more code but provides more stability
 <!-- create the chart -->
 <div id="chartNode" style="width: 550px; height: 550px;"></div>
 ```
-[View Demo](demo/basic-programmatic.html)
+<a href="demo/basic-programmatic.html" class="button">View Demo</a>
 
 The code above should give you a basic example of `dojox/charting`, but there's much more to chart creation than that.  Let's dig deeper into `dojox/charting` and its capabilities.
 
@@ -505,7 +505,7 @@ require([
 <div id="chartNode" style="width:800px;height:400px;"></div>
 ```
 
-[View Demo](demo/monthly-sales.html)
+<a href="demo/monthly-sales.html" class="button">View Demo</a>
 
 [![Dojo Line Chart](images/tom.png)](demo/monthly-sales.html)
 
@@ -571,7 +571,7 @@ require([
 <div id="chartNode" style="width:800px;height:400px;"></div>
 ```
 
-[View Demo](demo/monthly-sales-stacked.html)
+<a href="demo/monthly-sales-stacked.html" class="button">View Demo</a>
 
 [![Dojo StackedAreas Chart](images/stacked.png)](demo/monthly-sales-stacked.html)
 
@@ -639,7 +639,7 @@ require([
 
 ```
 
-[View Demo](demo/monthly-sales-column.html)
+<a href="demo/monthly-sales-column.html" class="button">View Demo</a>
 
 [![Dojo Column Chart](images/column.png)](demo/monthly-sales-column.html)
 
@@ -795,7 +795,7 @@ require([
 <div id="legend"></div>
 ```
 
-[View Demo](demo/monthly-sales-legend.html)
+<a href="demo/monthly-sales-legend.html" class="button">View Demo</a>
 
 We are using Tooltips which are based on the Dijit Tooltip, therefore we need to make sure we load a Dijit theme stylesheet. In this example we loaded Claro.
 
@@ -874,7 +874,7 @@ require([
 <div id="chartNode" style="width:800px;height:400px;"></div>
 ```
 
-[View Demo](demo/monthly-sales-moveslice.html)
+<a href="demo/monthly-sales-moveslice.html" class="button">View Demo</a>
 
 [![Dojo Pie Chart with MoveSlice](images/moveslice.png)](demo/monthly-sales-moveslice.html)
 
@@ -941,7 +941,7 @@ require([
 <div id="chartNode" style="width:800px;height:400px;"></div>
 ```
 
-[View Demo](demo/monthly-sales-highlight.html)
+<a href="demo/monthly-sales-highlight.html" class="button">View Demo</a>
 
 [![Dojo column chart with highlight](images/highlight.png)](demo/monthly-sales-highlight.html)
 

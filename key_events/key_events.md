@@ -52,7 +52,7 @@ require(["dojo/on", "dojo/domReady!"], function(on) {
 });
 ```
 
-[View Demo](demo/field_basic.html)
+<a href="demo/field_basic.html" class="button">View Demo</a>
 
 This example shows how simple it is to capture keyboard events on form elements and doing something (logging to the
 console) using Dojo's normalized events and `dojo/keys`. This was accomplished using:
@@ -114,7 +114,7 @@ function(domConstruct, on, query, keys) {
 });
 ```
 
-[View Demo](demo/field_traverse.html)
+<a href="demo/field_traverse.html" class="button">View Demo</a>
 
 With just a few changes, we've eliminated some redundant code, as well as making our script more powerful &mdash;
 allowing us to handle more than one type of key press in a single event handler, as well as handling multiple elements.
@@ -195,7 +195,7 @@ function(dom, domConstruct, on, query, keys) {
 });
 ```
 
-[View Demo](demo/form_traverse.html)
+<a href="demo/form_traverse.html" class="button">View Demo</a>
 
 What just happened you say? This latest incarnation of our form traversal uses `dojo/on's` event delegation &mdash; we
 have registered a single event listener on the `form`. This listens for all `keydown` events of all the child elements
@@ -214,7 +214,7 @@ for and responding to navigation-related keyboard events for you. We won't go in
 can read about it in the [reference guide](/reference-guide/1.10/dijit/_KeyNavMixin.html) and see a basic implementation
 in the following demo.
 
-[View Demo](demo/keyNav.html)
+<a href="demo/keyNav.html" class="button">View Demo</a>
 
 ### Conclusion
 

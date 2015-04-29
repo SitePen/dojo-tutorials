@@ -100,7 +100,7 @@ require(["dojo/store/Memory", "dojo/store/Observable"],
 });
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 Now whenever we locally initiate a modification to data via
 `put()`, `add()`, or `remove()` calls,
@@ -158,7 +158,7 @@ setInterval(function(){
 }, 1000); // every second
 ```
 
-[View Demo](demo/demo.html)
+<a href="demo/demo.html" class="button">View Demo</a>
 
 Since the `notify()` method is commonly coupled with
 Comet-driven messaging, let's look at how we can use this with

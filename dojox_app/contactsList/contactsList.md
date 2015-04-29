@@ -258,7 +258,7 @@ define(["dojo/_base/declare", "dojo/dom", "dojox/mobile/ListItem",
 
 [Run the Contacts List Application App](demos/contactsList/contacts.html)
 
-[View the Contacts List Application source on github](https://github.com/edchat/dojox_app_tutorial/tree/master/contactsList/demos/contactsList)
+<a href="https://github.com/edchat/dojox_app_tutorial/tree/master/contactsList/demos/contactsList" class="button">View the Contacts List Application source on github</a>
 
 ### Conclusion
 

@@ -117,7 +117,7 @@ create a select widget referencing the store, like so:
 </body>
 ```
 
-[View Select Demo](demos/ProgSelect.html)
+<a href="demos/ProgSelect.html" class="button">View Select Demo</a>
 
 ##### Using dijit/form/FilteringSelect
 
@@ -151,7 +151,7 @@ create a select widget referencing the store, like so:
 </body>
 ```
 
-[View FilteringSelect Demo](demos/ProgFilteringSelect.html)
+<a href="demos/ProgFilteringSelect.html" class="button">View FilteringSelect Demo</a>
 
 
 ##### Using dijit/form/ComboBox
@@ -185,7 +185,7 @@ create a select widget referencing the store, like so:
 </body>
 ```
 
-[View ComboBox Demo](demos/ProgComboBox.html)
+<a href="demos/ProgComboBox.html" class="button">View ComboBox Demo</a>
 
 <!-- protip -->
 > When creating widgets programmatically, don't forget to call `startup`
@@ -382,7 +382,7 @@ with an alternate (and abridged) version of our states drop-down:
 </body>
 ```
 
-[View Demo](demos/ProgSelectOptions.html)
+<a href="demos/ProgSelectOptions.html" class="button">View Demo</a>
 
 As you can see, this achieves a result comparable to the previous
 `dijit/form/Select` example, without using a store.

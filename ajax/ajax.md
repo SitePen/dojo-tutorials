@@ -124,7 +124,7 @@ require(["dojo/dom", "dojo/on", "dojo/request", "dojo/domReady!"],
 );
 ```
 
-[View Demo](demo/dojo-request-xhr.html)
+<a href="demo/dojo-request-xhr.html" class="button">View Demo</a>
 
 #### Login demo
 
@@ -281,7 +281,7 @@ require(["dojo/dom", "dojo/request", "dojo/json",
 
 In addition to the encoding the data as JSON in the response, set the [Content-Type](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17) header to _application/json_, either using server configuration such as [Apache's AddType](http://httpd.apache.org/docs/2.0/mod/mod_mime.html#addtype) or adding it to the header with the server side code.
 
-[View Demo](demo/dojo-request-json.html)
+<a href="demo/dojo-request-json.html" class="button">View Demo</a>
 
 ### JSONP (Javascript Object Notation with Padding)
 
@@ -363,7 +363,7 @@ require(["dojo/dom", "dojo/on", "dojo/request/script",
 });
 ```
 
-[View Demo](demo/dojo-request-script-pulls.html)
+<a href="demo/dojo-request-script-pulls.html" class="button">View Demo</a>
 
 ### Reporting Status
 

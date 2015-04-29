@@ -25,7 +25,7 @@ You can manage layout of the entire page, or just a small part of it. For this t
 
 [![Application Layout](images/appLayout.png)](demo/appLayout.html)
 
-[View Complete Demo](demo/appLayout.html)
+<a href="demo/appLayout.html" class="button">View Complete Demo</a>
 
 Dijit provides a small collection of flexible widgets to meet common layout requirements like this. We'll prepare the ground with some HTML and CSS, then introduce those widgets to build up a typical application layout.
 
@@ -164,7 +164,7 @@ For this example, we'll be using the markup or _declarative_ way of instantiatin
 </body>
 ```
 
-[View Demo](demo/borderContainer.html)
+<a href="demo/borderContainer.html" class="button">View Demo</a>
 
 The outer `appLayout` element has been configured as a `BorderContainer`, and the child divs are each `ContentPane`s.
 	This gives us a full-screen flexible layout. Go ahead and try resizing your Demo window, to see how the left region stays a fixed width, while the center/right region sizes to fit.
@@ -207,7 +207,7 @@ In fact, BorderContainer works quite happily as a region in a BorderContainer. H
 </div>
 ```
 
-[View Demo](demo/nestedBorderContainer.html)
+<a href="demo/nestedBorderContainer.html" class="button">View Demo</a>
 
 See the [BorderContainer documentation](/reference-guide/1.10/dijit/layout/BorderContainer.html) for more details on the different options for BorderContainer and its use.
 
@@ -247,7 +247,7 @@ To make the "group" sections tabs in a TabContainer, we first make the containin
 TabContainer is another _container_ widget - it manages child widgets - so we need to wrap each of our section blocks in a suitable widget. They don't need to do anything fancy, so a ContentPane is a good choice.
 Notice that each provides a "`title`" property. The title is what TabContainer uses as the label in the corresponding tab it creates for each child widget.
 
-[View Demo](demo/appLayout.html)
+<a href="demo/appLayout.html" class="button">View Demo</a>
 
 ### StackContainer and Friends
 
@@ -355,7 +355,7 @@ contentTabs.addChild(
 appLayout.startup();
 ```
 
-[View Demo](demo/programmaticLayout.html)
+<a href="demo/programmaticLayout.html" class="button">View Demo</a>
 
 Each widget is instantiated with the equivalent properties we were defining before in the `data-dojo-props` attributes.
 Rather than the implicit containment we get from the markup, each widget is explicitly added to its parent using its `addChild` method.
@@ -375,7 +375,7 @@ function addTab(name) {
 }
 ```
 
-[View Demo](demo/addTabs.html)
+<a href="demo/addTabs.html" class="button">View Demo</a>
 
 ### Conclusion
 

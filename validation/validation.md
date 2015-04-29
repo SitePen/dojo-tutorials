@@ -134,7 +134,7 @@ The basic idea is that you perform the check, and then use the results to find o
 are valid and what are not before letting the browser process it.  Take a look at the demo to see it in
 action!
 
-[View Demo](demo/htmlcheck.html)
+<a href="demo/htmlcheck.html" class="button">View Demo</a>
 
 <!-- protip -->
 > While `dojox/validate/check` is not well documented, there _are_ good instructions on how
@@ -176,7 +176,7 @@ the `constraints` property:
 
 Check it out!
 
-[View Demo](demo/dijitcheck.html)
+<a href="demo/dijitcheck.html" class="button">View Demo</a>
 
 ### Conclusion
 

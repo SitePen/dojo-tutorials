@@ -67,7 +67,7 @@ Let’s say we are creating a simple page that uses Ajax to load new content int
 	</html>
 ```
 
-[View Demo](demos/demo1)
+<a href="demos/demo1" class="button">View Demo</a>
 
 This code updates the content and title of the page using JavaScript. It doesn’t actually change the browser’s history or the URL at all. This means that if someone bookmarks the page, or tries to navigate using the browser’s back and forward controls, they will find that it simply doesn’t work—there are no pages to go back to, and the bookmarked page will always start at whatever page was first loaded. With two small modifications, we can get a URL that is updated when new content is requested:
 
@@ -104,7 +104,7 @@ This code updates the content and title of the page using JavaScript. It doesn�
 	});
 ```
 
-[View Demo](demos/demo2)
+<a href="demos/demo2" class="button">View Demo</a>
 
 By calling `dojo/hash`, the page’s URL is updated to reflect its new state, and entries are added to the browser’s
 history. However, when users try to use the back/forward buttons, while the URL now changes, nothing else happens. In
@@ -139,7 +139,7 @@ current page in the browser’s history, rather than being added as a new page. 
 URL is invalidated in response to an action and needs to be removed from the user’s browser history (for instance, in a
 content management system, when someone deletes a record).
 
-[View Demo](demos/demo3)
+<a href="demos/demo3" class="button">View Demo</a>
 
 ### Responding to hash changes: [dojo/router](/reference-guide/1.10/dojo/router.html)
 
@@ -155,7 +155,7 @@ If the logic you are evaluating in your handler for the `/dojo/hashchange` topic
 	});
 ```
 
-[View Demo](demos/demo4)
+<a href="demos/demo4" class="button">View Demo</a>
 
 If you are using `dojo/router`, you may also use its `go` method, which is a convenience method for changing the hash.
 
@@ -166,7 +166,7 @@ If you are using `dojo/router`, you may also use its `go` method, which is a con
 The following demo gives a more in-depth example of a useful implementation of `dojo/router's` pattern-matching:
 loading users by id with the hash value pattern `#/user/<id>`.
 
-[View Demo](demos/router)
+<a href="demos/router" class="button">View Demo</a>
 
 ### Caveats
 
@@ -243,7 +243,7 @@ application:
 This makes the application bookmarkable, allows natural navigation with the browser’s back and forward controls, and
 makes the site easily indexable by search engines. The site is even navigable by clients with JavaScript disabled.
 
-[View Demo](demo/index.html)
+<a href="demo/index.html" class="button">View Demo</a>
 
 ### Conclusion
 
