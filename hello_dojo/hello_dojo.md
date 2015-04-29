@@ -19,7 +19,7 @@ Getting started with Dojo is as simple as including the `dojo.js` script in a we
 <body>
 	<h1 id="greeting">Hello</h1>
 	<!-- load Dojo -->
-	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
 			data-dojo-config="async: true"></script>
 </body>
 </html>
@@ -41,7 +41,7 @@ A few of Dojo's basic modules for HTML DOM manipulation are [dojo/dom](/referenc
 <body>
 	<h1 id="greeting">Hello</h1>
 	<!-- load Dojo -->
-	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
             data-dojo-config="async: true"></script>
 
 	<script>
@@ -50,7 +50,7 @@ A few of Dojo's basic modules for HTML DOM manipulation are [dojo/dom](/referenc
 			'dojo/dom-construct'
 		], function (dom, domConstruct) {
 			var greetingNode = dom.byId('greeting');
-			domConstruct.place('<em> Dojo! </em>', greetingNode);
+			domConstruct.place('<em> Dojo!</em>', greetingNode);
 		});
 	</script>
 </body>
@@ -141,7 +141,7 @@ Loading local modules while using Dojo from a CDN requires a little extra config
 		};
 	</script>
 	<!-- load Dojo -->
-	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 
 	<script>
 		require([
