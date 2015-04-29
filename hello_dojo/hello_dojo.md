@@ -50,7 +50,7 @@ A few of Dojo's basic modules for HTML DOM manipulation are [dojo/dom](/referenc
 			'dojo/dom-construct'
 		], function (dom, domConstruct) {
 			var greetingNode = dom.byId('greeting');
-			domConstruct.place('_ Dojo!_', greetingNode);
+			domConstruct.place('<em>Dojo!</em>', greetingNode);
 		});
 	</script>
 </body>
