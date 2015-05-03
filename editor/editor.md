@@ -50,7 +50,7 @@ The first step in implementing the Editor widget is the same as any other widget
 ```html
 <style type="text/css">
     /* bring in the claro theme */
-    @import "//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css";
+    @import "//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css";
 </style>
 <body class="claro">
 ```
@@ -61,7 +61,7 @@ The first step in implementing the Editor widget is the same as any other widget
 Once the Dijit theme is in place, the following code snippet is all you need to create an Editor widget instance:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
     data-dojo-config="async: true, parseOnLoad: true"> </script>
 <script>
     // Load the editor resource
@@ -322,4 +322,4 @@ Looking for more detail about Dijit's Editor?  Check out these great resources:
 *   [dijit/Editor API Documentation](/api/?qs=1.10/dijit/Editor)
 *   [dijit/Editor Reference Guide](/reference-guide/1.10/dijit/Editor.html)
 *   [dojox/editor/plugins Reference Guide](/reference-guide/1.10/dojox/editor/plugins.html#dojox-editor-plugins)
-*   [dijit/Editor Tests](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dijit/tests/editor/)
+*   [dijit/Editor Tests](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dijit/tests/editor/)

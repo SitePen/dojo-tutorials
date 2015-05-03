@@ -33,7 +33,7 @@ CSS class on the `body` element of your page, like so:
     <meta charset="utf-8">
     <title>Hello Dijit!</title>
     <!-- load Dojo -->
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
 </head>
 <!-- set the claro class on our body element -->
 <body class="claro">
@@ -570,7 +570,7 @@ so that your user interface is both beautiful and functional.
 In addition to the API and Reference Guide documentation, there are test pages
 within the Dojo Toolkit SDK distribution which test various configurations of
 widgets.  Tests for button and textbox widgets can be found
-[online](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dijit/tests/form/),
+[online](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dijit/tests/form/),
 or in the `dijit/tests/form` folder of your local copy.
 
 <script>

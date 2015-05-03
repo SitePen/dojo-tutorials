@@ -22,7 +22,7 @@ The documentation for dojox/app can be found here:
 
 *   [Dojo Reference Guide section for dojox/app](http://dojotoolkit.org/reference-guide/1.10/dojox/app.html)
 *   [Dojo API Guide](http://dojotoolkit.org/api/)
-*   [Run the dojox/app tests here](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dojox/app/tests/)
+*   [Run the dojox/app tests here](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dojox/app/tests/)
 *   [View the dojox/app tests source here](https://github.com/dmachi/dojox_application/tree/dojo19/tests)
 
 Even though dojox/app is built on top of Dojo, it is UI Toolkit agnostic.  The application views can be developed with:

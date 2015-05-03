@@ -36,7 +36,7 @@ First, a programmatic example of setting `dojoConfig` directly:
 		async: true
 	};
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 
 <script>
 // Require the registry, parser, Dialog, and wait for domReady
@@ -80,7 +80,7 @@ parameters for later lookup by module code.
 Here's the same example written declaratively:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
 		data-dojo-config="has:{'dojo-firebug': true}, parseOnLoad: false, foo: 'bar', async: 1">
 </script>
 ```
@@ -263,7 +263,7 @@ Now let's create a simple demo that puts the basic parameters to use.  One very 
 </script>
 
 <!-- Load Dojo, Dijit, and DojoX resources from Google CDN -->
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 
 <!-- Load a "demo" module -->
 
@@ -277,7 +277,7 @@ Now let's create a simple demo that puts the basic parameters to use.  One very 
 </script>
 ```
 
-By using the `packages` configuration, we've made all references to `demo/*` point to our local `/documentation/tutorials/1.10/dojo_config/demo/` directory, while allowing any references to `dojo`, `dijit`, and `dojox` to come from Google CDN.  Had the `demo` package not been defined, the request for `demo/AuthoredDialog` would have gone to `//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/demo/AuthoredDialog.js`.  We also used alias, by associating `ready` with `dojo/domReady`.
+By using the `packages` configuration, we've made all references to `demo/*` point to our local `/documentation/tutorials/1.10/dojo_config/demo/` directory, while allowing any references to `dojo`, `dijit`, and `dojox` to come from Google CDN.  Had the `demo` package not been defined, the request for `demo/AuthoredDialog` would have gone to `//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/demo/AuthoredDialog.js`.  We also used alias, by associating `ready` with `dojo/domReady`.
 
 <a href="demo/packages.html" class="button">View Demo</a>
 
@@ -307,7 +307,7 @@ by your browser. A simple demo shows it at work:
 		locale: location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en-us"
 	};
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 <script>
 	require(["dojo/date/locale", "dijit/Dialog", "dojo/json", "dojo/_base/config",
 	"dojo/_base/window", "dojo/i18n", "dojo/domReady!"]
@@ -391,7 +391,7 @@ behavior and page- or application-wide properties. Consider the following:
 		}
 	};
 </script>
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 <script>
 	require(["dijit/Dialog", "dijit/registry", "dojo/parser", "dojo/_base/lang",
 	"dojo/json", "dojo/_base/config", "dojo/io-query", "dojo/domReady!"]

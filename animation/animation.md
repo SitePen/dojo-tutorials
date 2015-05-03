@@ -141,7 +141,7 @@ For this demo, the setup is that we have two boxes of content which we want to s
 As usual, we load Dojo, require the desired modules, and do our initialization inside a function we pass to `require`.
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
 		data-dojo-config="isDebug: true, async: true">
 <script>
 

@@ -393,5 +393,5 @@ Creating basic Dojo charts isn't always enough.  Dynamic data calls for dynamic 
 Looking for more detail about Dojo's charting library?  Check out these great resources:
 
 * [dojox/charting Reference Guide](/reference-guide/1.10/dojox/charting.html)
-* [Theme Preview](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dojox/charting/tests/theme_preview.html)
+* [Theme Preview](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dojox/charting/tests/theme_preview.html)
 * [GFX Animation Examples](http://www.sitepen.com/labs/code/london-ajax/london-ajax.html)

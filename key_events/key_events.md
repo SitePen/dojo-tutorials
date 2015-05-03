@@ -36,7 +36,7 @@ Dojo normalizes keyboard events, enabling you to use the `dojo/keys` constants t
 	Let's say we want to create a form that will allow element traversal using the up and down arrows or enter key.  We can start with this simple example:
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
                 data-dojo-config="async: true"> </script>
 <body>
     <h1>Press any key</h1>

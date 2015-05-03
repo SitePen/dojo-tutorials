@@ -108,7 +108,7 @@ Here is now how should look our HTML before we define the three Views (SettingsV
 	<!-- application stylesheet -->
 	<link rel="stylesheet" type="text/css" href="css/flickrview.css">
 	<!-- dynamically apply native visual theme according to the browser user agent -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/mobile/deviceTheme.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojox/mobile/deviceTheme.js"></script>
 	<!-- dojo configuration options -->
 	<script type="text/javascript">
 		dojoConfig = {
@@ -123,7 +123,7 @@ Here is now how should look our HTML before we define the three Views (SettingsV
 		};
 	</script>
 	<!-- dojo bootstrap -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 	<!-- dojo application code -->
 	<script>
 		// Load the widget parser and mobile base
