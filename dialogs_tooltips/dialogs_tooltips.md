@@ -22,9 +22,9 @@ The setup for using `dijit/Tooltip` is the same as using any Dijit widget: add t
 ```html
 <head>
 <!-- use the "claro" theme -->
-<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css">
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
 <!-- load dojo and provide config via data attribute -->
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad:true"></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad:true"></script>
 <script>
     // Load the Tooltip widget class
     require(["dijit/Tooltip",  "dojo/parser", "dojo/domReady!"], function(Tooltip, parser){

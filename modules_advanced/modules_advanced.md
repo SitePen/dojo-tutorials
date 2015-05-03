@@ -42,7 +42,7 @@ We'll cover configuring the loader in more detail below; for now here's an examp
 require({
     baseUrl: "/js/",
     packages: [
-        { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.10.3/" },
+        { name: "dojo", location: "//ajax.googleapis.com/ajax/libs/dojo/1.10.4/" },
         { name: "my", location: "my" }
     ]
 }, [ "my/app" ]);

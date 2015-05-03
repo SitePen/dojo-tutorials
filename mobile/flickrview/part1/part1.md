@@ -25,7 +25,7 @@ Dojo Mobile is the Dojo Toolkit's answer to your mobile web application needs. I
 
 **Check out a few quick examples of Dojo Mobile in action:**
 
-*   [Browse all dojox/mobile Tests (1.10.3)](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dojox/mobile/tests/)
+*   [Browse all dojox/mobile Tests (1.10.4)](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dojox/mobile/tests/)
 
 These mobile interfaces also perform well in desktop browser clients, but take the time to use your iOS and Android-powered devices to browse each test. You'll be impressed by**Dojo Mobile's widgets and CSS themes**!
 
@@ -70,7 +70,7 @@ following statement in your HTML pages:
 
 ```html
 <script type="text/javascript"
-	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/mobile/deviceTheme.js"></script>
+	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojox/mobile/deviceTheme.js"></script>
 ```
 #### Dojo bootstrap and configuration
 
@@ -78,7 +78,7 @@ Including Dojo happens per the traditional `script` tag:
 
 ```html
 <script type="text/javascript"
-	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 ```
 
 Dojo configuration can be specified like this:
@@ -132,7 +132,7 @@ Putting all together gives the following template for your Dojo Mobile applicati
 	<title>Your Application Name</title>
 	<!-- application stylesheet will go here -->
 	<!-- dynamically apply native visual theme according to the browser user agent -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojox/mobile/deviceTheme.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojox/mobile/deviceTheme.js"></script>
 	<!-- dojo configuration options -->
 	<script type="text/javascript">
 		dojoConfig = {
@@ -141,7 +141,7 @@ Putting all together gives the following template for your Dojo Mobile applicati
 		};
 	</script>
 	<!-- dojo bootstrap -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 	<!-- dojo application code -->
 	<script type="text/javascript">
 		require([

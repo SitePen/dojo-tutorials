@@ -24,7 +24,7 @@ To use a CDN, start with a simple HTML page that includes the Dojo loader from a
 	</head>
 	<body>
 		<script data-dojo-config="async: 1"
-			src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+			src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 	</body>
 </html>
 ```
@@ -37,7 +37,7 @@ Next, we need to make sure that Dojo has access to a local copy of the `dojo/res
 
 ```html
 <script data-dojo-config="async: 1, dojoBlankHtmlUrl: '/path/to/blank.html'"
-	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 ```
 
 Finally, we need to define the location of our local module package(s):
@@ -48,7 +48,7 @@ Finally, we need to define the location of our local module package(s):
 			name: 'custom',
 			location: location.pathname.replace(/\/[^/]+$/, '') + '/js/custom'
 		} ]"
-	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
+	src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
 ```
 
 Note that the local package location is using a little JavaScript trickery to create an absolute path that is derived from the path of the current HTML file. Using absolute paths is necessary for the Dojo 1.10 loader to resolve local modules correctly. This same trickery can be used for the `dojoBlankHtmlUrl` key as well, if necessary.

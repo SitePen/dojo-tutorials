@@ -36,7 +36,7 @@ Dijit provides a small collection of flexible widgets to meet common layout requ
         <meta charset="utf-8">
         <title>Demo: Layout with Dijit</title>
         <link rel="stylesheet" href="style.css" media="screen">
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css" media="screen">
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css" media="screen">
     </head>
     <body class="claro">
         <div id="appLayout" class="demoLayout">
@@ -57,7 +57,7 @@ Dijit provides a small collection of flexible widgets to meet common layout requ
             <div id="leftCol" class="edgePanel">Sidebar content (left)</div>
         </div>
         <!-- load dojo and provide config via data attribute -->
-        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+        <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
                 data-dojo-config="async: 1, parseOnLoad: 1">
         </script>
     </body>
@@ -108,7 +108,7 @@ To implement the layout, we'll be using three widget classes from Dijit: `dijit/
 To get started, let's add a `require` call to load these dependencies.
 
 ```js
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
         data-dojo-config="async:true, parseOnLoad:true">
 </script>
 <script>
@@ -289,7 +289,7 @@ With this in mind, lets look at some code. Here's the basic outline:
 
 ```html
 <head>
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
         data-dojo-config="async:1">
     </script>
     <script>

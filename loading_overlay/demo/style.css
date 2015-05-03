@@ -16,7 +16,7 @@ html, body {
 }
 
 #loadingOverlay {
-    background:  #fff url('//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
+    background:  #fff url('//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/images/loadingAnimation.gif') no-repeat 10px 23px;
 }
 
 .loadingMessage {

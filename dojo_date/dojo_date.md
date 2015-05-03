@@ -117,7 +117,7 @@ dojoConfig = {
 or
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js""
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js""
     data-dojo-config="extraLocale:['en-us', 'en-gb', 'fr', 'es']"></script>
 ```
 

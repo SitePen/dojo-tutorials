@@ -22,13 +22,13 @@ As with using any Dijit resource, it's important to include the CSS of the theme
 ```html
 <head>
     <!-- load the "claro" theme -->
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
 </head>
 <!-- add the "claro" CSS class to the body -->
 <body class="claro">
 
     <!-- load dojo and provide config via data attribute -->
-    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
         data-dojo-config="async: true, parseOnLoad: true">
     </script>
 </body>

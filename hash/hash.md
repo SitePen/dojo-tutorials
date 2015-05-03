@@ -33,7 +33,7 @@ Let’s say we are creating a simple page that uses Ajax to load new content int
 			</ul>
 			<div id="content">Welcome to the home page!</div>
 			<!-- load dojo and provide config via data attribute -->
-			<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="isDebug: 1, async: 1, parseOnLoad: 1"></script>
 			<script>
 				require([
 					"dojo/dom",

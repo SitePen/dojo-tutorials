@@ -98,9 +98,9 @@ The package descriptor file (`package.json`) provides information about the curr
 		"path": "packages/app"
 	}],
 	"dependencies": {
-		"dojo": "~1.10.3",
-		"dijit": "~1.10.3",
-		"dojox": "~1.10.3"
+		"dojo": "~1.10.4",
+		"dijit": "~1.10.4",
+		"dojox": "~1.10.4"
 	},
 	"main": "src",
 	"homepage": "http://example.com/",

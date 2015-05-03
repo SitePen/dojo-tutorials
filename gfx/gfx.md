@@ -620,4 +620,4 @@ Looking for more detail about Dojo's GFX library? Check out these great resource
 *   [GFX API Documentation](/api/?qs=1.10/dojox/gfx)
 *   [GFX FX API Documentation](/api/?qs=1.10/dojox/gfx/fx)
 *   [GFX Animations Matrix API Documentation](/api/?qs=1.10/dojox/gfx/matrix)
-*   [GFX Tests](http://download.dojotoolkit.org/release-1.10.3/dojo-release-1.10.3/dojox/gfx/tests/)
+*   [GFX Tests](http://download.dojotoolkit.org/release-1.10.4/dojo-release-1.10.4/dojox/gfx/tests/)
