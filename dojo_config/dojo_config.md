@@ -36,7 +36,7 @@ First, a programmatic example of setting `dojoConfig` directly:
 		async: true
 	};
 </script>
-<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
 
 <script>
 // Require the registry, parser, Dialog, and wait for domReady
@@ -80,8 +80,8 @@ parameters for later lookup by module code.
 Here's the same example written declaratively:
 
 ```html
-<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;
-		data-dojo-config=&quot;has:{'dojo-firebug': true}, parseOnLoad: false, foo: &#x27;bar&#x27;, async: 1&quot;>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"
+		data-dojo-config="has:{'dojo-firebug': true}, parseOnLoad: false, foo: 'bar', async: 1">
 </script>
 ```
 
@@ -303,11 +303,11 @@ by your browser. A simple demo shows it at work:
 			"dojo-debug-messages": true
 		},
 		parseOnLoad: true,
-		// look for a locale=xx query string param, else default to &#x27;en-us&#x27;
-		locale: location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : &quot;en-us&quot;
+		// look for a locale=xx query string param, else default to 'en-us'
+		locale: location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "en-us"
 	};
 </script>
-<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
 <script>
 	require(["dojo/date/locale", "dijit/Dialog", "dojo/json", "dojo/_base/config",
 	"dojo/_base/window", "dojo/i18n", "dojo/domReady!"]
@@ -387,11 +387,11 @@ behavior and page- or application-wide properties. Consider the following:
 			"dojo-firebug": true
 		},
 		app: {
-			userName: &quot;Anonymous&quot;
+			userName: "Anonymous"
 		}
 	};
 </script>
-<script src=&quot;//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js&quot;></script>
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.3/dojo/dojo.js"></script>
 <script>
 	require(["dijit/Dialog", "dijit/registry", "dojo/parser", "dojo/_base/lang",
 	"dojo/json", "dojo/_base/config", "dojo/io-query", "dojo/domReady!"]
