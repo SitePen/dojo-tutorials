@@ -70,9 +70,9 @@ The AMD loader will automatically load all sub-dependencies for a requested modu
 At this point you've seen an example of loading and using modules. To define and load your own modules, you'll need to ensure that you are loading your HTML file from an HTTP server (localhost is fine, but you do need an HTTP server since there are security subtleties that will prevent many things from working with the "file:///" protocol). For these examples, you don't need any fancy features in your web server other than the ability to serve files. Add a `demo` directory in the directory that contains your `hellodojo.html` file, and in the `demo` directory create a file named `myModule.js`:
 
 ```
+hellodojo.html
 demo/
     myModule.js
-	hellodojo.html
 ```
 
 Now enter the following in `myModule.js`:
