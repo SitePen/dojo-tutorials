@@ -72,7 +72,7 @@ At this point you've seen an example of loading and using modules. To define and
 ```
 demo/
     myModule.js
-	hellodojo.html
+hellodojo.html
 ```
 
 Now enter the following in `myModule.js`:
