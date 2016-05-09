@@ -281,7 +281,7 @@ Just building a build won't necessarily give you everything you might want out o
 		<tr><td>`mini`</td><td>Boolean</td><td>This determines if the build is a "mini" build or not.  If `true` it will exclude files that are tagged as `miniExclude` which is typically things like tests, demos and other items not required for the build to work.  This defaults to `false`.</td></tr>
 		<tr><td>`stripConsole`</td><td>String</td><td>This determines how `console` handling is dealt with in the output code.  This defaults to `"normal"` which strips all console messages except `console.error` and `console.warn`.  It is important to note though, this feature only applies when there is a level of optimization going on, otherwise it is ignored.  Other possible values are `"none"`, `"warn"` and `"all"`.</td></tr>
 		<tr><td>`selectorEngine`</td><td>String</td><td>This identifies the default selector engine for the build and builds it into the code.  While this does not directly make the code smaller, it ensure that a selector engine won't require another call to be loaded.  It defaults to nothing and the two engines included with Dojo are `lite` and `acme`.</td></tr>
-		<tr><td>`staticHasFeatures`</td><td>Object</td><td>This is a hash of features that you are "forcing" to be on or off for the build.  When coupled with the Closure Complier, this allows dead code path removal.  We will talk in detail later about the specific values that can be set.</td></tr>
+		<tr><td>`staticHasFeatures`</td><td>Object</td><td>This is a hash of features that you are "forcing" to be on or off for the build.  When coupled with the Closure Compiler, this allows dead code path removal.  We will talk in detail later about the specific values that can be set.</td></tr>
 	</tbody>
 </table>
 
