@@ -499,7 +499,7 @@ With the changes mentioned above in regards to the concepts introduced with `doj
 
 In addition, the parser also supports the concepts introduced with `dojo/aspect` and you can provide code for "before", "after" and "around" advice.  See [dojo/parser](/reference-guide/1.10/dojo/parser.html#changing-the-behavior-of-a-method) reference guide for more information about this.
 
-<div class="proTip">The `dojo/parser` also supports auto-requiring in modules.  This means you don't necessarily have to require in the module before invoking the require.  If you set `isDebug` to `true` though, it will warn you if you are requiring modules this way.</div>
+<div class="proTip">The `dojo/parser` also supports auto-requring in modules.  This means you don't necessairly have to require in the module before invoking the require.  If you set `isDebug` to `true` though, it will warn you if you are requiring modules this way.</div>
 
 ### Builder
 
