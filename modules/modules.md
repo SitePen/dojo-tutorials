@@ -86,10 +86,10 @@ The index page will look like this:
 ```html
 <html>
 	<body>
-		<script src=&quot;dojo/dojo.js&quot; data-dojo-config="async: true"></script>
+		<script src="dojo/dojo.js" data-dojo-config="async: true"></script>
 		<script>
 			require([
-				&quot;app/counter&quot;
+				"app/counter"
 			], function(counter){
 				log(counter.getValue());
 				counter.increment();
