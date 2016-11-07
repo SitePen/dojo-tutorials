@@ -33,7 +33,7 @@ You might be saying to yourself "I thought AMD was for the client, why would I w
 	server.  Using the same language only gets you so far, but if you have a single coding style, then you can even
 	more rapidly write code.
 
-Sadly for developers, who want other to use their packages and modules to run either on the server or in a browser
+Sadly for developers, who want to use their packages and modules to run either on the server or in a browser
 	client have to support both CommonJS packaging and modules as well as AMD modules.  There is an increasing number
 	of packages that support both CommonJS and AMD and who knows what we will see in the future as far as standards.
 
