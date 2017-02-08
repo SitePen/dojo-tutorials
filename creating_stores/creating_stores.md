@@ -331,8 +331,8 @@ our `add` method makes sure the object does not exist in our store already.
 Here's our final store:
 
 ```js
-define(["dojo/store/util/QueryResults", "dojo/_base/declare", "dojo/store/util/SimpleQueryEngine"],
-		function(QueryResults, declare, SimpleQueryEngine){
+define(["dojo/store/util/QueryResults", "dojo/_base/declare", "dojo/_base/lang", "dojo/store/util/SimpleQueryEngine"],
+		function(QueryResults, declare, lang, SimpleQueryEngine){
 
 	//	Declare the initial store
 	return declare(null, {
